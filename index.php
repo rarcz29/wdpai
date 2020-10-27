@@ -9,16 +9,19 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
-        <div id="logo">CodeCrew</div>
-        <nav>
-            <ul class="navbar">
-                <li><a href="default.asp">Home</a></li>
-                <li><a href="news.asp">News</a></li>
-                <li><a href="contact.asp">Contact</a></li>
-                <li><a href="about.asp">About</a></li>
-            </ul>
-        </nav>
+    <header class="topbar">
+        <div class="logo">CodeCrew</div>
+        <div>
+            <nav class="nav-h">
+                <ul>
+                    <li><a href="#x">Home</a></li>
+                    <li><a href="#X">News</a></li>
+                    <li><a href="#X">Contact</a></li>
+                    <li><a href="#X">About</a></li>
+                </ul>
+            </nav>
+            <div>user</div>
+        </div>
     </header>
 </body>
 </html>
