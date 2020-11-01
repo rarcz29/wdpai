@@ -1,8 +1,93 @@
+@font-face {
+  font-family: 'Lato';
+  src: url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .logo {
+  width: 30%;
+  margin-bottom: 10%;
+  margin-right: 4%;
+}
+
+.container .logo img {
+  width: 100%;
+}
+
+.container .login-container {
+  width: 30%;
+}
+
+.container .login-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30vh;
+}
+
+.container .login-container button {
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(#1382A3), to(#0A4152)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #1382A3 0%, #0A4152 100%) 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  border-radius: 26px;
+  width: 40%;
+  border: none;
+  color: white;
+  margin: 1em;
+  line-height: 2.5em;
+}
+
+.container .login-container input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 1em;
+  margin: 1em;
+  width: 70%;
+}
+
+.container .login-container p {
+  margin: 0;
+  margin-bottom: 1em;
+  color: grey;
+}
+
+.container .login-container a {
+  color: white;
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   padding: 0;
-}
-
-.navbar {
-  background-color: red;
+  background-color: #363738;
+  font-family: 'Lato', sans-serif;
 }

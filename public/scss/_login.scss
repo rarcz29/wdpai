@@ -1,0 +1,66 @@
+@import "./colorpalette";
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+        $width: 30%;
+        width: $width;
+        margin-bottom: 10%;
+        margin-right: 4%;
+    
+        img {
+            width: 100%;
+        }
+    }
+
+    .login-container {
+        width: 30%;
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+        }
+        
+        button {
+            background: $blue-bt-gradient;
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 26px;
+        
+            width: 40%;
+            border: none;
+            color: $fg-main-color;
+            margin: 1em;
+            line-height: 2.5em;
+        }
+        
+        input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $fg-main-color;
+            padding: 1em;
+            margin: 1em;
+            width: 70%;
+        }
+    
+        p {
+            margin: 0;
+            margin-bottom: 1em;
+            color: grey;
+        }
+    
+        a {
+            color: $fg-main-color;
+            text-decoration: underline;
+        }
+    }
+}
