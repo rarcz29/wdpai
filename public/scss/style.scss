@@ -1,6 +1,7 @@
-@import "./colorpalette";
-@import "./fonts";
-@import "./login";
+@import "./shared/color-palette";
+@import "./shared/fonts";
+@import "./shared/header";
+@import "./start";
 
 // * {
 //     border: 1px solid red;
@@ -11,6 +12,7 @@ body {
     padding: 0;
     background-color: $bg-main-color;
     font-family: 'Lato', sans-serif;
+    font-size: 12px;
 }
 
 // .topbar {
