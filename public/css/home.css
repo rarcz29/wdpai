@@ -1,8 +1,37 @@
 .home-left-container {
-  width: 26em;
-  height: calc(100vh - 4em - 1em);
+  width: 27em;
+  height: calc(100vh - 4em - 0.3em);
   background-color: #2D2E2E;
-  padding-top: 1em;
+  padding-top: 0.3em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.home-left-container::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.home-left-container::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+}
+
+.home-left-container:hover::-webkit-scrollbar-thumb {
+  background: #252525;
+}
+
+.home-left-container .search-projects-form > input {
+  width: 100%;
+  background-color: #363738;
+  -webkit-box-shadow: inset 0px 3px 6px #00000029;
+          box-shadow: inset 0px 3px 6px #00000029;
+  border-width: 0;
+  color: white;
+}
+
+.home-left-container .new-project-bt {
+  width: 50%;
 }
 
 .home-left-container .projects-container {
