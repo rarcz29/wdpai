@@ -1,6 +1,6 @@
 @import "./shared/color-palette";
 @import "./shared/fonts";
-@import "./shared/header";
+@import "./shared/variables";
 @import "./start";
 
 // * {
@@ -14,6 +14,100 @@ body {
     background-color: $bg-main-color;
     font-family: 'Lato', sans-serif;
     font-size: 12px;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 2em;
+    border: none;
+    color: $fg-main-color;
+    line-height: 2.5em;
+}
+
+.bt-blue {
+    background: $blue-bt-gradient;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    //font-size: 20px;
+    list-style-type: none;
+
+    & li {
+        padding: 0;
+        margin: 0;
+
+        a {
+            //color: $fg-main-color;
+            text-decoration: none;
+        }
+    }
+}
+
+.main-navbar {
+    width: 100vw;
+    height: 4em;
+    background-color: $bg-darker-color;
+    
+    // display: flex;
+    // align-items: center;
+
+    .logo {
+        height: 80%;
+        margin-right: 4em;
+        margin-left: 3.5em;
+    }
+
+    .nav-container {
+        width: 100%;
+        //display: flex;
+        justify-content: space-between;
+        font-size: 1.8em;
+        color: $fg-main-color;
+
+        ul {
+            // margin: 0;
+            // //font-size: 20px;
+            // list-style-type: none;
+    
+            li {
+                display: inline-block;
+                // padding: 0;
+                // margin: 0;
+                margin-right: 31px;
+    
+                a {
+                    //color: $fg-main-color;
+                    //text-decoration: none;
+                    transition: color 0.3s;
+
+                    &:visited, &:link {
+                        color: $fg-main-color;
+                    }
+
+                    &:hover {
+                        color: $fg-darker-color;
+                    }
+                }
+            }
+        }
+
+        .right-side-icons {
+            margin-right: 1.5em;
+
+            i {
+                margin-left: 1em;
+            }
+        }
+    }
+
+    
 }
 
 // .topbar {

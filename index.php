@@ -1,8 +1,8 @@
 <?php
 
 $url = "https://api.github.com/user/repos";
-$username = "xxxxxx";
-$password = "xxxxxx";
+$username = "xxx";
+$password = "xxx";
 $auth_data = base64_encode("${username}:${password}");
 
 $curl = curl_init();
@@ -14,7 +14,7 @@ $headers = array(
 );
 
 $post_fields = array(
-    "name" => "asdfasdf"
+    "name" => "asdfasdfaa"
 );
 
 curl_setopt($curl, CURLOPT_URL, $url);
