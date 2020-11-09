@@ -3,6 +3,8 @@
 @import "./shared/variables";
 @import "./start";
 
+$main-width: 1000px;
+
 // * {
 //     border: 1px solid red;
 // }
@@ -16,6 +18,17 @@ body {
     font-size: 12px;
     font-weight: normal;
     color: $fg-main-color;
+}
+
+.main-container {
+    width: $main-width;
+    margin: 0 auto;
+}
+
+@media only screen and (max-device-width: $main-width) {
+    .main-container {
+        background-color: red;
+    }
 }
 
 .flex-center {
@@ -126,41 +139,14 @@ body {
     }
 }
 
+.data-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $fg-main-color;
+}
+
 @media only screen and (max-device-width: 800px) {
     .main-navbar .nav-container {
         display: none;
     }
 }
-
-// .topbar {
-//     display: flex;
-// }
-
-// .logo {
-//     font-size: 40px;
-// }
-
-// .nav-h {
-//     margin-top: 200px;
-//     ul {
-//         list-style-type: none;
-//         margin: 0;
-//         padding: 0;
-
-//         & > li {
-//             display: inline-block;
-//         }
-
-//         a {
-//             text-decoration: none;
-
-//             &:link {
-//                 color: black;
-//             }
-            
-//             &:visited {
-//                 color:black;
-//             }
-//         }
-//     }
-// }
