@@ -3,8 +3,9 @@
 
 $left-panel-width: 27em;
 
-main {
+.home-main {
     display: flex;
+    flex-direction: row;
 }
 
 .home-left-container {
@@ -104,12 +105,12 @@ main {
     }
 }
 
-.home-main-container {
+.home-news-container {
     width: calc(100vw - #{$left-panel-width});
 }
 
 @media only screen and (max-device-width: 800px) {
-    main {
+    .home-main {
         flex-direction: column;
     }
 

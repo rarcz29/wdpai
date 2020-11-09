@@ -1,7 +1,11 @@
-main {
+.home-main-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .home-left-container {
@@ -77,12 +81,12 @@ main {
   background-color: red;
 }
 
-.home-main-container {
+.home-news-container {
   width: calc(100vw - 27em);
 }
 
 @media only screen and (max-device-width: 800px) {
-  main {
+  .home-main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

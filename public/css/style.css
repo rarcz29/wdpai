@@ -145,6 +145,17 @@ body {
   color: white;
 }
 
+.main-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-device-width: 1000px) {
+  .main-container {
+    background-color: red;
+  }
+}
+
 .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,6 +262,17 @@ body {
 
 .main-navbar .nav-container .right-side-icons i {
   margin-left: 1em;
+}
+
+.data-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 1.2em;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-indent: 1em;
 }
 
 @media only screen and (max-device-width: 800px) {

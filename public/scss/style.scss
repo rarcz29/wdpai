@@ -143,6 +143,10 @@ body {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $fg-main-color;
+    font-size: 1.2em;
+    margin: 0;
+    box-sizing: border-box;
+    text-indent: 1em;
 }
 
 @media only screen and (max-device-width: 800px) {

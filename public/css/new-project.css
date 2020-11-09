@@ -1,0 +1,15 @@
+.new-project-form input {
+  width: 100%;
+}
+
+.new-project-form .git-form {
+  background-color: #2D2E2E;
+  width: 100%;
+}
+
+.new-project-form .git-form input {
+  margin: 0 1em;
+  width: calc(100% - 2 * 1em);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
