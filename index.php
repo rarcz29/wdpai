@@ -1,29 +1,14 @@
 <?php
 
-$url = "https://api.github.com/user/repos";
-$username = "xxx";
-$password = "xxx";
-$auth_data = base64_encode("${username}:${password}");
+require 'Routing.php';
 
-$curl = curl_init();
+$path = trim($_SERVER['REQUEST_URI'], '/');
+$path = parse_url($path, PHP_URL_PATH);
 
-$headers = array(
-    "User-Agent: ${username}",
-    "Authorization: Basic ${auth_data}",
-    "Accept: application/vnd.github.v3+json"
-);
+Routing::get('', 'DefaultController');
+Routing::get('home', 'DefaultController');
+Routing::get('new', 'DefaultController');
 
-$post_fields = array(
-    "name" => "asdfasdfaa"
-);
+Routing::run($path);
 
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($curl, CURLOPT_POST, count($post_fields));
-curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($post_fields));
-
-$output = curl_exec($curl);
-curl_close($curl);
-
-echo $output;
+?>
