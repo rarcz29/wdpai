@@ -1,0 +1,117 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .logo {
+  width: 30%;
+  margin-bottom: 10%;
+  margin-right: 4%;
+}
+
+.container .logo img {
+  width: 100%;
+}
+
+.container .login-container {
+  width: 30%;
+}
+
+.container .login-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+}
+
+.container .login-container .button-login {
+  width: 55%;
+  margin: 1em;
+}
+
+.container .login-container .input-login {
+  width: 70%;
+  margin: 1em;
+}
+
+.container .login-container p {
+  margin: 0;
+  margin-bottom: 1em;
+  color: grey;
+  font-size: 12px;
+}
+
+.container .login-container a {
+  color: white;
+  text-decoration: underline;
+}
+
+@media only screen and (max-device-width: 420px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .logo {
+    width: 80%;
+    margin: 0;
+    margin-bottom: 3vh;
+  }
+  .container .logo img {
+    width: 100%;
+  }
+  .container .login-container {
+    width: 100%;
+  }
+  .container .login-container form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+  }
+}

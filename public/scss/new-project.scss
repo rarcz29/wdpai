@@ -1,19 +1,19 @@
 @import "./shared/color-palette";
 
 .new-project-form {
+  input {
+    width: 100%;
+  }
+
+  .git-form {
+    background-color: $bg-darker-color;
+    width: 100%;
+
     input {
-        width: 100%;
+      $input-margin: 1em;
+
+      margin: 0 $input-margin;
+      width: calc(100% - 2 * #{$input-margin});
     }
-
-    .git-form {
-        background-color: $bg-darker-color;
-        width: 100%;
-
-        input {
-            $input-margin: 1em;
-
-            margin: 0 $input-margin;
-            width: calc(100% - 2 * #{$input-margin});
-        }
-    }
+  }
 }
