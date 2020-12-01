@@ -18,6 +18,14 @@
         </div>
         <div class="login-container">
             <form>
+                <div class="messages">
+                    <?php
+                        if (isset($message))
+                        {
+                            echo $message;
+                        }
+                    ?>
+                </div>
                 <input class="input-field-line-under input-login" name="username" type="text" placeholder="username">
                 <input class="input-field-line-under input-login" name="password" type="password"
                     placeholder="password">
