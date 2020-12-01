@@ -17,19 +17,22 @@
             <img src="public/img/logo.svg" alt="logo">
         </div>
         <div class="login-container">
-            <form>
+            <form action="login" method="POST">
                 <div class="messages">
                     <?php
-                        if (isset($message))
+                        if (isset($messages))
                         {
-                            echo $message;
+                            foreach ($messages as $message)
+                            {
+                                echo $message;
+                            }                         
                         }
                     ?>
                 </div>
                 <input class="input-field-line-under input-login" name="username" type="text" placeholder="username">
                 <input class="input-field-line-under input-login" name="password" type="password"
                     placeholder="password">
-                <button class="button input-field-round bt-blue button-login">Log in</button>
+                <button type="submit" class="button input-field-round bt-blue button-login">Log in</button>
                 <p>Don't have an account?</p>
                 <a href="./signup.html">Sign up</a>
             </form>

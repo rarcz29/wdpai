@@ -9,6 +9,7 @@ Routing::get('', 'DefaultController');
 Routing::get('signup', 'DefaultController');
 Routing::get('home', 'DefaultController');
 Routing::get('new', 'DefaultController');
+Routing::post('login', 'SecurityController');
 
 Routing::run($path);
 
