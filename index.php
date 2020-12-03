@@ -12,5 +12,3 @@ Routing::get('new', 'DefaultController');
 Routing::post('login', 'SecurityController');
 
 Routing::run($path);
-
-?>
