@@ -6,12 +6,11 @@ services:
       context: .
       dockerfile: docker/nginx/Dockerfile
     ports:
-      - "8080:80"
+      - 8080:80
     volumes:
       - .:/app/
     depends_on:
       - php
-      - db
 
   php:
     build:
@@ -19,12 +18,3 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app/
-
-  db:
-    image: postgres:13.1-alpine
-    ports:
-      - 5432:5432
-    environment:
-      - POSTGRES_DB=wdpaidb
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password1234

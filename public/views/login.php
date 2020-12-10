@@ -29,7 +29,7 @@
                         }
                     ?>
                 </div>
-                <input class="input-field-line-under input-login" name="username" type="text" placeholder="username">
+                <input class="input-field-line-under input-login" name="email" type="email" placeholder="email">
                 <input class="input-field-line-under input-login" name="password" type="password"
                     placeholder="password">
                 <button type="submit" class="button input-field-round bt-blue button-login">Log in</button>
