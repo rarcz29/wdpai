@@ -19,3 +19,15 @@ $green-bt-gradient: transparent
     #0a4152 100%
   )
   0% 0% no-repeat padding-box;
+$red-bt-gradient: transparent
+  linear-gradient(
+    180deg,
+    #1321a3 0%,
+    #02d52c 0%,
+    #ef0e0e 0%,
+    #cc0808 1%,
+    #7e0a0a 100%,
+    #9a0808 100%,
+    #0a4152 100%
+  )
+  0% 0% no-repeat padding-box;

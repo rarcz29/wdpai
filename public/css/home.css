@@ -130,7 +130,8 @@
 }
 
 .home-news-container {
-  width: calc(100vw - 27em);
+  width: calc(100vw - 27em - 2em);
+  margin: 2em;
 }
 
 .home-news-container img {
@@ -141,7 +142,7 @@
 }
 
 @media only screen and (max-device-width: 800px) {
-  .home-main {
+  .home-main-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

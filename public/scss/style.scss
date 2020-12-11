@@ -65,6 +65,10 @@ body {
   background: $green-bt-gradient;
 }
 
+.bt-red {
+  background: $red-bt-gradient;
+}
+
 .search-form > input {
   font-size: 1.2em;
   margin: 0;
@@ -123,7 +127,7 @@ body {
         a {
           //color: $fg-main-color;
           //text-decoration: none;
-          transition: color 0.3s;
+          transition: color $transition-time;
 
           &:visited,
           &:link {

@@ -150,7 +150,10 @@ $left-panel-width: 27em;
 }
 
 .home-news-container {
-  width: calc(100vw - #{$left-panel-width});
+  $margin: 2em;
+
+  width: calc(100vw - #{$left-panel-width} - #{$margin});
+  margin: $margin;
 
   img {
     border-radius: 50%;
@@ -161,7 +164,7 @@ $left-panel-width: 27em;
 }
 
 @media only screen and (max-device-width: 800px) {
-  .home-main {
+  .home-main-container {
     flex-direction: column;
   }
 

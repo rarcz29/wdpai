@@ -69,6 +69,11 @@ body {
   background: transparent linear-gradient(180deg, #1382a3 0%, #02d52c 0%, #086349 84%, #09594c 100%, #0a4152 100%) 0% 0% no-repeat padding-box;
 }
 
+.bt-red {
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(#1321a3), color-stop(0%, #02d52c), color-stop(0%, #ef0e0e), color-stop(1%, #cc0808), color-stop(100%, #7e0a0a), color-stop(100%, #9a0808), to(#0a4152)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #1321a3 0%, #02d52c 0%, #ef0e0e 0%, #cc0808 1%, #7e0a0a 100%, #9a0808 100%, #0a4152 100%) 0% 0% no-repeat padding-box;
+}
+
 .search-form > input {
   font-size: 1.2em;
   margin: 0;
@@ -121,8 +126,8 @@ body {
 }
 
 .main-navbar .nav-container ul li a {
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 .main-navbar .nav-container ul li a:visited, .main-navbar .nav-container ul li a:link {
