@@ -91,13 +91,19 @@ $left-panel-width: 27em;
 
           a {
             .project-tile {
-              background-color: black;
+              background-color: transparent;
               width: 100%;
               height: 10em;
               border-radius: $project-tile-border-radius;
               border: 1px solid $border-color;
               text-align: center;
               position: relative;
+              transition: border-color ease-out $transition-time;
+              overflow: hidden;
+
+              &:hover {
+                border-color: $fg-main-color;
+              }
 
               img {
                 position: absolute;
@@ -106,12 +112,13 @@ $left-panel-width: 27em;
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
-                border-radius: $project-tile-border-radius;
-                opacity: 0.5;
-                transition: opacity ease-out 0.5s;
+                //border-radius: $project-tile-border-radius;
+                opacity: 0.2;
+                transition: all ease-out $transition-time;
 
                 &:hover {
-                  opacity: 1;
+                  opacity: 0.5;
+                  transform: scale(1.08);
                 }
               }
 
