@@ -73,6 +73,7 @@ $left-panel-width: 27em;
 
     .filters {
       height: inherit;
+      margin: 0.3em 0;
       width: $element-width;
       border-radius: 1em;
       border: 1px solid white;
@@ -151,15 +152,53 @@ $left-panel-width: 27em;
 
 .home-news-container {
   $margin: 2em;
+  overflow: hidden;
 
   width: calc(100vw - #{$left-panel-width} - #{$margin});
-  margin: $margin;
+  margin: 0 $margin;
 
-  img {
-    border-radius: 50%;
-    border: 2px solid #2d2e2e;
-    width: 170px;
-    height: 170px;
+  .join-project-message {
+    margin-top: $margin;
+
+    img {
+      float: left;
+      border-radius: 50%;
+      border: 2px solid #2d2e2e;
+      width: 170px;
+      height: 170px;
+      margin-bottom: 1em;
+      margin-right: 2em;
+    }
+
+    .news-right-side {
+      display: flex;
+      height: 170px;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      p {
+        margin-bottom: 2em;
+        margin-left: 1em;
+        font-size: 1.5em;
+
+        span {
+          opacity: 0.7;
+        }
+      }
+
+      .news-buttons {
+        margin-bottom: 1.5em;
+
+        button {
+          width: 10em;
+          margin-right: 1em;
+        }
+      }
+    }
+
+    hr {
+      clear: both;
+    }
   }
 }
 

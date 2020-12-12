@@ -57,6 +57,7 @@
 
 .home-left-container .projects-buttons .filters {
   height: inherit;
+  margin: 0.3em 0;
   width: 47%;
   border-radius: 1em;
   border: 1px solid white;
@@ -130,15 +131,60 @@
 }
 
 .home-news-container {
+  overflow: hidden;
   width: calc(100vw - 27em - 2em);
-  margin: 2em;
+  margin: 0 2em;
 }
 
-.home-news-container img {
+.home-news-container .join-project-message {
+  margin-top: 2em;
+}
+
+.home-news-container .join-project-message img {
+  float: left;
   border-radius: 50%;
   border: 2px solid #2d2e2e;
   width: 170px;
   height: 170px;
+  margin-bottom: 1em;
+  margin-right: 2em;
+}
+
+.home-news-container .join-project-message .news-right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 170px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.home-news-container .join-project-message .news-right-side p {
+  margin-bottom: 2em;
+  margin-left: 1em;
+  font-size: 1.5em;
+}
+
+.home-news-container .join-project-message .news-right-side p span {
+  opacity: 0.7;
+}
+
+.home-news-container .join-project-message .news-right-side .news-buttons {
+  margin-bottom: 1.5em;
+}
+
+.home-news-container .join-project-message .news-right-side .news-buttons button {
+  width: 10em;
+  margin-right: 1em;
+}
+
+.home-news-container .join-project-message hr {
+  clear: both;
 }
 
 @media only screen and (max-device-width: 800px) {
