@@ -106,13 +106,13 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0.2;
+  opacity: 0.1;
   -webkit-transition: all ease-out 0.5s;
   transition: all ease-out 0.5s;
 }
 
 .home-left-container .projects-container .projects ul li a .project-tile img:hover {
-  opacity: 0.5;
+  opacity: 1;
   -webkit-transform: scale(1.08);
           transform: scale(1.08);
 }
@@ -144,7 +144,7 @@
 }
 
 .home-news-container .join-project-message {
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 .home-news-container .join-project-message img {
@@ -200,6 +200,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-radius: 1em;
 }
 
 .home-news-container .pull-request-message .pull-request-logo {
@@ -229,6 +230,28 @@
   margin-left: 1em;
   font-size: 1.1em;
   opacity: 0.7;
+}
+
+.git-tools {
+  width: 20em;
+  height: 4em;
+  background-color: #2d2e2e;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  -webkit-box-shadow: 0 3px 20px #000000ad;
+          box-shadow: 0 3px 20px #000000ad;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 1em;
+}
+
+.git-tools i {
+  margin: auto 0;
+  font-size: 3em;
 }
 
 @media only screen and (max-device-width: 800px) {

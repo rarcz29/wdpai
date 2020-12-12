@@ -120,11 +120,11 @@ $left-panel-width: 27em;
                 width: 100%;
                 object-fit: cover;
                 //border-radius: $project-tile-border-radius;
-                opacity: 0.2;
+                opacity: 0.1;
                 transition: all ease-out $transition-time;
 
                 &:hover {
-                  opacity: 0.5;
+                  opacity: 1;
                   transform: scale(1.08);
                 }
               }
@@ -160,13 +160,12 @@ $left-panel-width: 27em;
   $margin: 2em;
 
   width: calc(100% - #{$left-panel-width} - #{$margin});
-  // margin: 0 $margin;
   margin-left: calc(#{$left-panel-width} + #{$margin});
   margin-right: $margin;
   margin-top: $main-navbar-height;
 
   .join-project-message {
-    margin-top: $margin;
+    margin-top: 3em;
 
     img {
       float: left;
@@ -214,6 +213,7 @@ $left-panel-width: 27em;
     background-color: $bg-darker-color;
     // padding: 0.5em 0;
     display: flex;
+    border-radius: 1em;
 
     .pull-request-logo {
       // display: inline-block;
@@ -248,6 +248,24 @@ $left-panel-width: 27em;
         opacity: 0.7;
       }
     }
+  }
+}
+
+.git-tools {
+  width: 20em;
+  height: 4em;
+  background-color: $bg-darker-color;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  box-shadow: $shadow2;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 1em;
+
+  i {
+    margin: auto 0;
+    font-size: 3em;
   }
 }
 

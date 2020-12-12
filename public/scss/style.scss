@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: $bg-main-color;
-  font-family: "Lato", sans-serif;
+  font-family: Lato, sans-serif;
   font-size: 12px;
   font-weight: normal;
   color: $fg-main-color;
@@ -38,7 +38,7 @@ body {
 }
 
 .input-field-round {
-  box-shadow: shadow;
+  box-shadow: $shadow;
   border-radius: 2em;
   line-height: 2.5em;
 }
@@ -55,6 +55,11 @@ body {
   color: $fg-main-color;
   font-size: 1.3em;
   cursor: pointer;
+  transition: box-shadow ease-in-out $transition-time;
+
+  &:hover {
+    box-shadow: $shadow2;
+  }
 }
 
 .bt-blue {
