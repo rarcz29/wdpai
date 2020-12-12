@@ -1,3 +1,7 @@
+.home-navbar {
+  position: fixed;
+}
+
 .home-main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,6 +13,8 @@
 }
 
 .home-left-container {
+  position: fixed;
+  top: 4em;
   width: 27em;
   height: calc(100vh - 4em - 0.3em);
   background-color: #2d2e2e;
@@ -131,9 +137,10 @@
 }
 
 .home-news-container {
-  overflow: hidden;
-  width: calc(100vw - 27em - 2em);
-  margin: 0 2em;
+  width: calc(100% - 27em - 2em);
+  margin-left: calc(27em + 2em);
+  margin-right: 2em;
+  margin-top: 4em;
 }
 
 .home-news-container .join-project-message {
@@ -185,6 +192,43 @@
 
 .home-news-container .join-project-message hr {
   clear: both;
+}
+
+.home-news-container .pull-request-message {
+  margin-top: 2em;
+  background-color: #2d2e2e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-news-container .pull-request-message .pull-request-logo {
+  margin: auto 3em;
+}
+
+.home-news-container .pull-request-message .pull-request-logo i {
+  font-size: 6em;
+}
+
+.home-news-container .pull-request-message .pull-request-info h1 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.home-news-container .pull-request-message .pull-request-info h1 span {
+  opacity: 0.7;
+  font-size: 0.8em;
+}
+
+.home-news-container .pull-request-message .pull-request-info h2 {
+  margin-left: 1em;
+  font-size: 1.1em;
+}
+
+.home-news-container .pull-request-message .pull-request-info h3 {
+  margin-left: 1em;
+  font-size: 1.1em;
+  opacity: 0.7;
 }
 
 @media only screen and (max-device-width: 800px) {

@@ -3,6 +3,10 @@
 
 $left-panel-width: 27em;
 
+.home-navbar {
+  position: fixed;
+}
+
 .home-main-container {
   display: flex;
   flex-direction: row;
@@ -11,6 +15,8 @@ $left-panel-width: 27em;
 .home-left-container {
   $padding-top: 0.3em;
 
+  position: fixed;
+  top: $main-navbar-height;
   width: $left-panel-width;
   height: calc(100vh - #{$main-navbar-height} - #{$padding-top});
   background-color: $bg-darker-color;
@@ -152,10 +158,12 @@ $left-panel-width: 27em;
 
 .home-news-container {
   $margin: 2em;
-  overflow: hidden;
 
-  width: calc(100vw - #{$left-panel-width} - #{$margin});
-  margin: 0 $margin;
+  width: calc(100% - #{$left-panel-width} - #{$margin});
+  // margin: 0 $margin;
+  margin-left: calc(#{$left-panel-width} + #{$margin});
+  margin-right: $margin;
+  margin-top: $main-navbar-height;
 
   .join-project-message {
     margin-top: $margin;
@@ -198,6 +206,47 @@ $left-panel-width: 27em;
 
     hr {
       clear: both;
+    }
+  }
+
+  .pull-request-message {
+    margin-top: 2em;
+    background-color: $bg-darker-color;
+    // padding: 0.5em 0;
+    display: flex;
+
+    .pull-request-logo {
+      // display: inline-block;
+      margin: auto 3em;
+
+      i {
+        font-size: 6em;
+      }
+    }
+
+    .pull-request-info {
+      // display: inline-block;
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0;
+
+        span {
+          opacity: 0.7;
+          font-size: 0.8em;
+        }
+      }
+
+      h2 {
+        margin-left: 1em;
+        font-size: 1.1em;
+      }
+
+      h3 {
+        margin-left: 1em;
+        font-size: 1.1em;
+        opacity: 0.7;
+      }
     }
   }
 }
