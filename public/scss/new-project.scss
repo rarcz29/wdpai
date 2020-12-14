@@ -5,6 +5,17 @@
   input[type="text"] {
     font-size: 1.3em;
     margin-bottom: 1.5em;
+  }
+
+  .main-input {
+    width: 100%;
+  }
+
+  .technologies-input {
+    width: 30%;
+  }
+
+  .submit-bt {
     width: 100%;
   }
 
@@ -12,6 +23,7 @@
     $input-margin: 2em;
     padding-top: 0.1px;
     padding-bottom: 1em;
+    margin-bottom: 1em;
 
     background-color: $bg-darker-color;
     width: 100%;

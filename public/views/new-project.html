@@ -35,9 +35,10 @@
 
     <main class="main-container">
         <h1 class="new-project-page-header">Create new project</h1>
+
         <form class="new-project-form">
-            <input class="input-field-line-under" type="text" placeholder="Title...">
-            <input class="input-field-line-under" type="text" placeholder="Description...">
+            <input class="input-field-line-under main-input" type="text" placeholder="Title...">
+            <input class="input-field-line-under main-input" type="text" placeholder="Description...">
 
             <section class="git-form">
                 <!-- <input class="input-field-line-under git-input" type="text" placeholder="Title...">
@@ -61,12 +62,16 @@
                     </label>
                     <input type="radio" id="huey5" name="name2" value="huey" unchecked>
                     <label for="huey5">
-                        <i class="fab fa-gitlab"></i>
+                        <i class="fas fa-lock"></i>
                         <div>Private</div>
                     </label>
                 </div>
                 <hr>
             </section>
+
+            <input type="text" class="input-field-line-under technologies-input" placeholder="Technologies...">
+
+            <button class="input-field-round button bt-blue submit-bt">Create project</button>
         </form>
     </main>
 </body>

@@ -1,12 +1,24 @@
 .new-project-form input[type="text"] {
   font-size: 1.3em;
   margin-bottom: 1.5em;
+}
+
+.new-project-form .main-input {
+  width: 100%;
+}
+
+.new-project-form .technologies-input {
+  width: 30%;
+}
+
+.new-project-form .submit-bt {
   width: 100%;
 }
 
 .new-project-form .git-form {
   padding-top: 0.1px;
   padding-bottom: 1em;
+  margin-bottom: 1em;
   background-color: #2d2e2e;
   width: 100%;
 }
