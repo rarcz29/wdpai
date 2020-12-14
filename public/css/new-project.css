@@ -1,20 +1,66 @@
-.new-project-form input {
+.new-project-form input[type="text"] {
   font-size: 1.3em;
   margin-bottom: 1.5em;
-}
-
-.new-project-form .main-input {
   width: 100%;
 }
 
 .new-project-form .git-form {
+  padding-top: 0.1px;
+  padding-bottom: 1em;
   background-color: #2d2e2e;
   width: 100%;
 }
 
-.new-project-form .git-form .git-input {
+.new-project-form .git-form h1 {
+  margin-left: 2em;
+  margin-top: 1em;
+  font-size: 1.4em;
+}
+
+.new-project-form .git-form hr {
+  width: calc(100% - 2 * 2em);
+}
+
+.new-project-form .git-form .input-radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.new-project-form .git-form .input-radio-container input[type="radio"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: none;
+}
+
+.new-project-form .git-form .input-radio-container label {
+  opacity: 0.2;
+  -webkit-transition: opacity ease-in-out 0.5s;
+  transition: opacity ease-in-out 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.new-project-form .git-form .input-radio-container label i {
+  font-size: 6em;
+}
+
+.new-project-form .git-form .input-radio-container label div {
+  font-size: 2em;
   margin-left: 1em;
-  margin-right: 1em;
-  width: 100%;
-  width: calc(100% - 2 * 1em);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.new-project-form .git-form .input-radio-container label:hover {
+  cursor: pointer;
+}
+
+.new-project-form .git-form .input-radio-container input[type="radio"]:checked + label {
+  opacity: 1;
 }

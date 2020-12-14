@@ -1,26 +1,75 @@
 @import "./shared/color-palette";
+@import "./shared/variables";
 
 .new-project-form {
-  input {
+  input[type="text"] {
     font-size: 1.3em;
     margin-bottom: 1.5em;
-  }
-
-  .main-input {
     width: 100%;
   }
 
   .git-form {
+    $input-margin: 2em;
+    padding-top: 0.1px;
+    padding-bottom: 1em;
+
     background-color: $bg-darker-color;
     width: 100%;
+    // margin-left: $input-margin;
+    // margin-right: $input-margin;
 
-    .git-input {
-      $input-margin: 1em;
+    // .git-input {
+    //   $input-margin: 1em;
 
+    //   margin-left: $input-margin;
+    //   margin-right: $input-margin;
+    //   width: 100%;
+    //   width: calc(100% - 2 * #{$input-margin});
+    // }
+
+    h1 {
       margin-left: $input-margin;
-      margin-right: $input-margin;
-      width: 100%;
+      margin-top: 1em;
+      font-size: 1.4em;
+    }
+
+    hr {
       width: calc(100% - 2 * #{$input-margin});
+    }
+
+    .input-radio-container {
+      display: flex;
+      justify-content: space-evenly;
+
+      input[type="radio"] {
+        appearance: none;
+        display: none;
+      }
+
+      label {
+        opacity: 0.2;
+        transition: opacity ease-in-out $transition-time;
+        display: flex;
+
+        i {
+          font-size: 6em;
+        }
+
+        div {
+          font-size: 2em;
+          margin-left: 1em;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      input[type="radio"]:checked + label {
+        opacity: 1;
+      }
     }
   }
 }
