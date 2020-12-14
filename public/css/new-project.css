@@ -1,4 +1,9 @@
 .new-project-form input {
+  font-size: 1.3em;
+  margin-bottom: 1.5em;
+}
+
+.new-project-form .main-input {
   width: 100%;
 }
 
@@ -7,7 +12,9 @@
   width: 100%;
 }
 
-.new-project-form .git-form input {
-  margin: 0 1em;
+.new-project-form .git-form .git-input {
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 100%;
   width: calc(100% - 2 * 1em);
 }

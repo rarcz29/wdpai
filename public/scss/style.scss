@@ -23,6 +23,10 @@ body {
 .main-container {
   width: $main-width;
   margin: 0 auto;
+
+  .new-project-page-header {
+    margin-left: 1em;
+  }
 }
 
 @media only screen and (max-device-width: $main-width) {
@@ -48,6 +52,7 @@ body {
   border: none;
   border-bottom: 1px solid $fg-main-color;
   padding: 1em;
+  box-sizing: border-box;
 }
 
 .button {
@@ -156,15 +161,15 @@ body {
   }
 }
 
-.data-input {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid $fg-main-color;
-  font-size: 1.2em;
-  margin: 0;
-  box-sizing: border-box;
-  text-indent: 1em;
-}
+// .data-input {
+//   background-color: transparent;
+//   border: none;
+//   border-bottom: 1px solid $fg-main-color;
+//   font-size: 1.2em;
+//   margin: 0;
+//   box-sizing: border-box;
+//   text-indent: 1em;
+// }
 
 @media only screen and (max-device-width: 800px) {
   .main-navbar .nav-container {
