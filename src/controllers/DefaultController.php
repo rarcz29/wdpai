@@ -18,9 +18,4 @@ class DefaultController extends AppController
     {
         $this->render('home');
     }
-    
-    public function new()
-    {
-        $this->render('new-project');
-    }
 }

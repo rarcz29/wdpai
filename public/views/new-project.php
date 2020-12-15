@@ -36,7 +36,7 @@
     <main class="main-container">
         <h1 class="new-project-page-header">Create new project</h1>
 
-        <form class="new-project-form" action="addProject" method="POST" ENCTYPE="multipart/form-data">
+        <form class="new-project-form" action="newProject" method="POST" ENCTYPE="multipart/form-data">
             <div class="messages">
                 <?php
                     if (isset($messages))
@@ -51,7 +51,7 @@
             <input class="input-field-line-under main-input" name="title" type="text" placeholder="Title...">
             <textarea class="input-field-line-under main-input description-input" name="description" rows="1"
                 type="text" placeholder="Description..."></textarea>
-            <input type="file">
+            <input type="file" name="file">
 
             <section class="git-form">
                 <h1>Connect with:</h1>
