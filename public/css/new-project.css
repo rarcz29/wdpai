@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.new-project-form .description-input {
+  overflow: hidden;
+}
+
 .new-project-form .technologies-input {
   width: 30%;
 }

@@ -38,11 +38,11 @@
 
         <form class="new-project-form">
             <input class="input-field-line-under main-input" type="text" placeholder="Title...">
-            <input class="input-field-line-under main-input" type="text" placeholder="Description...">
+            <textarea class="input-field-line-under main-input description-input" rows="1" type="text"
+                placeholder="Description..."></textarea>
+            <input type="file">
 
             <section class="git-form">
-                <!-- <input class="input-field-line-under git-input" type="text" placeholder="Title...">
-                <input class="input-field-line-under git-input" type="text" placeholder="Description..."> -->
                 <h1>Connect with:</h1>
                 <div class="input-radio-container">
                     <input type="radio" id="huey1" name="name1" value="huey" checked>
@@ -53,6 +53,7 @@
                     <label for="huey3"><i class="fab fa-gitlab"></i></label>
                 </div>
                 <hr>
+
                 <h1>Visibility:</h1>
                 <div class="input-radio-container">
                     <input type="radio" id="huey4" name="name2" value="huey" checked>
@@ -74,6 +75,8 @@
             <button class="input-field-round button bt-blue submit-bt">Create project</button>
         </form>
     </main>
+
+    <script src="../js/scripts.js"></script>
 </body>
 
 </html>

@@ -9,10 +9,6 @@ $main-width: 1000px;
 //     border: 1px solid red;
 // }
 
-h1 {
-  font-weight: normal;
-}
-
 body {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +18,17 @@ body {
   font-size: 12px;
   font-weight: normal;
   color: $fg-main-color;
+}
+
+input,
+textarea {
+  color: $fg-main-color;
+  outline: none;
+  resize: none;
+}
+
+h1 {
+  font-weight: normal;
 }
 
 .main-container {
