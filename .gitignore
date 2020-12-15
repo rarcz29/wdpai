@@ -9,5 +9,6 @@
 atlassian-ide-plugin.xml
 
 # other
+public/uploads/
 test/
 config.php
