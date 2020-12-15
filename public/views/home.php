@@ -61,7 +61,7 @@
                                         <h1>Snake</h1>
                                         <p>developer123</p>
                                     </div>
-                                    <img src="../img/example/pictures/altumcode-dMUt0X3f59Q-unsplash.jpg" alt="Project">
+                                    <img src="public/img/example/pictures/altumcode-dMUt0X3f59Q-unsplash.jpg" alt="Project">
                                 </div>
                             </a>
                         </li>
@@ -72,7 +72,7 @@
                                         <h1>Snake</h1>
                                         <p>developer123</p>
                                     </div>
-                                    <img src="../img/example/pictures/anne-nygard-lOcP_QZzitI-unsplash.jpg"
+                                    <img src="public/img/example/pictures/anne-nygard-lOcP_QZzitI-unsplash.jpg"
                                         alt="Project">
                                 </div>
                             </a>
@@ -84,7 +84,7 @@
                                         <h1>Snake</h1>
                                         <p>developer123</p>
                                     </div>
-                                    <img src="../img/example/pictures/danial-ricaros-FCHlYvR5gJI-unsplash.jpg"
+                                    <img src="public/img/example/pictures/danial-ricaros-FCHlYvR5gJI-unsplash.jpg"
                                         alt="Project">
                                 </div>
                             </a>
@@ -96,7 +96,7 @@
                                         <h1>Snake</h1>
                                         <p>developer123</p>
                                     </div>
-                                    <img src="../img/example/pictures/jeshoots-com-eCktzGjC-iU-unsplash.jpg"
+                                    <img src="public/img/example/pictures/jeshoots-com-eCktzGjC-iU-unsplash.jpg"
                                         alt="Project">
                                 </div>
                             </a>
@@ -108,7 +108,7 @@
                                         <h1>Snake</h1>
                                         <p>developer123</p>
                                     </div>
-                                    <img src="../img/example/pictures/markus-winkler-A0iDWXTrQEY-unsplash.jpg"
+                                    <img src="public/img/example/pictures/markus-winkler-A0iDWXTrQEY-unsplash.jpg"
                                         alt="Project">
                                 </div>
                             </a>
@@ -120,7 +120,7 @@
                                         <h1>Snake</h1>
                                         <p>developer123</p>
                                     </div>
-                                    <img src="../img/example/pictures/pawel-kadysz-CuFYW1c97w8-unsplash.jpg"
+                                    <img src="public/img/example/pictures/pawel-kadysz-CuFYW1c97w8-unsplash.jpg"
                                         alt="Project">
                                 </div>
                             </a>
@@ -132,7 +132,7 @@
 
         <section class="home-news-container">
             <section class="join-project-message">
-                <img src="../img/example/faces/image-2.png" alt="Avatar">
+                <img src="public/img/example/faces/image-2.png" alt="Avatar">
                 <div class="news-right-side">
                     <p>someone123 <span>wants to joint your project "Snake"</span></p>
                     <div class="news-buttons">
@@ -150,7 +150,7 @@
                 <hr>
             </section>
             <section class="join-project-message">
-                <img src="../img/example/faces/image-3.png" alt="Avatar">
+                <img src="public/img/example/faces/image-3.png" alt="Avatar">
                 <div class="news-right-side">
                     <p>someone123 <span>wants to joint your project "Snake"</span></p>
                     <div class="news-buttons">
@@ -168,7 +168,7 @@
                 <hr>
             </section>
             <section class="join-project-message">
-                <img src="../img/example/faces/image-4.png" alt="Avatar">
+                <img src="public/img/example/faces/image-4.png" alt="Avatar">
                 <div class="news-right-side">
                     <p>someone123 <span>wants to joint your project "Snake"</span></p>
                     <div class="news-buttons">
@@ -186,7 +186,7 @@
                 <hr>
             </section>
             <section class="join-project-message">
-                <img src="../img/example/faces/image-5.png" alt="Avatar">
+                <img src="public/img/example/faces/image-5.png" alt="Avatar">
                 <div class="news-right-side">
                     <p>someone123 <span>wants to joint your project "Snake"</span></p>
                     <div class="news-buttons">
