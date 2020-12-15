@@ -1,7 +1,7 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/User.php';
+require_once __DIR__ .'/../models/Project.php';
 
 class ProjectController extends AppController
 {
@@ -26,10 +26,7 @@ class ProjectController extends AppController
             $tool = $_POST["gitTool"];
             $visibility = $_POST["visibility"];
 
-            echo $tool;
-            die();
-
-            $project = new Project($_POST['title'], $_POST['description'], $_FILES['file']['name']);
+            $project = new Project($title, $description, $img, $tool, $visibility);
             return $this->render('home', ['messages' => $this->message]);
         }
 

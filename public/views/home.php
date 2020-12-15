@@ -61,7 +61,7 @@
                                         <h1>Snake</h1>
                                         <p>developer123</p>
                                     </div>
-                                    <img src="public/img/example/pictures/altumcode-dMUt0X3f59Q-unsplash.jpg" alt="Project">
+                                    <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
                                 </div>
                             </a>
                         </li>
