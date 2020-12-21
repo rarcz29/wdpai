@@ -172,6 +172,10 @@ h1 {
   margin-left: 1em;
 }
 
+.messages {
+  color: red;
+}
+
 @media only screen and (max-device-width: 800px) {
   .main-navbar .nav-container {
     display: none;
