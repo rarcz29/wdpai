@@ -4,286 +4,310 @@
 $left-panel-width: 27em;
 
 .home-navbar {
-  position: fixed;
+    position: fixed;
 }
 
 .home-main-container {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .home-left-container {
-  $padding-top: 0.3em;
+    $padding-top: 0.3em;
 
-  position: fixed;
-  top: $main-navbar-height;
-  width: $left-panel-width;
-  height: calc(100vh - #{$main-navbar-height} - #{$padding-top});
-  background-color: $bg-darker-color;
-  padding-top: $padding-top;
-  box-shadow: 0px 3px 6px #00000029;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  &::-webkit-scrollbar {
-    width: 0.5em;
-  }
-
-  // &:hover::-webkit-scrollbar {
-  //     width: 2em;
-  // }
-
-  // &::-webkit-scrollbar-track {
-  //     background: black;
-  //     border-radius: 1em;
-  // }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 1em;
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-    background: rgb(37, 37, 37);
-  }
-
-  // &::-webkit-scrollbar-thumb:hover {
-  //     background: $bg-color-brighter;
-  // }
-
-  // &:hover {
-  //     &::-webkit-scrollbar {
-  //         width: 10em;
-  //     }
-  // }
-
-  .search-projects-form > input {
-    width: 100%;
-    background-color: $bg-main-color;
-    box-shadow: inset 0px 3px 6px #00000029;
-    //border: 1px solid #363738;
-    border-width: 0;
-    color: $fg-main-color;
-    margin-top: 1em;
-  }
-
-  .projects-buttons {
-    $element-width: 47%;
-
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
-
-    .new-project-bt {
-      width: $element-width;
-    }
-
-    .filters {
-      height: inherit;
-      margin: 0.3em 0;
-      width: $element-width;
-      border-radius: 1em;
-      border: 1px solid white;
-    }
-  }
-
-  .projects-container {
-    margin: 0 1em;
-
-    .projects {
-      margin-top: 1em;
-
-      ul {
-        li {
-          margin-bottom: 1em;
-
-          a {
-            .project-tile {
-              background-color: transparent;
-              width: 100%;
-              height: 10em;
-              border-radius: $project-tile-border-radius;
-              border: 1px solid $border-color;
-              text-align: center;
-              position: relative;
-              transition: border-color ease-out $transition-time;
-              overflow: hidden;
-
-              &:hover {
-                border-color: $fg-main-color;
-              }
-
-              img {
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                //border-radius: $project-tile-border-radius;
-                opacity: 0.1;
-                transition: all ease-out $transition-time;
-
-                &:hover {
-                  opacity: 1;
-                  transform: scale(1.08);
-                }
-              }
-
-              div {
-                position: absolute;
-                width: 100%;
-
-                h1 {
-                  font-weight: bold;
-                  font-size: 2em;
-                  margin-top: 0.4em;
-                  margin-bottom: 0;
-                  color: $fg-main-color;
-                }
-
-                p {
-                  margin-top: 0.6em;
-                  // color: $fg-darker-color;
-                  color: $fg-main-color;
-                  opacity: 0.8;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.home-news-container {
-  $margin: 2em;
-
-  width: calc(100% - #{$left-panel-width} - #{$margin});
-  margin-left: calc(#{$left-panel-width} + #{$margin});
-  margin-right: $margin;
-  margin-top: $main-navbar-height;
-
-  .join-project-message {
-    margin-top: 3em;
-
-    img {
-      float: left;
-      border-radius: 50%;
-      border: 2px solid #2d2e2e;
-      width: 170px;
-      height: 170px;
-      margin-bottom: 1em;
-      margin-right: 2em;
-    }
-
-    .news-right-side {
-      display: flex;
-      height: 170px;
-      flex-direction: column;
-      justify-content: flex-end;
-
-      p {
-        margin-bottom: 2em;
-        margin-left: 1em;
-        font-size: 1.5em;
-
-        span {
-          opacity: 0.7;
-        }
-      }
-
-      .news-buttons {
-        margin-bottom: 1.5em;
-
-        button {
-          width: 10em;
-          margin-right: 1em;
-        }
-      }
-    }
-
-    hr {
-      clear: both;
-    }
-  }
-
-  .pull-request-message {
-    margin-top: 2em;
+    position: fixed;
+    top: $main-navbar-height;
+    width: $left-panel-width;
+    height: calc(100vh - #{$main-navbar-height} - #{$padding-top});
     background-color: $bg-darker-color;
-    // padding: 0.5em 0;
-    display: flex;
-    border-radius: 1em;
+    padding-top: $padding-top;
+    box-shadow: 0px 3px 6px #00000029;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
-    .pull-request-logo {
-      // display: inline-block;
-      margin: auto 3em;
-
-      i {
-        font-size: 6em;
-      }
+    &::-webkit-scrollbar {
+        width: 0.5em;
     }
 
-    .pull-request-info {
-      // display: inline-block;
+    // &:hover::-webkit-scrollbar {
+    //     width: 2em;
+    // }
 
-      h1 {
-        font-size: 2em;
-        margin-bottom: 0;
+    // &::-webkit-scrollbar-track {
+    //     background: black;
+    //     border-radius: 1em;
+    // }
 
-        span {
-          opacity: 0.7;
-          font-size: 0.8em;
-        }
-      }
-
-      h2 {
-        margin-left: 1em;
-        font-size: 1.1em;
-      }
-
-      h3 {
-        margin-left: 1em;
-        font-size: 1.1em;
-        opacity: 0.7;
-      }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1em;
     }
-  }
-}
 
-.git-tools {
-  width: 20em;
-  height: 4em;
-  background-color: $bg-darker-color;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  box-shadow: $shadow2;
-  display: flex;
-  justify-content: space-around;
-  border-radius: 1em;
+    &:hover::-webkit-scrollbar-thumb {
+        background: rgb(37, 37, 37);
+    }
 
-  i {
-    margin: auto 0;
-    font-size: 3em;
-  }
-}
+    // &::-webkit-scrollbar-thumb:hover {
+    //     background: $bg-color-brighter;
+    // }
 
-@media only screen and (max-device-width: 800px) {
-  .home-main-container {
-    flex-direction: column;
-  }
-
-  .home-left-container {
-    width: 100%;
-    height: auto;
+    // &:hover {
+    //     &::-webkit-scrollbar {
+    //         width: 10em;
+    //     }
+    // }
 
     .search-projects-form > input {
-      margin-top: 0.5em;
+        width: 100%;
+        background-color: $bg-main-color;
+        box-shadow: inset 0px 3px 6px #00000029;
+        //border: 1px solid #363738;
+        border-width: 0;
+        color: $fg-main-color;
+        margin-top: 1em;
     }
 
     .projects-buttons {
-      display: none;
+        $element-width: 47%;
+
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1em;
+
+        .new-project-bt {
+            width: $element-width;
+        }
+
+        .filters {
+            height: inherit;
+            margin: 0.3em 0;
+            width: $element-width;
+            border-radius: 1em;
+            border: 1px solid white;
+        }
     }
-  }
+
+    .projects-container {
+        margin: 0 1em;
+
+        .projects {
+            margin-top: 1em;
+
+            ul {
+                li {
+                    margin-bottom: 1em;
+
+                    a {
+                        .project-tile {
+                            background-color: transparent;
+                            width: 100%;
+                            height: 10em;
+                            border-radius: $project-tile-border-radius;
+                            border: 1px solid $border-color;
+                            text-align: center;
+                            position: relative;
+                            transition: border-color ease-out $transition-time;
+                            overflow: hidden;
+
+                            &:hover {
+                                border-color: $fg-main-color;
+                            }
+
+                            img {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                                //border-radius: $project-tile-border-radius;
+                                opacity: 0.1;
+                                transition: all ease-out $transition-time;
+
+                                &:hover {
+                                    opacity: 1;
+                                    transform: scale(1.08);
+                                }
+                            }
+
+                            div {
+                                position: absolute;
+                                width: 100%;
+
+                                h1 {
+                                    font-weight: bold;
+                                    font-size: 2em;
+                                    margin-top: 0.4em;
+                                    margin-bottom: 0;
+                                    color: $fg-main-color;
+                                }
+
+                                p {
+                                    margin-top: 0.6em;
+                                    // color: $fg-darker-color;
+                                    color: $fg-main-color;
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-news-container {
+    $margin: 2em;
+
+    width: calc(100% - #{$left-panel-width} - #{$margin});
+    margin-left: calc(#{$left-panel-width} + #{$margin});
+    margin-right: $margin;
+    margin-top: $main-navbar-height;
+
+    .join-project-message {
+        margin-top: 3em;
+
+        img {
+            float: left;
+            border-radius: 50%;
+            border: 2px solid #2d2e2e;
+            width: 170px;
+            height: 170px;
+            margin-bottom: 1em;
+            margin-right: 2em;
+        }
+
+        .news-right-side {
+            display: flex;
+            height: 170px;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            p {
+                margin-bottom: 2em;
+                margin-left: 1em;
+                font-size: 1.5em;
+
+                span {
+                    opacity: 0.7;
+                }
+            }
+
+            .news-buttons {
+                margin-bottom: 1.5em;
+
+                button {
+                    width: 10em;
+                    margin-right: 1em;
+                }
+            }
+        }
+
+        hr {
+            clear: both;
+        }
+    }
+
+    .pull-request-message {
+        margin-top: 2em;
+        background-color: $bg-darker-color;
+        // padding: 0.5em 0;
+        display: flex;
+        border-radius: 1em;
+
+        .pull-request-logo {
+            // display: inline-block;
+            margin: auto 3em;
+
+            i {
+                font-size: 6em;
+            }
+        }
+
+        .pull-request-info {
+            // display: inline-block;
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 0;
+
+                span {
+                    opacity: 0.7;
+                    font-size: 0.8em;
+                }
+            }
+
+            h2 {
+                margin-left: 1em;
+                font-size: 1.1em;
+            }
+
+            h3 {
+                margin-left: 1em;
+                font-size: 1.1em;
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.git-tools {
+    width: 280px;
+    height: 300px;
+    background-color: $bg-darker-color;
+    position: fixed;
+    bottom: -250px;
+    right: 0;
+    box-shadow: $shadow2;
+    border-radius: 15px;
+    transition: bottom ease-out $transition-time;
+
+    .git-icons {
+        justify-content: space-around !important;
+        margin: 5px 0;
+    }
+
+    .git-input {
+        width: calc(100% - 2em);
+        margin: 0.5em 1em;
+    }
+
+    .git-submit-bt {
+        width: calc(100% - 6em);
+        margin: 1.5em 3em 0 3em;
+    }
+
+    i {
+        margin: auto 0;
+        font-size: 40px;
+    }
+
+    &:hover {
+        bottom: 0;
+    }
+
+    &:not(:hover) {
+        label {
+            opacity: 1 !important;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 800px) {
+    .home-main-container {
+        flex-direction: column;
+    }
+
+    .home-left-container {
+        width: 100%;
+        height: auto;
+
+        .search-projects-form > input {
+            margin-top: 0.5em;
+        }
+
+        .projects-buttons {
+            display: none;
+        }
+    }
 }

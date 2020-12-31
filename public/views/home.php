@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="public/css/style.css" />
     <link rel="stylesheet" href="public/css/home.css" />
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
+    <script defer src="public/js/home.js"></script>
 </head>
 
 <body>
@@ -77,7 +78,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#">
                                 <div class="project-tile">
                                     <div>
@@ -124,7 +125,7 @@
                                         alt="Project">
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </section>
             </div>
@@ -148,7 +149,7 @@
                     </div>
                 </div>
                 <hr>
-            </section>
+                <!-- </section>
             <section class="join-project-message">
                 <img src="public/img/example/faces/image-3.png" alt="Avatar">
                 <div class="news-right-side">
@@ -202,19 +203,19 @@
                     </div>
                 </div>
                 <hr>
-            </section>
+            </section> -->
 
-            <section class="pull-request-message">
-                <div class="pull-request-logo">
-                    <i class="fab fa-github"></i>
-                </div>
-                <div class="pull-request-info">
-                    <h1>Pull request <span>by someone123</span></h1>
-                    <h2>asdfasdf asdfadsf asdfasdfsadf asdfasddfasdf</h2>
-                    <h3>opened 11 days ago by someone321</h3>
-                </div>
-            </section>
-            <section class="pull-request-message">
+                <section class="pull-request-message">
+                    <div class="pull-request-logo">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="pull-request-info">
+                        <h1>Pull request <span>by someone123</span></h1>
+                        <h2>asdfasdf asdfadsf asdfasdfsadf asdfasddfasdf</h2>
+                        <h3>opened 11 days ago by someone321</h3>
+                    </div>
+                </section>
+                <!-- <section class="pull-request-message">
                 <div class="pull-request-logo">
                     <i class="fab fa-github"></i>
                 </div>
@@ -233,14 +234,27 @@
                     <h2>asdfasdf</h2>
                     <h3>opened 11 days ago by someone321</h3>
                 </div>
+            </section> -->
             </section>
-        </section>
 
-        <section class="git-tools">
-            <i class="fab fa-github"></i>
-            <i class="fab fa-bitbucket"></i>
-            <i class="fab fa-gitlab"></i>
-        </section>
+            <section class="git-tools">
+                <form id="git-tools-form">
+                    <div class="input-radio-container git-icons">
+                        <input type="radio" id="gitTool1" name="gitTool" value="github" checked>
+                        <label for="gitTool1"><i class="fab fa-github"></i></label>
+                        <input type="radio" id="gitTool2" name="gitTool" value="bitbucket" unchecked>
+                        <label for="gitTool2"><i class="fab fa-bitbucket"></i></label>
+                        <input type="radio" id="gitTool3" name="gitTool" value="gitlab" unchecked>
+                        <label for="gitTool3"><i class="fab fa-gitlab"></i></label>
+                    </div>
+                    <div>
+                        <input type="text" name="login" placeholder="login" autocomplete="off" class="input-field-line-under git-input">
+                        <input type="password" name="password" placeholder="password" class="input-field-line-under git-input">
+                        <input type="password" name="token" placeholder="token" class="input-field-line-under git-input">
+                        <input type="submit" class="input-field-round button bt-blue git-submit-bt" value="Connect">
+                    </div>
+                </form>
+            </section>
     </main>
 </body>
 

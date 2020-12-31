@@ -176,6 +176,39 @@ h1 {
   color: red;
 }
 
+.input-radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.input-radio-container input[type="radio"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: none;
+}
+
+.input-radio-container label {
+  opacity: 0.2;
+  -webkit-transition: opacity ease-in-out 0.5s;
+  transition: opacity ease-in-out 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-radio-container label:hover {
+  cursor: pointer;
+}
+
+.input-radio-container input[type="radio"]:checked + label {
+  opacity: 1;
+}
+
 @media only screen and (max-device-width: 800px) {
   .main-navbar .nav-container {
     display: none;

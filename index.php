@@ -10,5 +10,6 @@ Routing::get('signup', 'DefaultController');
 Routing::get('home', 'DefaultController');
 Routing::get('newProject', 'ProjectController');
 Routing::post('login', 'SecurityController');
+Routing::post('gitToolConnect', 'GitToolsController');
 
 Routing::run($path);

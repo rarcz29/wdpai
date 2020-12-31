@@ -10,170 +10,194 @@ $main-width: 1000px;
 // }
 
 body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: $bg-main-color;
-  font-family: Lato, sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  color: $fg-main-color;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: $bg-main-color;
+    font-family: Lato, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: $fg-main-color;
 }
 
 input,
 textarea {
-  color: $fg-main-color;
-  outline: none;
-  resize: none;
+    color: $fg-main-color;
+    outline: none;
+    resize: none;
 }
 
 h1 {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .main-container {
-  width: $main-width;
-  margin: 0 auto;
+    width: $main-width;
+    margin: 0 auto;
 
-  .new-project-page-header {
-    margin-left: 1em;
-  }
+    .new-project-page-header {
+        margin-left: 1em;
+    }
 }
 
 @media only screen and (max-device-width: $main-width) {
-  .main-container {
-    background-color: red;
-  }
+    .main-container {
+        background-color: red;
+    }
 }
 
 .flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .input-field-round {
-  box-shadow: $shadow;
-  border-radius: 2em;
-  line-height: 2.5em;
+    box-shadow: $shadow;
+    border-radius: 2em;
+    line-height: 2.5em;
 }
 
 .input-field-line-under {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid $fg-main-color;
-  padding: 1em;
-  box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $fg-main-color;
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 .button {
-  border: none;
-  color: $fg-main-color;
-  font-size: 1.3em;
-  cursor: pointer;
-  transition: box-shadow ease-in-out $transition-time;
+    border: none;
+    color: $fg-main-color;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: box-shadow ease-in-out $transition-time;
 
-  &:hover {
-    box-shadow: $shadow2;
-  }
+    &:hover {
+        box-shadow: $shadow2;
+    }
 }
 
 .bt-blue {
-  background: $blue-bt-gradient;
+    background: $blue-bt-gradient;
 }
 
 .bt-green {
-  background: $green-bt-gradient;
+    background: $green-bt-gradient;
 }
 
 .bt-red {
-  background: $red-bt-gradient;
+    background: $red-bt-gradient;
 }
 
 .search-form > input {
-  font-size: 1.2em;
-  margin: 0;
-  box-sizing: border-box;
-  text-indent: 1em;
+    font-size: 1.2em;
+    margin: 0;
+    box-sizing: border-box;
+    text-indent: 1em;
 }
 
 .list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-
-  & li {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style-type: none;
 
-    a {
-      text-decoration: none;
+    & li {
+        padding: 0;
+        margin: 0;
+
+        a {
+            text-decoration: none;
+        }
     }
-  }
 }
 
 .main-navbar {
-  width: 100%;
-  height: 4em;
-  background-color: $bg-darker-color;
-  box-shadow: 0px 3px 6px #00000029;
-
-  // display: flex;
-  // align-items: center;
-
-  .logo {
-    height: 80%;
-    margin-right: 4em;
-    margin-left: 3.5em;
-  }
-
-  .nav-container {
     width: 100%;
-    //display: flex;
-    justify-content: space-between;
-    font-size: 1.6em;
-    color: $fg-main-color;
+    height: 4em;
+    background-color: $bg-darker-color;
+    box-shadow: 0px 3px 6px #00000029;
 
-    ul {
-      // margin: 0;
-      // //font-size: 20px;
-      // list-style-type: none;
+    // display: flex;
+    // align-items: center;
 
-      li {
-        display: inline-block;
-        // padding: 0;
-        // margin: 0;
-        margin-right: 31px;
+    .logo {
+        height: 80%;
+        margin-right: 4em;
+        margin-left: 3.5em;
+    }
 
-        a {
-          //color: $fg-main-color;
-          //text-decoration: none;
-          transition: color $transition-time;
+    .nav-container {
+        width: 100%;
+        //display: flex;
+        justify-content: space-between;
+        font-size: 1.6em;
+        color: $fg-main-color;
 
-          &:visited,
-          &:link {
-            color: $fg-main-color;
-          }
+        ul {
+            // margin: 0;
+            // //font-size: 20px;
+            // list-style-type: none;
 
-          &:hover {
-            color: $fg-darker-color;
-          }
+            li {
+                display: inline-block;
+                // padding: 0;
+                // margin: 0;
+                margin-right: 31px;
+
+                a {
+                    //color: $fg-main-color;
+                    //text-decoration: none;
+                    transition: color $transition-time;
+
+                    &:visited,
+                    &:link {
+                        color: $fg-main-color;
+                    }
+
+                    &:hover {
+                        color: $fg-darker-color;
+                    }
+                }
+            }
         }
-      }
-    }
 
-    .right-side-icons {
-      margin-right: 1.5em;
+        .right-side-icons {
+            margin-right: 1.5em;
 
-      i {
-        margin-left: 1em;
-      }
+            i {
+                margin-left: 1em;
+            }
+        }
     }
-  }
 }
 
 .messages {
-  color: red;
+    color: red;
+}
+
+.input-radio-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    input[type="radio"] {
+        appearance: none;
+        display: none;
+    }
+
+    label {
+        opacity: 0.2;
+        transition: opacity ease-in-out $transition-time;
+        display: flex;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    input[type="radio"]:checked + label {
+        opacity: 1;
+    }
 }
 
 // .data-input {
@@ -187,7 +211,7 @@ h1 {
 // }
 
 @media only screen and (max-device-width: 800px) {
-  .main-navbar .nav-container {
-    display: none;
-  }
+    .main-navbar .nav-container {
+        display: none;
+    }
 }
