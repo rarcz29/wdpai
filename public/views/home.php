@@ -20,7 +20,7 @@
         <div class="nav-container flex-center">
             <nav>
                 <ul class="list">
-                    <li><a style="visibility: hidden;" href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#">Community</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
