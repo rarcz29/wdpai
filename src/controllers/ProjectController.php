@@ -2,7 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Project.php';
-require_once __DIR__ . '/../../Cookies.php';
+require_once __DIR__ . '/../services/Cookies.php';
 
 class ProjectController extends AppController
 {
