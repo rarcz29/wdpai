@@ -20,7 +20,7 @@
         <div class="nav-container flex-center">
             <nav>
                 <ul class="list">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home">Home</a></li>
                     <li><a href="#">Community</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
@@ -29,7 +29,7 @@
             <div class="right-side-icons flex-center">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-bell"></i>
-                <i class="fas fa-user-circle"></i>
+                <a href="login"><i class="fas fa-user-circle"></i></a>
             </div>
         </div>
     </header>
@@ -55,7 +55,7 @@
                 </section>
                 <section class="projects">
                     <ul class="list">
-                        <li>
+                        <!-- <li>
                             <a href="#">
                                 <div class="project-tile">
                                     <div>
@@ -77,7 +77,7 @@
                                         alt="Project">
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <a href="#">
                                 <div class="project-tile">
@@ -132,7 +132,7 @@
         </section>
 
         <section class="home-news-container">
-            <section class="join-project-message">
+            <!-- <section class="join-project-message">
                 <img src="public/img/example/faces/image-2.png" alt="Avatar">
                 <div class="news-right-side">
                     <p>someone123 <span>wants to joint your project "Snake"</span></p>
@@ -148,7 +148,7 @@
                         </button>
                     </div>
                 </div>
-                <hr>
+                <hr> -->
                 <!-- </section>
             <section class="join-project-message">
                 <img src="public/img/example/faces/image-3.png" alt="Avatar">
@@ -205,7 +205,7 @@
                 <hr>
             </section> -->
 
-                <section class="pull-request-message">
+                <!-- <section class="pull-request-message">
                     <div class="pull-request-logo">
                         <i class="fab fa-github"></i>
                     </div>
@@ -214,7 +214,7 @@
                         <h2>asdfasdf asdfadsf asdfasdfsadf asdfasddfasdf</h2>
                         <h3>opened 11 days ago by someone321</h3>
                     </div>
-                </section>
+                </section> -->
                 <!-- <section class="pull-request-message">
                 <div class="pull-request-logo">
                     <i class="fab fa-github"></i>

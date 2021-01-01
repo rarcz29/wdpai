@@ -17,16 +17,16 @@
             <img src="public/img/logo.svg" alt="logo">
         </div>
         <div class="login-container">
-            <form>
-                <input class="input-field-line-under input-login" name="username" type="text" placeholder="username">
+            <form action="register" method="POST">
+                <input class="input-field-line-under input-login" name="nickname" type="text" placeholder="nickname">
                 <input class="input-field-line-under input-login" name="email" type="email" placeholder="email">
                 <input class="input-field-line-under input-login" name="password" type="password"
                     placeholder="password">
-                <input class="input-field-line-under input-login" name="password2" type="password"
+                <input class="input-field-line-under input-login" name="confirmedPassword" type="password"
                     placeholder="confirm password">
                 <button class="button-login button bt-blue input-field-round">Sign up</button>
                 <p>or</p>
-                <a href="./login.html">Log in</a>
+                <a href="#">Log in</a>
             </form>
         </div>
     </div>
