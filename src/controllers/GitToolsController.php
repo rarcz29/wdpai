@@ -22,25 +22,35 @@ class GitToolsController extends AppController
             die();
         }
 
+        $nickname = $_COOKIE['user_name'];
         $login = $_POST['login'];
         $password = md5($_POST['password']);
         $token = $_POST['token'];
 
-        if (!$user)
-        {
-            return $this->render('login', ['messages' => ['User not found!']]);
-        }
+        $myArr = array(
+            "tool"=>"GitHub",
+            "value"=>true,
+        );
+        $json = json_encode($myArr);
 
-        if ($user->getEmail() !== $email)
-        {
-            return $this->render('login', ['messages' => ['User not exist!']]);
-        }
+        echo $json;
+        die();
 
-        if ($user->getPassword() !== $password)
-        {
-            return $this->render('login', ['messages' => ['Wrong password!']]);
-        }
-
-        return $this->render('home');
+//        if (!$user)
+//        {
+//            return $this->render('login', ['messages' => ['User not found!']]);
+//        }
+//
+//        if ($user->getEmail() !== $email)
+//        {
+//            return $this->render('login', ['messages' => ['User not exist!']]);
+//        }
+//
+//        if ($user->getPassword() !== $password)
+//        {
+//            return $this->render('login', ['messages' => ['Wrong password!']]);
+//        }
+//
+//        return $this->render('home');
     }
 }

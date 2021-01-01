@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Project.php';
+require_once __DIR__ . '/../../Cookies.php';
 
 class ProjectController extends AppController
 {
@@ -13,9 +14,15 @@ class ProjectController extends AppController
 
     public function newProject()
     {
+        if (Cookies::getNickname() === null)
+        {
+            return $this->render("login");
+        }
+
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
         {
-            move_uploaded_file(
+            move_uploaded_file
+            (
                 $_FILES['file']['tmp_name'],
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );

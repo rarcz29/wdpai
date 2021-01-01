@@ -6,7 +6,7 @@ function logSubmit(event) {
     //formattedFormData.append("property", "value");
 
     fetch("gitToolConnect", { method: "POST", body: formattedData })
-        .then((response) => response.text())
+        .then((response) => response.json())
         .then((data) => console.log(data));
     // .then((response) => response.json())
     // .then((data) => console.log("Created Gist:", data.html_url);

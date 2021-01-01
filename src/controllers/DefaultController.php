@@ -16,6 +16,11 @@ class DefaultController extends AppController
 
     public function home()
     {
+        if (Cookies::getNickname() === null)
+        {
+            return $this->render("login");
+        }
+
         $this->render('home');
     }
 }
