@@ -8,12 +8,68 @@
         margin-bottom: 1.5em;
     }
 
+    .upload-img-container {
+        display: flex;
+
+        #upload-img-path {
+            margin-left: 1rem;
+        }
+
+        .add-background-img-bt {
+            margin-bottom: 1em;
+            width: 300px;
+
+            label {
+                height: inherit;
+                width: inherit;
+                border-radius: inherit;
+                cursor: inherit;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        margin-right: 1em;
+                    }
+
+                    input[type="file"] {
+                        display: none;
+                        width: 0;
+                    }
+                }
+            }
+        }
+    }
+
     .main-input {
         width: 100%;
     }
 
     .description-input {
         overflow: hidden;
+    }
+
+    .connect-with-container {
+        i {
+            font-size: 3.5rem;
+        }
+    }
+
+    .visibility-container {
+        label {
+            i {
+                font-size: 3rem;
+            }
+
+            div {
+                font-size: 1rem;
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: 0.5rem;
+            }
+        }
     }
 
     .technologies-input {

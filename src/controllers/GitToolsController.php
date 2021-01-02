@@ -46,11 +46,11 @@ class GitToolsController extends AppController
                     break;
             }
 
-//            if ($exists)
-//            {
-//                $model = new GitTool($gitTool, $login, $token, $nodeId);
-//                $this->gitToolRepository->addUserGitTool($nickname, $model);
-//            }
+            if ($exists)
+            {
+                $model = new GitTool($gitTool, $login, $token, $nodeId);
+                $this->gitToolRepository->addUserGitTool($nickname, $model);
+            }
 
             $json = json_encode($response);
             echo $json;

@@ -33,6 +33,7 @@ h1 {
 
 .main-container .new-project-page-header {
   margin-left: 1em;
+  margin-top: 1em;
 }
 
 @media only screen and (max-device-width: 1000px) {

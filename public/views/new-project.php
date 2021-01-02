@@ -49,14 +49,27 @@
                     }
                 ?>
             </div>
-            <input class="input-field-line-under main-input" name="title" type="text" placeholder="Title...">
+            <input class="input-field-line-under main-input" name="title" type="text" autocomplete="off" placeholder="Title...">
             <textarea class="input-field-line-under main-input description-input" name="description" rows="1"
                 type="text" placeholder="Description..."></textarea>
-            <input type="file" name="file">
+
+            <div class="upload-img-container">
+                <div class="input-field-round button bt-green add-background-img-bt">
+                    <label>
+                        <div>
+                            <input id="input-img-upload" type="file" name="file">
+                            <i class="fas fa-upload"></i>
+                            Upload background image
+                        </div>
+                    <label>
+                </div>
+
+                <p id="upload-img-path">No file chosen</p>
+            </div>
 
             <section class="git-form">
                 <h1>Connect with:</h1>
-                <div class="input-radio-container">
+                <div class="input-radio-container connect-with-container">
                     <input type="radio" id="gitTool1" name="gitTool" value="github" checked>
                     <label for="gitTool1"><i class="fab fa-github"></i></label>
                     <input type="radio" id="gitTool2" name="gitTool" value="bitbucket" unchecked>
@@ -67,7 +80,7 @@
                 <hr>
 
                 <h1>Visibility:</h1>
-                <div class="input-radio-container">
+                <div class="input-radio-container visibility-container">
                     <input type="radio" id="visibility-visible" name="visibility" value="public" checked>
                     <label for="visibility-visible">
                         <i class="fas fa-eye"></i>

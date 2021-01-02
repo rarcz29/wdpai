@@ -4,12 +4,70 @@
   margin-bottom: 1.5em;
 }
 
+.new-project-form .upload-img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.new-project-form .upload-img-container #upload-img-path {
+  margin-left: 1rem;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt {
+  margin-bottom: 1em;
+  width: 300px;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label {
+  height: inherit;
+  width: inherit;
+  border-radius: inherit;
+  cursor: inherit;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label div i {
+  margin-right: 1em;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label div input[type="file"] {
+  display: none;
+  width: 0;
+}
+
 .new-project-form .main-input {
   width: 100%;
 }
 
 .new-project-form .description-input {
   overflow: hidden;
+}
+
+.new-project-form .connect-with-container i {
+  font-size: 3.5rem;
+}
+
+.new-project-form .visibility-container label i {
+  font-size: 3rem;
+}
+
+.new-project-form .visibility-container label div {
+  font-size: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
 }
 
 .new-project-form .technologies-input {

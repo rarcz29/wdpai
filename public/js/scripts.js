@@ -1,11 +1,20 @@
-var textarea = document.querySelector("textarea");
+const inputImgUpload = document.getElementById("input-img-upload");
+const textarea = document.querySelector("textarea");
 textarea.addEventListener("keydown", autosize);
+inputImgUpload.addEventListener("change", updateImgUpladPath);
 
 function autosize() {
-  var el = this;
+    const element = this;
 
-  setTimeout(() => {
-    el.style.cssText = "height: auto; padding: 1em;";
-    el.style.cssText = "height: calc(" + el.scrollHeight + "px + 1px);";
-  }, 0);
+    setTimeout(() => {
+        element.style.cssText = "height: auto; padding: 1em;";
+        element.style.cssText =
+            "height: calc(" + element.scrollHeight + "px + 1px);";
+    }, 0);
+}
+
+function updateImgUpladPath() {
+    const path = inputImgUpload.value;
+    const visiblePath = document.getElementById("upload-img-path");
+    visiblePath.innerText = path.replace(/^.*[\\\/]/, "");
 }
