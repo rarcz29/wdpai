@@ -66,8 +66,8 @@ class GitToolRepository extends Repository
         ');
 
         $stmt->execute([
-            $this->getUserId(),
-            $this->getGitToolId(),
+            $this->getUserId($nickname),
+            $this->getGitToolId($gitTool->getName()),
             $gitTool->getLogin(),
             $gitTool->getToken(),
             $gitTool->getNodeId()

@@ -34,7 +34,7 @@
                     placeholder="password">
                 <button type="submit" class="button input-field-round bt-blue button-login">Log in</button>
                 <p>Don't have an account?</p>
-                <a href="./signup.html">Sign up</a>
+                <a href="signup">Sign up</a>
             </form>
         </div>
     </div>

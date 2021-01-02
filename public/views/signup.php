@@ -26,7 +26,7 @@
                     placeholder="confirm password">
                 <button class="button-login button bt-blue input-field-round">Sign up</button>
                 <p>or</p>
-                <a href="#">Log in</a>
+                <a href="login">Log in</a>
             </form>
         </div>
     </div>
