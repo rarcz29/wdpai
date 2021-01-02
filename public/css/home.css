@@ -252,6 +252,26 @@
   margin: 5px 0;
 }
 
+.git-tools .git-icons label {
+  position: relative;
+}
+
+.git-tools .git-icons label .main-icon {
+  margin: auto 0;
+  font-size: 40px;
+}
+
+.git-tools .git-icons label .check-icon {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  font-size: 16px;
+  color: green;
+  opacity: 0;
+  -webkit-transition: opacity ease-out 0.5s;
+  transition: opacity ease-out 0.5s;
+}
+
 .git-tools .git-input {
   width: calc(100% - 2em);
   margin: 0.5em 1em;
@@ -260,11 +280,6 @@
 .git-tools .git-submit-bt {
   width: calc(100% - 6em);
   margin: 1.5em 3em 0 3em;
-}
-
-.git-tools i {
-  margin: auto 0;
-  font-size: 40px;
 }
 
 .git-tools:hover {

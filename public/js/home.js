@@ -6,9 +6,19 @@ function logSubmit(event) {
     //formattedFormData.append("property", "value");
 
     fetch("gitToolConnect", { method: "POST", body: formattedData })
-        .then((response) => response.text())
-        .then((data) => console.log(data));
-    // .then((response) => response.json())
-    // .then((data) => console.log("Created Gist:", data.html_url);
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.tool !== "unknown" && data.value === true) {
+                const toolConnectedIcon = document.getElementById(
+                    data.tool + "-connected-icon"
+                );
+                toolConnectedIcon.style.opacity = "1";
+            } else {
+                alert("Connection failure!");
+            }
+
+            form.reset();
+        });
+
     event.preventDefault();
 }

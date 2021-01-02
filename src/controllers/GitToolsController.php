@@ -19,39 +19,42 @@ class GitToolsController extends AppController
     {
         if (!$this->isPost())
         {
-            echo "ELLOL";
-            die();
+            $response = array(
+                "tool" => "unknown",
+                "value" => false
+            );
         }
-
-        $nickname = $_COOKIE['user_name'];
-        $gitTool = $_POST['gitTool'];
-        $login = $_POST['login'];
-        $token = $_POST['token'];
-        $response = null;
-        $exists = false;
-        $nodeId = null;
-
-        switch ($gitTool)
+        else
         {
-            case "github":
-                $tool = new GitHub();
-                $nodeId = $tool->getNodeId($login, $token);
-                $exists = $nodeId !== null;
-                $response = array(
-                    "tool"=>$gitTool,
-                    "value"=>$exists,
-                );
-                break;
-        }
+            $nickname = $_COOKIE['user_name'];
+            $gitTool = $_POST['gitTool'];
+            $login = $_POST['login'];
+            $token = $_POST['token'];
+            $response = null;
+            $exists = false;
+            $nodeId = null;
 
-        if ($exists)
-        {
-            $model = new GitTool($gitTool, $login, $token, $nodeId);
-            $this->gitToolRepository->addUserGitTool($nickname, $model);
-        }
+            switch ($gitTool) {
+                case "github":
+                    $tool = new GitHub();
+                    $nodeId = $tool->getNodeId($login, $token);
+                    $exists = $nodeId !== null;
+                    $response = array(
+                        "tool" => $gitTool,
+                        "value" => $exists
+                    );
+                    break;
+            }
 
-        //$json = json_encode($response);
-        echo $nodeId;
+//            if ($exists)
+//            {
+//                $model = new GitTool($gitTool, $login, $token, $nodeId);
+//                $this->gitToolRepository->addUserGitTool($nickname, $model);
+//            }
+
+            $json = json_encode($response);
+            echo $json;
+        }
 
 //        if (!$user)
 //        {

@@ -265,6 +265,25 @@ $left-panel-width: 27em;
     .git-icons {
         justify-content: space-around !important;
         margin: 5px 0;
+
+        label {
+            position: relative;
+
+            .main-icon {
+                margin: auto 0;
+                font-size: 40px;
+            }
+
+            .check-icon {
+                position: absolute;
+                bottom: 0;
+                right: -10px;
+                font-size: 16px;
+                color: $checked-icon-color;
+                opacity: 0;
+                transition: opacity ease-out $transition-time;
+            }
+        }
     }
 
     .git-input {
@@ -277,10 +296,10 @@ $left-panel-width: 27em;
         margin: 1.5em 3em 0 3em;
     }
 
-    i {
-        margin: auto 0;
-        font-size: 40px;
-    }
+    // i {
+    //     margin: auto 0;
+    //     font-size: 40px;
+    // }
 
     &:hover {
         bottom: 0;
