@@ -23,6 +23,7 @@
                     <li><a href="home">Home</a></li>
                     <li><a href="#">Community</a></li>
                     <li><a href="#">About</a></li>
+                    <li><a href="#">Help</a></li>
                 </ul>
             </nav>
 
@@ -36,6 +37,7 @@
 
     <main class="home-main-container">
         <section class="home-left-container">
+            <hr class="left-nav-separator" />
             <div class="projects-container">
                 <section>
                     <form class="search-form search-projects-form">
@@ -45,7 +47,7 @@
 
                     <div class="projects-buttons">
                         <button onclick="location.href='newProject'" class="input-field-round button bt-green new-project-bt">
-                            New
+                            <i class="fas fa-folder-plus"></i>New
                         </button>
 
                         <div class="filters">
@@ -54,6 +56,12 @@
                     </div>
                 </section>
                 <section class="projects">
+                    <section id="no-projects-info">
+                        <hr />
+                        <h1>Your project list is empty</h1>
+                        <p>Connect your account to GitHub, Bitbucket and GitLab. Create new repositories and manage them from one place.</p>
+                        <p>Find a team to work with. Add other users to your projects or join to other's ones.</p>
+                    </section>
                     <ul class="list">
                         <!-- <li>
                             <a href="#">
@@ -132,6 +140,8 @@
         </section>
 
         <section class="home-news-container">
+            <div id="news-empty-image"></div>
+            <!-- <img id="news-empty-image" src="public/img/empty.png" alt="emtpy image"> -->
             <!-- <section class="join-project-message">
                 <img src="public/img/example/faces/image-2.png" alt="Avatar">
                 <div class="news-right-side">

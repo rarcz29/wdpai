@@ -43,7 +43,8 @@ class SecurityController extends AppController
         }
 
         Cookies::setNicknameCookie($user->getNickname());
-        return $this->render('home');
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/home");
     }
 
     public function register()

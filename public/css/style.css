@@ -3,6 +3,10 @@
   src: url(https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap);
 }
 
+html {
+  font-size: 12px;
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -10,7 +14,6 @@ body {
   padding: 0;
   background-color: #363738;
   font-family: Lato, sans-serif;
-  font-size: 12px;
   font-weight: normal;
   color: white;
 }
@@ -32,8 +35,8 @@ h1 {
 }
 
 .main-container .new-project-page-header {
-  margin-left: 1em;
-  margin-top: 1em;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 @media only screen and (max-device-width: 1000px) {
@@ -57,15 +60,15 @@ h1 {
 .input-field-round {
   -webkit-box-shadow: 0 3px 6px #00000029;
           box-shadow: 0 3px 6px #00000029;
-  border-radius: 2em;
-  line-height: 2.5em;
+  border-radius: 2rem;
+  line-height: 3.2rem;
 }
 
 .input-field-line-under {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid white;
-  padding: 1em;
+  padding: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -73,7 +76,7 @@ h1 {
 .button {
   border: none;
   color: white;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   cursor: pointer;
   -webkit-transition: -webkit-box-shadow ease-in-out 0.5s;
   transition: -webkit-box-shadow ease-in-out 0.5s;
@@ -102,11 +105,11 @@ h1 {
 }
 
 .search-form > input {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  text-indent: 1em;
+  text-indent: 1rem;
 }
 
 .list {
@@ -126,7 +129,7 @@ h1 {
 
 .main-navbar {
   width: 100%;
-  height: 4em;
+  height: 4.4rem;
   background-color: #2d2e2e;
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;
@@ -134,8 +137,8 @@ h1 {
 
 .main-navbar .logo {
   height: 80%;
-  margin-right: 4em;
-  margin-left: 3.5em;
+  margin-right: 3.4rem;
+  margin-left: 3rem;
 }
 
 .main-navbar .nav-container {
@@ -143,13 +146,13 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-size: 1.6em;
+  font-size: 1.5rem;
   color: white;
 }
 
 .main-navbar .nav-container ul li {
   display: inline-block;
-  margin-right: 31px;
+  margin-right: 2.2rem;
 }
 
 .main-navbar .nav-container ul li a {
@@ -166,11 +169,11 @@ h1 {
 }
 
 .main-navbar .nav-container .right-side-icons {
-  margin-right: 1.5em;
+  margin-right: 1.5rem;
 }
 
 .main-navbar .nav-container .right-side-icons i {
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 .messages {

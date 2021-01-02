@@ -1,7 +1,7 @@
 .new-project-form textarea,
 .new-project-form input[type="text"] {
-  font-size: 1.3em;
-  margin-bottom: 1.5em;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
 }
 
 .new-project-form .upload-img-container {
@@ -15,7 +15,7 @@
 }
 
 .new-project-form .upload-img-container .add-background-img-bt {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   width: 300px;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .new-project-form .upload-img-container .add-background-img-bt label div i {
-  margin-right: 1em;
+  margin-right: 1rem;
 }
 
 .new-project-form .upload-img-container .add-background-img-bt label div input[type="file"] {
@@ -80,18 +80,18 @@
 
 .new-project-form .git-form {
   padding-top: 0.1px;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   background-color: #2d2e2e;
   width: 100%;
 }
 
 .new-project-form .git-form h1 {
-  margin-left: 2em;
-  margin-top: 1em;
-  font-size: 1.4em;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  font-size: 1.4rem;
 }
 
 .new-project-form .git-form hr {
-  width: calc(100% - 2 * 2em);
+  width: calc(100% - 2 * 2rem);
 }

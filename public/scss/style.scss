@@ -9,13 +9,16 @@ $main-width: 1000px;
 //     border: 1px solid red;
 // }
 
+html {
+    font-size: 12px;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: $bg-main-color;
     font-family: Lato, sans-serif;
-    font-size: 12px;
     font-weight: normal;
     color: $fg-main-color;
 }
@@ -36,8 +39,8 @@ h1 {
     margin: 0 auto;
 
     .new-project-page-header {
-        margin-left: 1em;
-        margin-top: 1em;
+        margin-left: 1rem;
+        margin-top: 1rem;
     }
 }
 
@@ -55,22 +58,22 @@ h1 {
 
 .input-field-round {
     box-shadow: $shadow;
-    border-radius: 2em;
-    line-height: 2.5em;
+    border-radius: 2rem;
+    line-height: 3.2rem;
 }
 
 .input-field-line-under {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $fg-main-color;
-    padding: 1em;
+    padding: 1rem;
     box-sizing: border-box;
 }
 
 .button {
     border: none;
     color: $fg-main-color;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     cursor: pointer;
     transition: box-shadow ease-in-out $transition-time;
 
@@ -92,10 +95,10 @@ h1 {
 }
 
 .search-form > input {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin: 0;
     box-sizing: border-box;
-    text-indent: 1em;
+    text-indent: 1rem;
 }
 
 .list {
@@ -115,7 +118,7 @@ h1 {
 
 .main-navbar {
     width: 100%;
-    height: 4em;
+    height: $main-navbar-height;
     background-color: $bg-darker-color;
     box-shadow: 0px 3px 6px #00000029;
 
@@ -124,15 +127,15 @@ h1 {
 
     .logo {
         height: 80%;
-        margin-right: 4em;
-        margin-left: 3.5em;
+        margin-right: 3.4rem;
+        margin-left: 3rem;
     }
 
     .nav-container {
         width: 100%;
         //display: flex;
         justify-content: space-between;
-        font-size: 1.6em;
+        font-size: 1.5rem;
         color: $fg-main-color;
 
         ul {
@@ -144,7 +147,7 @@ h1 {
                 display: inline-block;
                 // padding: 0;
                 // margin: 0;
-                margin-right: 31px;
+                margin-right: 2.2rem;
 
                 a {
                     //color: $fg-main-color;
@@ -164,10 +167,10 @@ h1 {
         }
 
         .right-side-icons {
-            margin-right: 1.5em;
+            margin-right: 1.5rem;
 
             i {
-                margin-left: 1em;
+                margin-left: 1rem;
             }
         }
     }

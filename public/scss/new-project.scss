@@ -4,8 +4,8 @@
 .new-project-form {
     textarea,
     input[type="text"] {
-        font-size: 1.3em;
-        margin-bottom: 1.5em;
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
     }
 
     .upload-img-container {
@@ -16,7 +16,7 @@
         }
 
         .add-background-img-bt {
-            margin-bottom: 1em;
+            margin-bottom: 1rem;
             width: 300px;
 
             label {
@@ -31,7 +31,7 @@
                     align-items: center;
 
                     i {
-                        margin-right: 1em;
+                        margin-right: 1rem;
                     }
 
                     input[type="file"] {
@@ -81,10 +81,10 @@
     }
 
     .git-form {
-        $input-margin: 2em;
+        $input-margin: 2rem;
         padding-top: 0.1px;
-        padding-bottom: 1em;
-        margin-bottom: 1em;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
 
         background-color: $bg-darker-color;
         width: 100%;
@@ -102,8 +102,8 @@
 
         h1 {
             margin-left: $input-margin;
-            margin-top: 1em;
-            font-size: 1.4em;
+            margin-top: 1rem;
+            font-size: 1.4rem;
         }
 
         hr {

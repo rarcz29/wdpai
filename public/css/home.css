@@ -14,23 +14,30 @@
 
 .home-left-container {
   position: fixed;
-  top: 4em;
-  width: 27em;
-  height: calc(100vh - 4em - 0.3em);
+  top: 4.4rem;
+  width: 27rem;
+  height: calc(100vh - 4.4rem - 0rem);
   background-color: #2d2e2e;
-  padding-top: 0.3em;
+  padding-top: 0rem;
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
+.home-left-container .left-nav-separator {
+  height: 1px;
+  width: 100%;
+  opacity: 0.05;
+  margin: 0;
+}
+
 .home-left-container::-webkit-scrollbar {
-  width: 0.5em;
+  width: 0.5rem;
 }
 
 .home-left-container::-webkit-scrollbar-thumb {
-  border-radius: 1em;
+  border-radius: 1rem;
 }
 
 .home-left-container:hover::-webkit-scrollbar-thumb {
@@ -44,7 +51,7 @@
           box-shadow: inset 0px 3px 6px #00000029;
   border-width: 0;
   color: white;
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 .home-left-container .projects-buttons {
@@ -54,38 +61,60 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 .home-left-container .projects-buttons .new-project-bt {
   width: 47%;
 }
 
+.home-left-container .projects-buttons .new-project-bt i {
+  margin-right: 1rem;
+}
+
 .home-left-container .projects-buttons .filters {
   height: inherit;
-  margin: 0.3em 0;
+  margin: 0.3rem 0;
   width: 47%;
-  border-radius: 1em;
+  border-radius: 1rem;
   border: 1px solid white;
 }
 
 .home-left-container .projects-container {
-  margin: 0 1em;
+  margin: 0 1rem;
 }
 
 .home-left-container .projects-container .projects {
-  margin-top: 1em;
+  margin-top: 1rem;
+}
+
+.home-left-container .projects-container .projects #no-projects-info {
+  opacity: 0.3;
+}
+
+.home-left-container .projects-container .projects #no-projects-info hr {
+  margin-top: 2rem;
+}
+
+.home-left-container .projects-container .projects #no-projects-info h1 {
+  font-size: 1.3rem;
+  margin: 1.5rem 1rem 1rem 1rem;
+}
+
+.home-left-container .projects-container .projects #no-projects-info p {
+  font-size: 1rem;
+  margin: 0.5rem 1rem;
 }
 
 .home-left-container .projects-container .projects ul li {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .home-left-container .projects-container .projects ul li a .project-tile {
   background-color: transparent;
   width: 100%;
-  height: 10em;
-  border-radius: 2em;
+  height: 10rem;
+  border-radius: 2rem;
   border: 1px solid #73777b;
   text-align: center;
   position: relative;
@@ -124,27 +153,39 @@
 
 .home-left-container .projects-container .projects ul li a .project-tile div h1 {
   font-weight: bold;
-  font-size: 2em;
-  margin-top: 0.4em;
+  font-size: 2rem;
+  margin-top: 0.4rem;
   margin-bottom: 0;
   color: white;
 }
 
 .home-left-container .projects-container .projects ul li a .project-tile div p {
-  margin-top: 0.6em;
+  margin-top: 0.6rem;
   color: white;
   opacity: 0.8;
 }
 
 .home-news-container {
-  width: calc(100% - 27em - 2em);
-  margin-left: calc(27em + 2em);
-  margin-right: 2em;
-  margin-top: 4em;
+  min-height: calc(100vh - 4.4rem);
+  width: calc(100% - 27rem - 2rem);
+  margin-left: calc(27rem + 2rem);
+  margin-right: 2rem;
+  margin-top: 4.4rem;
+}
+
+.home-news-container #news-empty-image {
+  background-image: url("../img/empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.1;
+  width: 100%;
+  height: 90%;
+  margin-top: 1rem;
 }
 
 .home-news-container .join-project-message {
-  margin-top: 3em;
+  margin-top: 3rem;
 }
 
 .home-news-container .join-project-message img {
@@ -153,8 +194,8 @@
   border: 2px solid #2d2e2e;
   width: 170px;
   height: 170px;
-  margin-bottom: 1em;
-  margin-right: 2em;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
 }
 
 .home-news-container .join-project-message .news-right-side {
@@ -172,9 +213,9 @@
 }
 
 .home-news-container .join-project-message .news-right-side p {
-  margin-bottom: 2em;
-  margin-left: 1em;
-  font-size: 1.5em;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
 }
 
 .home-news-container .join-project-message .news-right-side p span {
@@ -182,12 +223,12 @@
 }
 
 .home-news-container .join-project-message .news-right-side .news-buttons {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
 }
 
 .home-news-container .join-project-message .news-right-side .news-buttons button {
-  width: 10em;
-  margin-right: 1em;
+  width: 10rem;
+  margin-right: 1rem;
 }
 
 .home-news-container .join-project-message hr {
@@ -195,40 +236,40 @@
 }
 
 .home-news-container .pull-request-message {
-  margin-top: 2em;
+  margin-top: 2rem;
   background-color: #2d2e2e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 1em;
+  border-radius: 1rem;
 }
 
 .home-news-container .pull-request-message .pull-request-logo {
-  margin: auto 3em;
+  margin: auto 3rem;
 }
 
 .home-news-container .pull-request-message .pull-request-logo i {
-  font-size: 6em;
+  font-size: 6rem;
 }
 
 .home-news-container .pull-request-message .pull-request-info h1 {
-  font-size: 2em;
+  font-size: 2rem;
   margin-bottom: 0;
 }
 
 .home-news-container .pull-request-message .pull-request-info h1 span {
   opacity: 0.7;
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 .home-news-container .pull-request-message .pull-request-info h2 {
-  margin-left: 1em;
-  font-size: 1.1em;
+  margin-left: 1rem;
+  font-size: 1.1rem;
 }
 
 .home-news-container .pull-request-message .pull-request-info h3 {
-  margin-left: 1em;
-  font-size: 1.1em;
+  margin-left: 1rem;
+  font-size: 1.1rem;
   opacity: 0.7;
 }
 
@@ -273,13 +314,13 @@
 }
 
 .git-tools .git-input {
-  width: calc(100% - 2em);
-  margin: 0.5em 1em;
+  width: calc(100% - 2rem);
+  margin: 0.5rem 1rem;
 }
 
 .git-tools .git-submit-bt {
   width: calc(100% - 6em);
-  margin: 1.5em 3em 0 3em;
+  margin: 1.5rem 3rem 0 3rem;
 }
 
 .git-tools:hover {
@@ -302,7 +343,7 @@
     height: auto;
   }
   .home-left-container .search-projects-form > input {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
   }
   .home-left-container .projects-buttons {
     display: none;

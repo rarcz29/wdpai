@@ -1,7 +1,7 @@
 @import "./shared/color-palette";
 @import "./shared/variables";
 
-$left-panel-width: 27em;
+$left-panel-width: 27rem;
 
 .home-navbar {
     position: fixed;
@@ -13,7 +13,7 @@ $left-panel-width: 27em;
 }
 
 .home-left-container {
-    $padding-top: 0.3em;
+    $padding-top: 0rem;
 
     position: fixed;
     top: $main-navbar-height;
@@ -25,8 +25,15 @@ $left-panel-width: 27em;
     overflow-y: scroll;
     overflow-x: hidden;
 
+    .left-nav-separator {
+        height: 1px;
+        width: 100%;
+        opacity: 0.05;
+        margin: 0;
+    }
+
     &::-webkit-scrollbar {
-        width: 0.5em;
+        width: 0.5rem;
     }
 
     // &:hover::-webkit-scrollbar {
@@ -39,7 +46,7 @@ $left-panel-width: 27em;
     // }
 
     &::-webkit-scrollbar-thumb {
-        border-radius: 1em;
+        border-radius: 1rem;
     }
 
     &:hover::-webkit-scrollbar-thumb {
@@ -63,7 +70,7 @@ $left-panel-width: 27em;
         //border: 1px solid #363738;
         border-width: 0;
         color: $fg-main-color;
-        margin-top: 1em;
+        margin-top: 1rem;
     }
 
     .projects-buttons {
@@ -71,36 +78,61 @@ $left-panel-width: 27em;
 
         display: flex;
         justify-content: space-between;
-        margin-top: 1em;
+        margin-top: 1rem;
 
         .new-project-bt {
             width: $element-width;
+
+            i {
+                margin-right: 1rem;
+            }
         }
 
         .filters {
             height: inherit;
-            margin: 0.3em 0;
+            margin: 0.3rem 0;
             width: $element-width;
-            border-radius: 1em;
+            border-radius: 1rem;
             border: 1px solid white;
         }
     }
 
     .projects-container {
-        margin: 0 1em;
+        margin: 0 1rem;
 
         .projects {
-            margin-top: 1em;
+            margin-top: 1rem;
+
+            #no-projects-info {
+                //text-align: center;
+                // border: 1px solid white;
+                // border-radius: 1rem;
+                opacity: 0.3;
+
+                hr {
+                    margin-top: 2rem;
+                }
+
+                h1 {
+                    font-size: 1.3rem;
+                    margin: 1.5rem 1rem 1rem 1rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    margin: 0.5rem 1rem;
+                }
+            }
 
             ul {
                 li {
-                    margin-bottom: 1em;
+                    margin-bottom: 1rem;
 
                     a {
                         .project-tile {
                             background-color: transparent;
                             width: 100%;
-                            height: 10em;
+                            height: 10rem;
                             border-radius: $project-tile-border-radius;
                             border: 1px solid $border-color;
                             text-align: center;
@@ -135,14 +167,14 @@ $left-panel-width: 27em;
 
                                 h1 {
                                     font-weight: bold;
-                                    font-size: 2em;
-                                    margin-top: 0.4em;
+                                    font-size: 2rem;
+                                    margin-top: 0.4rem;
                                     margin-bottom: 0;
                                     color: $fg-main-color;
                                 }
 
                                 p {
-                                    margin-top: 0.6em;
+                                    margin-top: 0.6rem;
                                     // color: $fg-darker-color;
                                     color: $fg-main-color;
                                     opacity: 0.8;
@@ -157,15 +189,26 @@ $left-panel-width: 27em;
 }
 
 .home-news-container {
-    $margin: 2em;
-
+    $margin: 2rem;
+    min-height: calc(100vh - #{$main-navbar-height});
     width: calc(100% - #{$left-panel-width} - #{$margin});
     margin-left: calc(#{$left-panel-width} + #{$margin});
     margin-right: $margin;
     margin-top: $main-navbar-height;
 
+    #news-empty-image {
+        background-image: url("../img/empty.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        opacity: 0.1;
+        width: 100%;
+        height: 90%;
+        margin-top: 1rem;
+    }
+
     .join-project-message {
-        margin-top: 3em;
+        margin-top: 3rem;
 
         img {
             float: left;
@@ -173,8 +216,8 @@ $left-panel-width: 27em;
             border: 2px solid #2d2e2e;
             width: 170px;
             height: 170px;
-            margin-bottom: 1em;
-            margin-right: 2em;
+            margin-bottom: 1rem;
+            margin-right: 2rem;
         }
 
         .news-right-side {
@@ -184,9 +227,9 @@ $left-panel-width: 27em;
             justify-content: flex-end;
 
             p {
-                margin-bottom: 2em;
-                margin-left: 1em;
-                font-size: 1.5em;
+                margin-bottom: 2rem;
+                margin-left: 1rem;
+                font-size: 1.5rem;
 
                 span {
                     opacity: 0.7;
@@ -194,11 +237,11 @@ $left-panel-width: 27em;
             }
 
             .news-buttons {
-                margin-bottom: 1.5em;
+                margin-bottom: 1.5rem;
 
                 button {
-                    width: 10em;
-                    margin-right: 1em;
+                    width: 10rem;
+                    margin-right: 1rem;
                 }
             }
         }
@@ -209,18 +252,18 @@ $left-panel-width: 27em;
     }
 
     .pull-request-message {
-        margin-top: 2em;
+        margin-top: 2rem;
         background-color: $bg-darker-color;
         // padding: 0.5em 0;
         display: flex;
-        border-radius: 1em;
+        border-radius: 1rem;
 
         .pull-request-logo {
             // display: inline-block;
-            margin: auto 3em;
+            margin: auto 3rem;
 
             i {
-                font-size: 6em;
+                font-size: 6rem;
             }
         }
 
@@ -228,23 +271,23 @@ $left-panel-width: 27em;
             // display: inline-block;
 
             h1 {
-                font-size: 2em;
+                font-size: 2rem;
                 margin-bottom: 0;
 
                 span {
                     opacity: 0.7;
-                    font-size: 0.8em;
+                    font-size: 0.8rem;
                 }
             }
 
             h2 {
-                margin-left: 1em;
-                font-size: 1.1em;
+                margin-left: 1rem;
+                font-size: 1.1rem;
             }
 
             h3 {
-                margin-left: 1em;
-                font-size: 1.1em;
+                margin-left: 1rem;
+                font-size: 1.1rem;
                 opacity: 0.7;
             }
         }
@@ -287,13 +330,13 @@ $left-panel-width: 27em;
     }
 
     .git-input {
-        width: calc(100% - 2em);
-        margin: 0.5em 1em;
+        width: calc(100% - 2rem);
+        margin: 0.5rem 1rem;
     }
 
     .git-submit-bt {
         width: calc(100% - 6em);
-        margin: 1.5em 3em 0 3em;
+        margin: 1.5rem 3rem 0 3rem;
     }
 
     // i {
@@ -322,7 +365,7 @@ $left-panel-width: 27em;
         height: auto;
 
         .search-projects-form > input {
-            margin-top: 0.5em;
+            margin-top: 0.5rem;
         }
 
         .projects-buttons {

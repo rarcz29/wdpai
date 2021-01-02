@@ -1,6 +1,9 @@
 const form = document.getElementById("git-tools-form");
 form.addEventListener("submit", logSubmit);
-document.addEventListener("DOMContentLoaded", loadData);
+
+document.addEventListener("DOMContentLoaded", () => {
+    checkConnection();
+});
 
 function logSubmit(event) {
     const formattedData = new FormData(form);
@@ -24,7 +27,7 @@ function logSubmit(event) {
     event.preventDefault();
 }
 
-function loadData() {
+function checkConnection() {
     fetch("getConnectedTools")
         .then((response) => response.json())
         .then((data) => {
