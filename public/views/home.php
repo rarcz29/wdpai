@@ -235,35 +235,35 @@
                     <h3>opened 11 days ago by someone321</h3>
                 </div>
             </section> -->
-            </section>
+        </section>
 
-            <section class="git-tools">
-                <form id="git-tools-form">
-                    <div class="input-radio-container git-icons">
-                        <input type="radio" id="gitTool1" name="gitTool" value="github" checked>
-                        <label for="gitTool1">
-                            <i class="fab fa-github main-icon"></i>
-                            <i id="github-connected-icon" class="fas fa-check-circle check-icon"></i>
-                        </label>
-                        <input type="radio" id="gitTool2" name="gitTool" value="bitbucket" unchecked>
-                        <label for="gitTool2">
-                            <i class="fab fa-bitbucket main-icon"></i>
-                            <i id="bitbucket-connected-icon" class="fas fa-check-circle check-icon"></i>
-                        </label>
-                        <input type="radio" id="gitTool3" name="gitTool" value="gitlab" unchecked>
-                        <label for="gitTool3">
-                            <i class="fab fa-gitlab main-icon"></i>
-                            <i id="gitlab-connected-icon" class="fas fa-check-circle check-icon"></i>
-                        </label>
-                    </div>
-                    <div>
-                        <input type="text" name="login" placeholder="login" autocomplete="off" class="input-field-line-under git-input">
-                        <input type="password" name="password" placeholder="password" class="input-field-line-under git-input">
-                        <input type="password" name="token" placeholder="token" class="input-field-line-under git-input">
-                        <input type="submit" class="input-field-round button bt-blue git-submit-bt" value="Connect">
-                    </div>
-                </form>
-            </section>
+        <section class="git-tools">
+            <form id="git-tools-form">
+                <div class="input-radio-container git-icons">
+                    <input type="radio" id="gitTool1" name="gitTool" value="github" checked>
+                    <label for="gitTool1">
+                        <i class="fab fa-github main-icon"></i>
+                        <i id="github-connected-icon" class="fas fa-check-circle check-icon"></i>
+                    </label>
+                    <input type="radio" id="gitTool2" name="gitTool" value="bitbucket" unchecked>
+                    <label for="gitTool2">
+                        <i class="fab fa-bitbucket main-icon"></i>
+                        <i id="bitbucket-connected-icon" class="fas fa-check-circle check-icon"></i>
+                    </label>
+                    <input type="radio" id="gitTool3" name="gitTool" value="gitlab" unchecked>
+                    <label for="gitTool3">
+                        <i class="fab fa-gitlab main-icon"></i>
+                        <i id="gitlab-connected-icon" class="fas fa-check-circle check-icon"></i>
+                    </label>
+                </div>
+                <div>
+                    <input type="text" name="login" placeholder="login" autocomplete="off" class="input-field-line-under git-input">
+                    <input type="password" name="password" placeholder="password" class="input-field-line-under git-input">
+                    <input type="password" name="token" placeholder="token" class="input-field-line-under git-input">
+                    <input type="submit" class="input-field-round button bt-blue git-submit-bt" value="Connect">
+                </div>
+            </form>
+        </section>
     </main>
 </body>
 

@@ -11,6 +11,7 @@ class GitHub extends GitToolApi
         return $json['login'] === $username ? $json['node_id'] : null;
     }
 
+    // TODO: this method should return bool
     public function createNewRepository(string $username, string $token, string $title,
                                         string $description, bool $private)
     {

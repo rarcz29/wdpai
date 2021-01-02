@@ -27,10 +27,6 @@ abstract class GitToolApi
         $curl = curl_init();
         $headers = $this->setHeaders($username, $token);
 
-//        $postFields = array(
-//            "name" => "asdfasdfaa"
-//        );
-
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -40,7 +36,7 @@ abstract class GitToolApi
         $output = curl_exec($curl);
         curl_close($curl);
 
-        echo $output;
+        return $output;
     }
 
     private function setHeaders(string $username, string $token) : array

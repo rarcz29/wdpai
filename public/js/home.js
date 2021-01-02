@@ -1,5 +1,6 @@
 const form = document.getElementById("git-tools-form");
 form.addEventListener("submit", logSubmit);
+document.addEventListener("DOMContentLoaded", loadData);
 
 function logSubmit(event) {
     const formattedData = new FormData(form);
@@ -21,4 +22,8 @@ function logSubmit(event) {
         });
 
     event.preventDefault();
+}
+
+function loadData() {
+    console.log("page loaded");
 }

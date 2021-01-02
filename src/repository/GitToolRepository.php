@@ -5,28 +5,7 @@ require_once __DIR__.'/../models/GitTool.php';
 
 class GitToolRepository extends Repository
 {
-//    public function isConnected(string $name, string $userNickname): bool
-//    {
-//        $stmt = $this->database->connect()->prepare('
-//            SELECT name
-//            FROM user_git_tools ug
-//            LEFT JOIN git_tools g
-//                ON ug.id_git_tools = g.id
-//            LEFT JOIN users u
-//                ON ug.id_user = u.id
-//            WHERE
-//                name = :name AND
-//                nickname = :userNickname
-//        ');
-//        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-//        $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
-//        $stmt->execute();
-//
-//        $gitTool = $stmt->fetch(PDO::FETCH_ASSOC);
-//        return $gitTool ? true : false;
-//    }
-
-    public function getGitTool(string $userNickname): ?GitTool
+    public function getGitTools(string $userNickname): ?array
     {
         $stmt = $this->database->connect()->prepare('
             SELECT ug.*, g.*
@@ -39,25 +18,34 @@ class GitToolRepository extends Repository
                 name = :name AND
                 nickname = :userNickname
         ');
+
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
         $stmt->execute();
 
-        $gitTool = $stmt->fetch(PDO::FETCH_ASSOC);
+        $gitTools = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($gitTool == false)
+        if ($gitTools == false)
         {
             return null;
         }
 
-        return new GitTool(
-            $gitTool['name'],
-            $gitTool['login'],
-            $gitTool['token'],
-            $gitTool['node_id']
-        );
+        $array = null;
+
+        foreach ($gitTools as $tool)
+        {
+            $array[] = new GitTool(
+                $tool['name'],
+                $tool['login'],
+                $tool['token'],
+                $tool['node_id']
+            );
+        }
+
+        return $array;
     }
 
+    // TODO: return bool
     public function addUserGitTool(string $nickname, GitTool $gitTool)
     {
         $stmt = $this->database->connect()->prepare('
@@ -74,7 +62,7 @@ class GitToolRepository extends Repository
         ]);
     }
 
-    public function getUserId(string $nickname): int
+    private function getUserId(string $nickname): int
     {
         $stmt = $this->database->connect()->prepare('
             SELECT id
@@ -87,7 +75,7 @@ class GitToolRepository extends Repository
         return $data['id'];
     }
 
-    public function getGitToolId(string $name): int
+    private function getGitToolId(string $name): int
     {
         $stmt = $this->database->connect()->prepare('
             SELECT id

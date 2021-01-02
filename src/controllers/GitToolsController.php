@@ -26,7 +26,7 @@ class GitToolsController extends AppController
         }
         else
         {
-            $nickname = $_COOKIE['user_name'];
+            $nickname = Cookies::getNickname();
             $gitTool = $_POST['gitTool'];
             $login = $_POST['login'];
             $token = $_POST['token'];
@@ -55,22 +55,22 @@ class GitToolsController extends AppController
             $json = json_encode($response);
             echo $json;
         }
+    }
 
-//        if (!$user)
-//        {
-//            return $this->render('login', ['messages' => ['User not found!']]);
-//        }
-//
-//        if ($user->getEmail() !== $email)
-//        {
-//            return $this->render('login', ['messages' => ['User not exist!']]);
-//        }
-//
-//        if ($user->getPassword() !== $password)
-//        {
-//            return $this->render('login', ['messages' => ['Wrong password!']]);
-//        }
-//
-//        return $this->render('home');
+    public function getConnectedTools()
+    {
+        $array = $this->gitToolRepository->getGitTools(Cookies::getNickname());
+
+        echo $array;
+        die();
+
+        $response = array(
+            "github" => true,
+            "bitbucket" => false,
+            "gitlab" => false
+        );
+
+        $json = json_encode($response);
+        echo $json;
     }
 }

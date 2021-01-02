@@ -45,7 +45,7 @@ class ProjectController extends AppController
 
             // API
             $tool = new GitHub();
-            $tool->createNewRepository("rarcztest", "eb2fe97d1ee78deaffa84454cb626702dc9567a1",
+            $tool->createNewRepository("rarcztest", "c3a15f804e0e2ef346e4e8c3bff8d57d76f39c91",
                 $title, $description, $private);
             // Database
             $project = new Project($title, $description, $img, $tool, $visibility);
