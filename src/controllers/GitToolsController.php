@@ -60,15 +60,33 @@ class GitToolsController extends AppController
     public function getConnectedTools()
     {
         $array = $this->gitToolRepository->getGitTools(Cookies::getNickname());
-
-        echo $array;
-        die();
+        $toolName1 = "github";
+        $toolName2 = "bitbucket";
+        $toolName3 = "gitlab";
 
         $response = array(
-            "github" => true,
-            "bitbucket" => false,
-            "gitlab" => false
+            $toolName1 => false,
+            $toolName2 => false,
+            $toolName3 => false
         );
+
+        foreach ($array as $item)
+        {
+            switch ($item->getName())
+            {
+                case $toolName1:
+                    $response[$toolName1] = true;
+                    break;
+
+                case $toolName2:
+                    $response[$toolName2] = true;
+                    break;
+
+                case $toolName3:
+                    $response[$toolName3] = true;
+                    break;
+            }
+        }
 
         $json = json_encode($response);
         echo $json;

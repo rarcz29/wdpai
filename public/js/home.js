@@ -25,9 +25,17 @@ function logSubmit(event) {
 }
 
 function loadData() {
-    fetch("gitToolConnect")
-        .then((response) => response.text())
+    fetch("getConnectedTools")
+        .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            Object.entries(data).forEach((entry) => {
+                const [key, value] = entry;
+                const toolConnectedIcon = document.getElementById(
+                    key + "-connected-icon"
+                );
+                if (value) {
+                    toolConnectedIcon.style.opacity = "1";
+                }
+            });
         });
 }

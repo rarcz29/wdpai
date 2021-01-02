@@ -15,15 +15,13 @@ class GitToolRepository extends Repository
             LEFT JOIN users u
                 ON ug.id_user = u.id
             WHERE
-                name = :name AND
                 nickname = :userNickname
         ');
 
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
         $stmt->execute();
 
-        $gitTools = $stmt->fetch(PDO::FETCH_ASSOC);
+        $gitTools = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if ($gitTools == false)
         {

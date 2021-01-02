@@ -12,5 +12,6 @@ Routing::get('newProject', 'ProjectController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('gitToolConnect', 'GitToolsController');
+Routing::get('getConnectedTools', 'GitToolsController');
 
 Routing::run($path);
