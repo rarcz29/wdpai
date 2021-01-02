@@ -44,7 +44,7 @@
                     </form>
 
                     <div class="projects-buttons">
-                        <button class="input-field-round button bt-green new-project-bt">
+                        <button onclick="location.href='newProject'" class="input-field-round button bt-green new-project-bt">
                             New
                         </button>
 
