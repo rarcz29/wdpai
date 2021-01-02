@@ -25,5 +25,9 @@ function logSubmit(event) {
 }
 
 function loadData() {
-    console.log("page loaded");
+    fetch("gitToolConnect")
+        .then((response) => response.text())
+        .then((data) => {
+            console.log(data);
+        });
 }
