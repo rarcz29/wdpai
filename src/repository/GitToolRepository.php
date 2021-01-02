@@ -52,15 +52,16 @@ class GitToolRepository extends Repository
 
         return new GitTool(
             $gitTool['name'],
-            $gitTool['password'],
             $gitTool['login'],
-            $gitTool['token']);
+            $gitTool['token'],
+            $gitTool['node_id']
+        );
     }
 
     public function addUserGitTool(string $nickname, GitTool $gitTool)
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO user_git_tools (id_user, id_git_tools, login, password, token)
+            INSERT INTO user_git_tools (id_user, id_git_tools, login, token, node_id)
             VALUES (?, ?, ?, ?, ?)
         ');
 
@@ -68,8 +69,8 @@ class GitToolRepository extends Repository
             $this->getUserId(),
             $this->getGitToolId(),
             $gitTool->getLogin(),
-            $gitTool->getPassword(),
             $gitTool->getToken(),
+            $gitTool->getNodeId()
         ]);
     }
 

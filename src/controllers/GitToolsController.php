@@ -3,6 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/GitTool.php';
 require_once __DIR__.'/../repository/GitToolRepository.php';
+require_once __DIR__.'/../services/curl/GitHub.php';
 
 class GitToolsController extends AppController
 {
@@ -23,18 +24,34 @@ class GitToolsController extends AppController
         }
 
         $nickname = $_COOKIE['user_name'];
+        $gitTool = $_POST['gitTool'];
         $login = $_POST['login'];
-        $password = md5($_POST['password']);
         $token = $_POST['token'];
+        $response = null;
+        $exists = false;
+        $nodeId = null;
 
-        $myArr = array(
-            "tool"=>"GitHub",
-            "value"=>true,
-        );
-        $json = json_encode($myArr);
+        switch ($gitTool)
+        {
+            case "github":
+                $tool = new GitHub();
+                $nodeId = $tool->getNodeId($login, $token);
+                $exists = $nodeId !== null;
+                $response = array(
+                    "tool"=>$gitTool,
+                    "value"=>$exists,
+                );
+                break;
+        }
 
-        echo $json;
-        die();
+        if ($exists)
+        {
+            $model = new GitTool($gitTool, $login, $token, $nodeId);
+            $this->gitToolRepository->addUserGitTool($nickname, $model);
+        }
+
+        //$json = json_encode($response);
+        echo $nodeId;
 
 //        if (!$user)
 //        {

@@ -1,13 +1,13 @@
 <?php
 
-abstract class GitTool
+abstract class GitToolApi
 {
-    abstract public function exists(string $username, string $token);
+    abstract public function getNodeId(string $username, string $token) : ?string;
 
     protected function get(string $url, string $username, string $token) : string
     {
         $curl = curl_init();
-        $headers = $this->setHeaders($username, $token)
+        $headers = $this->setHeaders($username, $token);
 
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
