@@ -7,7 +7,7 @@ function autosize() {
     const element = this;
 
     setTimeout(() => {
-        element.style.cssText = "height: auto; padding: 1em;";
+        element.style.cssText = "height: auto; padding: 1rem;";
         element.style.cssText =
             "height: calc(" + element.scrollHeight + "px + 1px);";
     }, 0);

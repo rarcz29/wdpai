@@ -60,7 +60,7 @@
                         <hr />
                         <h1>Your project list is empty</h1>
                         <p>Connect your account to GitHub, Bitbucket and GitLab. Create new repositories and manage them from one place.</p>
-                        <p>Find a team to work with. Add other users to your projects or join to other's ones.</p>
+                        <p>Find a team to work with. Add other users to your projects or join other's ones.</p>
                     </section>
                     <ul class="list">
                         <!-- <li>

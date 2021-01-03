@@ -17,6 +17,8 @@ class GitToolsController extends AppController
 
     public function gitToolConnect()
     {
+        $response = null;
+
         if (!$this->isPost())
         {
             $response = array(
@@ -30,7 +32,6 @@ class GitToolsController extends AppController
             $gitTool = $_POST['gitTool'];
             $login = $_POST['login'];
             $token = $_POST['token'];
-            $response = null;
             $exists = false;
             $nodeId = null;
 
@@ -51,10 +52,10 @@ class GitToolsController extends AppController
                 $model = new GitTool($gitTool, $login, $token, $nodeId);
                 $this->gitToolRepository->addUserGitTool($nickname, $model);
             }
-
-            $json = json_encode($response);
-            echo $json;
         }
+
+        $json = json_encode($response);
+        echo $json;
     }
 
     public function getConnectedTools()

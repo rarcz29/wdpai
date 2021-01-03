@@ -3,8 +3,6 @@
 @import "./shared/variables";
 // @import "./start";
 
-$main-width: 1000px;
-
 // * {
 //     border: 1px solid red;
 // }
@@ -38,9 +36,9 @@ h1 {
     width: $main-width;
     margin: 0 auto;
 
-    .new-project-page-header {
-        margin-left: 1rem;
-        margin-top: 1rem;
+    .page-header {
+        margin-left: 1.5rem;
+        margin-top: 2rem;
     }
 }
 

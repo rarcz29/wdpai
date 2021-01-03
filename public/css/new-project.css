@@ -11,7 +11,8 @@
 }
 
 .new-project-form .upload-img-container #upload-img-path {
-  margin-left: 1rem;
+  margin-left: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .new-project-form .upload-img-container .add-background-img-bt {
@@ -56,18 +57,18 @@
 }
 
 .new-project-form .connect-with-container i {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
 }
 
 .new-project-form .visibility-container label i {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .new-project-form .visibility-container label div {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 .new-project-form .technologies-input {

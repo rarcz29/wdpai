@@ -35,7 +35,7 @@
     </header>
 
     <main class="main-container">
-        <h1 class="new-project-page-header">Create new project</h1>
+        <h1 class="page-header">Create new project</h1>
 
         <form class="new-project-form" action="newProject" method="POST" ENCTYPE="multipart/form-data">
             <div class="messages">

@@ -30,16 +30,16 @@ h1 {
 }
 
 .main-container {
-  width: 1000px;
+  width: 1140px;
   margin: 0 auto;
 }
 
-.main-container .new-project-page-header {
-  margin-left: 1rem;
-  margin-top: 1rem;
+.main-container .page-header {
+  margin-left: 1.5rem;
+  margin-top: 2rem;
 }
 
-@media only screen and (max-device-width: 1000px) {
+@media only screen and (max-device-width: 1140px) {
   .main-container {
     background-color: red;
   }
