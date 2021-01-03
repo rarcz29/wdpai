@@ -14,26 +14,7 @@
 </head>
 
 <body>
-    <header class="main-navbar flex-center home-navbar">
-        <img class="logo" src="public/img/logo.svg" alt="logo" />
-
-        <div class="nav-container flex-center">
-            <nav>
-                <ul class="list">
-                    <li><a href="home">Home</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </nav>
-
-            <div class="right-side-icons flex-center">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-bell"></i>
-                <a href="login"><i class="fas fa-user-circle"></i></a>
-            </div>
-        </div>
-    </header>
+    <?php require __DIR__.'/shared/_header.html'; ?>
 
     <main class="home-main-container">
         <section class="home-left-container">
