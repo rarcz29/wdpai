@@ -1,5 +1,6 @@
 <?php
 
+// TODO: update user activity
 class Cookies
 {
     private const USER_NAME_COOKIE = "user_name";

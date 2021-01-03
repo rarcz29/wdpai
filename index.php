@@ -13,5 +13,6 @@ Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('gitToolConnect', 'GitToolsController');
 Routing::get('getConnectedTools', 'GitToolsController');
+Routing::get('projects', 'api/ProjectRestApiController');
 
 Routing::run($path);
