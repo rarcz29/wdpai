@@ -23,6 +23,7 @@ class ProjectController extends AppController
         $this->gitToolRepository = new GitToolRepository();
     }
 
+    // TODO: check if repository exists
     public function newProject()
     {
         if (Cookies::getNickname() === null)
