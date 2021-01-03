@@ -71,6 +71,12 @@ h1 {
   padding: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: border-color ease-in-out 0.5s;
+  transition: border-color ease-in-out 0.5s;
+}
+
+.input-field-line-under-no-valid {
+  border-color: red !important;
 }
 
 .button {

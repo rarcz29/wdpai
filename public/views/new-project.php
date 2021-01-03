@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="public/css/style.css" />
     <link rel="stylesheet" href="public/css/new-project.css" />
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <script defer src="public/js/scripts.js" ></script>
+    <script defer src="public/js/new_project.js"></script>
 </head>
 
 <body>

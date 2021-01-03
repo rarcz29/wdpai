@@ -9,6 +9,7 @@
     <meta name="keywords" content="code programming team crew">
     <link rel="stylesheet" href="public/css/style.css" />
     <link rel="stylesheet" href="public/css/login.css" />
+    <script defer src="public/js/login_validation.js"></script>
 </head>
 
 <body>
