@@ -14,11 +14,13 @@ class ProjectController extends AppController
 
     private $messages = [];
     private $projectRepository;
+    private $gitToolRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->projectRepository = new ProjectRepository();
+        $this->gitToolRepository = new GitToolRepository();
     }
 
     public function newProject()
@@ -42,10 +44,13 @@ class ProjectController extends AppController
             $tool = $_POST["gitTool"];
             $visibility = $_POST["visibility"];
             $private = $visibility === "private";
+            $userNickname = Cookies::getNickname();
+
+            $gitTool = $this->gitToolRepository->getGitTool($userNickname, $tool);
 
             // API
             $tool = new GitHub();
-            $tool->createNewRepository("rarcztest", "e86716c7b829b1a886b59dda3971bd90d0c790fc",
+            $tool->createNewRepository($userNickname, $gitTool->getToken(),
                 $title, $description, $private);
             // Database
             $project = new Project($title, $description, $img, $tool, $visibility);

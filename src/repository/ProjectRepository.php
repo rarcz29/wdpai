@@ -9,8 +9,8 @@ class ProjectRepository extends Repository
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO projects (id_users, id_git_tools, title, description, created_at)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO projects (id_users, id_git_tools, title, description, image, created_at)
+            VALUES (?, ?, ?, ?, ?, ?)
         ');
 
         //TODO you should get this value from logged user session
@@ -22,7 +22,8 @@ class ProjectRepository extends Repository
             $gitToolId,
             $project->getTitle(),
             $project->getDescription(),
-            $date->format('Y-m-d'),
+            $project->getImage(),
+            $date->format('Y-m-d')
         ]);
     }
 }

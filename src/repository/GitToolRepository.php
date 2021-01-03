@@ -5,6 +5,39 @@ require_once __DIR__.'/../models/GitTool.php';
 
 class GitToolRepository extends Repository
 {
+    public function getGitTool(string $userNickname, string $gitToolName): ?GitTool
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT ug.*, g.*
+            FROM user_git_tools ug
+            LEFT JOIN git_tools g
+                ON ug.id_git_tools = g.id
+            LEFT JOIN users u
+                ON ug.id_user = u.id
+            WHERE
+                name = :gitToolName AND
+                nickname = :userNickname
+        ');
+
+        $stmt->bindParam(':gitToolName', $gitToolName, PDO::PARAM_STR);
+        $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $gitTool = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($gitTool == false)
+        {
+            return null;
+        }
+
+        return new GitTool(
+            $gitTool['name'],
+            $gitTool['login'],
+            $gitTool['token'],
+            $gitTool['node_id']
+        );
+    }
+
     public function getGitTools(string $userNickname): ?array
     {
         $stmt = $this->database->connect()->prepare('
