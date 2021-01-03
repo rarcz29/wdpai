@@ -108,6 +108,7 @@ $left-panel-width: 27rem;
                 // border: 1px solid white;
                 // border-radius: 1rem;
                 opacity: 0.3;
+                display: none;
 
                 hr {
                     margin-top: 2rem;
@@ -125,6 +126,8 @@ $left-panel-width: 27rem;
             }
 
             ul {
+                margin-top: 2rem;
+
                 li {
                     margin-bottom: 1rem;
 

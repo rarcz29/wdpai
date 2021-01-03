@@ -90,6 +90,7 @@
 
 .home-left-container .projects-container .projects #no-projects-info {
   opacity: 0.3;
+  display: none;
 }
 
 .home-left-container .projects-container .projects #no-projects-info hr {
@@ -104,6 +105,10 @@
 .home-left-container .projects-container .projects #no-projects-info p {
   font-size: 1rem;
   margin: 0.5rem 1rem;
+}
+
+.home-left-container .projects-container .projects ul {
+  margin-top: 2rem;
 }
 
 .home-left-container .projects-container .projects ul li {

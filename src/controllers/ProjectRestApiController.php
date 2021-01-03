@@ -29,19 +29,26 @@ class ProjectRestApiController extends AppController
         $array = $this->projectRepository->getProjects(Cookies::getNickname());
         $arrayOfArrays = null;
 
-        foreach ($array as $element)
+        if ($array === null)
         {
-            $arrayOfArrays[] = array(
-                'title' => $element->getTitle(),
-                'description' => $element->getDescription(),
-                'image_path' => $element->getImage(),
-                'git_tool' => $element->getTool(),
-                'visibility' => $element->getVisibility()
-                // TODO: visibility as a bool value
-            );
+            echo json_encode(array());
         }
+        else {
+            foreach ($array as $element) {
+                $arrayOfArrays[] = array(
+                    'title' => $element->getTitle(),
+                    'description' => $element->getDescription(),
+                    'image_path' => $element->getImage(),
+                    'git_tool' => $element->getTool(),
+                    'visibility' => $element->getVisibility()
+                    // TODO: visibility as a bool value
+                    // TODO: pass owner and colabolators with theirs profile images
+                    // TODO: add likes and dislikes
+                );
+            }
 
-        $json = json_encode($arrayOfArrays);
-        echo $json;
+            $json = json_encode($arrayOfArrays);
+            echo $json;
+        }
     }
 }

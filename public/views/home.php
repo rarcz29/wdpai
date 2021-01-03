@@ -62,7 +62,7 @@
                         <p>Connect your account to GitHub, Bitbucket and GitLab. Create new repositories and manage them from one place.</p>
                         <p>Find a team to work with. Add other users to your projects or join other's ones.</p>
                     </section>
-                    <ul class="list">
+                    <ul id="projects-container" class="list">
                         <!-- <li>
                             <a href="#">
                                 <div class="project-tile">

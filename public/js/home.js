@@ -45,18 +45,29 @@ function checkConnection() {
 }
 
 function getProjects() {
+    const container = document.getElementById("projects-container");
+    const emptyContainerText = document.getElementById("no-projects-info");
+
     fetch("projects")
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
-            // Object.entries(data).forEach((entry) => {
-            //     const [key, value] = entry;
-            //     const toolConnectedIcon = document.getElementById(
-            //         key + "-connected-icon"
-            //     );
-            //     if (value) {
-            //         toolConnectedIcon.style.opacity = "1";
-            //     }
-            // });
+            if (Object.keys(data).length === 0) {
+                emptyContainerText.style.display = "block";
+            } else {
+                Object.entries(data).forEach((entry) => {
+                    const [key, value] = entry;
+                    let element = document.createElement("li");
+                    element.innerHTML = `<a href="#">
+                        <div class="project-tile">
+                            <div>
+                                <h1>${value.title}</h1>
+                                <p>developer123</p>
+                            </div>
+                            <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
+                        </div>
+                    </a>`;
+                    container.appendChild(element);
+                });
+            }
         });
 }
