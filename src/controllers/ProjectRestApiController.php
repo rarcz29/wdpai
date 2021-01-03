@@ -1,0 +1,47 @@
+<?php
+
+require_once 'AppController.php';
+require_once __DIR__ .'/../models/Project.php';
+require_once __DIR__.'/../repository/ProjectRepository.php';
+
+class ProjectRestApiController extends AppController
+{
+    private $projectRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->projectRepository = new ProjectRepository();
+    }
+
+//    public function gitToolConnect()
+//    {
+//        if (!$this->isPost())
+//        {
+//        }
+//
+//        $json = json_encode($response);
+//        echo $json;
+//    }
+
+    public function projects()
+    {
+        $array = $this->projectRepository->getProjects(Cookies::getNickname());
+        $arrayOfArrays = null;
+
+        foreach ($array as $element)
+        {
+            $arrayOfArrays[] = array(
+                'title' => $element->getTitle(),
+                'description' => $element->getDescription(),
+                'image_path' => $element->getImage(),
+                'git_tool' => $element->getTool(),
+                'visibility' => $element->getVisibility()
+                // TODO: visibility as a bool value
+            );
+        }
+
+        $json = json_encode($arrayOfArrays);
+        echo $json;
+    }
+}

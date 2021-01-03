@@ -8,7 +8,7 @@ class Project
     private $image;
     private $tool;
     private $visibility;
-
+// TODO: visibility as a bool value
     public function __construct($title, $description, $image, $tool, $visibility)
     {
         $this->title = $title;

@@ -35,7 +35,7 @@ class ProjectRepository extends Repository
             LEFT JOIN git_tools g
                 ON p.id_git_tools = g.id
             LEFT JOIN users u
-                ON ug.id_user = u.id
+                ON p.id_users = u.id
             WHERE
                 nickname = :userNickname
         ');

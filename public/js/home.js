@@ -3,6 +3,7 @@ form.addEventListener("submit", logSubmit);
 
 document.addEventListener("DOMContentLoaded", () => {
     checkConnection();
+    getProjects();
 });
 
 function logSubmit(event) {
@@ -40,5 +41,22 @@ function checkConnection() {
                     toolConnectedIcon.style.opacity = "1";
                 }
             });
+        });
+}
+
+function getProjects() {
+    fetch("projects")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            // Object.entries(data).forEach((entry) => {
+            //     const [key, value] = entry;
+            //     const toolConnectedIcon = document.getElementById(
+            //         key + "-connected-icon"
+            //     );
+            //     if (value) {
+            //         toolConnectedIcon.style.opacity = "1";
+            //     }
+            // });
         });
 }
