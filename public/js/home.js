@@ -54,18 +54,24 @@ function getProjects() {
             if (Object.keys(data).length === 0) {
                 emptyContainerText.style.display = "block";
             } else {
+                const template = document.querySelector(
+                    "#project-tile-template"
+                );
+
                 Object.entries(data).forEach((entry) => {
                     const [key, value] = entry;
                     let element = document.createElement("li");
-                    element.innerHTML = `<a href="#">
-                        <div class="project-tile">
-                            <div>
-                                <h1>${value.title}</h1>
-                                <p>developer123</p>
-                            </div>
-                            <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
-                        </div>
-                    </a>`;
+                    const clone = template.content.cloneNode(true);
+                    element.appendChild(clone);
+                    // element.innerHTML = `<a href="#">
+                    //     <div class="project-tile">
+                    //         <div>
+                    //             <h1>${value.title}</h1>
+                    //             <p>developer123</p>
+                    //         </div>
+                    //         <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
+                    //     </div>
+                    // </a>`;
                     container.appendChild(element);
                 });
             }

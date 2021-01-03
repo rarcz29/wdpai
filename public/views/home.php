@@ -277,4 +277,16 @@
     </main>
 </body>
 
+<template id="project-tile-template">
+    <a href="#">
+        <div class="project-tile">
+            <div>
+                <h1>Title</h1>
+                <p>Description</p>
+            </div>
+            <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
+        </div>
+    </a>
+</template>
+
 </html>
