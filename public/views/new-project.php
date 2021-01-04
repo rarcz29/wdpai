@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php require __DIR__.'/shared/_header.html'; ?>
+    <?php require __DIR__ . '/shared/_header.html'; ?>
 
     <main class="main-container">
         <h1 class="page-header">Create new project</h1>

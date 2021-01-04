@@ -55,7 +55,7 @@ function getProjects() {
                 emptyContainerText.style.display = "block";
             } else {
                 const template = document.querySelector(
-                    "#project-tile-template"
+                    "#project-tile-shared"
                 );
 
                 Object.entries(data).forEach((entry) => {
