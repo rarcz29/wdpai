@@ -59,7 +59,7 @@ class ProjectController extends AppController
             return $this->render('home', ['messages' => $this->message]);
         }
 
-        return $this->render('new-project', ['messages' => $this->message]);
+        return $this->render('newProject', ['messages' => $this->message]);
     }
 
     private function validate(array $file): bool

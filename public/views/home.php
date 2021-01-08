@@ -1,12 +1,9 @@
-<?php
-    require_once __DIR__."/shared/_configuration.php";
-    session_start();
-?>
+<?php require_once __DIR__."/shared/_configuration.php"; ?>
 
 <!doctype html>
 <html lang=<?php echo $_SESSION['lang'] ?>>
 
-<?php require __DIR__.'/shared/_head-tag.php'; ?>
+<?php require_once __DIR__ . '/shared/_headTag.php'; ?>
 
 <body>
     <?php require __DIR__.'/shared/_header.html'; ?>

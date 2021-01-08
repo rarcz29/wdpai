@@ -1,16 +1,9 @@
-<!doctype html>
-<html lang="en">
+<?php require_once __DIR__."/shared/_configuration.php"; ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CNode</title>
-    <meta name="description" content="WdPAI project">
-    <meta name="keywords" content="code programming team crew">
-    <link rel="stylesheet" href="public/css/style.css" />
-    <link rel="stylesheet" href="public/css/login.css" />
-    <script defer src="public/js/login_validation.js"></script>
-</head>
+<!doctype html>
+<html lang=<?php echo $_SESSION['lang'] ?>>
+
+<?php require_once __DIR__.'/shared/_headTag.php'; ?>
 
 <body>
     <div class="container">
