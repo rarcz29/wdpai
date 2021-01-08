@@ -1,17 +1,9 @@
-<!doctype html>
-<html lang="en">
+<?php require_once __DIR__."/shared/_configuration.php"; ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CNode</title>
-    <meta name="description" content="WdPAI project">
-    <meta name="keywords" content="code programming team crew">
-    <link rel="stylesheet" href="public/css/style.css" />
-    <link rel="stylesheet" href="public/css/home.css" />
-    <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <script defer src="public/js/home.js"></script>
-</head>
+<!doctype html>
+<html lang=<?php echo $_SESSION['lang'] ?>>
+
+<?php require_once __DIR__ . '/shared/_headTag.php'; ?>
 
 <body>
     <?php require __DIR__.'/shared/_header.html'; ?>
@@ -24,6 +16,7 @@
                     <form class="search-form search-projects-form">
                         <input class="input-field-round" placeholder="&#xF002; Find a project"
                             style="font-family:Arial, FontAwesome">
+                            <!-- TODO: fix fonts -->
                     </form>
 
                     <div class="projects-buttons">

@@ -30,9 +30,9 @@
 // }
 
 // function createProject(project) {
-//     const template = document.querySelector("#project-template");
+//     const shared = document.querySelector("#project-shared");
 
-//     const clone = template.content.cloneNode(true);
+//     const clone = shared.content.cloneNode(true);
 //     const div = clone.querySelector("div");
 //     div.id = project.id;
 //     const image = clone.querySelector("img");

@@ -63,15 +63,6 @@ function getProjects() {
                     let element = document.createElement("li");
                     const clone = template.content.cloneNode(true);
                     element.appendChild(clone);
-                    // element.innerHTML = `<a href="#">
-                    //     <div class="project-tile">
-                    //         <div>
-                    //             <h1>${value.title}</h1>
-                    //             <p>developer123</p>
-                    //         </div>
-                    //         <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
-                    //     </div>
-                    // </a>`;
                     container.appendChild(element);
                 });
             }

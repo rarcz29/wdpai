@@ -1,20 +1,12 @@
-<!doctype html>
-<html lang="en">
+<?php require_once __DIR__."/shared/_configuration.php"; ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CNode</title>
-    <meta name="description" content="WdPAI project">
-    <meta name="keywords" content="code programming team crew">
-    <link rel="stylesheet" href="public/css/style.css" />
-    <link rel="stylesheet" href="public/css/new-project.css" />
-    <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <script defer src="public/js/new_project.js"></script>
-</head>
+<!doctype html>
+<html lang=<?php echo $_SESSION['lang'] ?>>
+
+<?php require_once __DIR__.'/shared/_headTag.php'; ?>
 
 <body>
-    <?php require __DIR__.'/shared/_header.html'; ?>
+    <?php require __DIR__ . '/shared/_header.html'; ?>
 
     <main class="main-container">
         <h1 class="page-header">Create new project</h1>
