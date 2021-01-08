@@ -27,20 +27,6 @@
             <textarea class="input-field-line-under main-input description-input" name="description" rows="1"
                 type="text" placeholder="Description..."></textarea>
 
-            <div class="upload-img-container">
-                <div class="input-field-round button bt-green add-background-img-bt">
-                    <label>
-                        <div>
-                            <input id="input-img-upload" type="file" name="file">
-                            <i class="fas fa-upload"></i>
-                            Upload background image
-                        </div>
-                    <label>
-                </div>
-
-                <p id="upload-img-path">No file chosen</p>
-            </div>
-
             <section class="git-form">
                 <h1>Connect with:</h1>
                 <div class="input-radio-container connect-with-container">
@@ -68,6 +54,20 @@
                 </div>
                 <hr>
             </section>
+
+            <div class="upload-img-container">
+                <div class="input-field-round button bt-green add-background-img-bt">
+                    <label>
+                        <div>
+                            <input id="input-img-upload" type="file" name="file">
+                            <i class="fas fa-upload"></i>
+                            Upload background image
+                        </div>
+                        <label>
+                </div>
+
+                <p id="upload-img-path">No file chosen</p>
+            </div>
 
             <input type="text" class="input-field-line-under technologies-input" name="technologies"
                 placeholder="Technologies...">

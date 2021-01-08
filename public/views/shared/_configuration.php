@@ -3,7 +3,7 @@
     $_SESSION['lang'] = "en";
 
     switch ($_SERVER['REQUEST_URI']) {
-        case "":
+        case "/":
         case "/login":
             $_SESSION['state'] = "login";
             $_SESSION['title'] = "Login";
@@ -19,5 +19,9 @@
         case "/newProject":
             $_SESSION['state'] = "newProject";
             $_SESSION['title'] = "CNone | New Project";
+            break;
+        case "/community":
+            $_SESSION['state'] = "community";
+            $_SESSION['title'] = "CNone | Community";
             break;
     }

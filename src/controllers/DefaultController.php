@@ -17,11 +17,17 @@ class DefaultController extends AppController
 
     public function home()
     {
+        // TODO: cookies
         if (Cookies::getNickname() === null)
         {
             return $this->render("login");
         }
 
         $this->render('home');
+    }
+
+    public function community()
+    {
+        $this->render('community');
     }
 }
