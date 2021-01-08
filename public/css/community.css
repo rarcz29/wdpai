@@ -1,0 +1,28 @@
+.community-navbar {
+  width: 32rem;
+  padding-bottom: 0 !important;
+}
+
+.community-navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.3rem;
+  list-style-type: none;
+  margin-right: 2rem;
+}
+
+.community-navbar ul li a {
+  text-decoration: none;
+}
+
+.community-navbar ul li a:visited, .community-navbar ul li a:link {
+  color: white;
+}
+
+.community-navbar ul li a:hover {
+  color: grey;
+}

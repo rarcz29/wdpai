@@ -8,7 +8,15 @@
 <body>
 <?php require __DIR__.'/shared/_header.html'; ?>
 
-asadfasdf
+    <main class="main-container">
+        <nav class="input-field-line-under community-navbar">
+            <ul>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Users</a></li>
+                <li><a href="#">Advertisements</a></li>
+            </ul>
+        </nav>
+    </main>
 
 </body>
 

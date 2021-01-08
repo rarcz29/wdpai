@@ -27,6 +27,10 @@
                 $resources = "<link rel='stylesheet' href='public/css/new-project.css' />".
                              "<script defer src='public/js/new_project.js'></script>";
                 break;
+
+            case 'community':
+                $resources = "<link rel='stylesheet' href='public/css/community.css' />";
+                break;
         }
 
         echo $resources;

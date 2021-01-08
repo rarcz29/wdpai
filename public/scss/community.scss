@@ -1,0 +1,30 @@
+@import "./shared/color-palette";
+@import "./shared/variables";
+
+.community-navbar {
+    width: 32rem;
+    padding-bottom: 0 !important;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.3rem;
+        list-style-type: none;
+        margin-right: 2rem;
+
+        li {
+            a {
+                text-decoration: none;
+
+                &:visited,
+                &:link {
+                    color: $fg-main-color;
+                }
+
+                &:hover {
+                    color: $fg-darker-color;
+                }
+            }
+        }
+    }
+}
