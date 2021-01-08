@@ -28,3 +28,28 @@
         }
     }
 }
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .project {
+        margin: 1rem 2rem 0 2rem;
+
+        img {
+            object-fit: cover;
+            border-radius: 1em 1em 0 0;
+        }
+
+        & > div {
+            border: 1px solid gray;
+            border-radius: 1em;
+            height: 400px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+}

@@ -16,6 +16,161 @@
                 <li><a href="#">Advertisements</a></li>
             </ul>
         </nav>
+
+        <section class="projects-container">
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article><article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article><article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+            <article id="" class="project">
+                <img src="">
+                <div>
+                    <h2>title</h2>
+                    <p>description</p>
+                    <div class="social-section">
+                        <i class="fas fa-heart"> 0</i>
+                        <i class="fas fa-minus-square"> 0</i>
+                    </div>
+                </div>
+            </article>
+        </section>
     </main>
 
 </body>
