@@ -25,8 +25,11 @@
 
 <template id="project-template">
     <article id="" class="project">
-        <img src="public/uploads/Blockchain-Dubai.jpg">
-        <div>
+        <div class="image">
+            <h1>DETAILS</h1>
+            <img src="public/uploads/Blockchain-Dubai.jpg">
+        </div>
+        <div class="info">
             <div class="basic-info">
                 <h2></h2>
                 <p></p>

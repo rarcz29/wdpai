@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     getAllProjects();
 });
 
+// TODO: move code to separate functions
 function getAllProjects() {
     const container = document.querySelector(".projects-container");
 
