@@ -186,4 +186,29 @@
 
 </body>
 
+<template id="project-template">
+    <article id="" class="project">
+        <img src="public/uploads/Blockchain-Dubai.jpg">
+        <div>
+            <div class="basic-info">
+                <h2>Tooooto</h2>
+                <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+            </div>
+            <div class="details-section">
+                <p>ASP.NET, React ASP.NET, React ASP.NET, React ASP.NET, React</p>
+                <div class="social-section">
+                    <div class="likes">
+                        <i class="fas fa-thumbs-up font-green"></i><p>0</p>
+                        <i class="fas fa-thumbs-down font-red"></i><p>0</p>
+                    </div>
+                    <div class="comments">
+                        <p>0 </p>
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</template>
+
 </html>

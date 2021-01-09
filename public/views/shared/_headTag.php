@@ -20,7 +20,7 @@
 
             case 'home':
                 $resources = "<link rel='stylesheet' href='public/css/home.css' />".
-                             "<script defer src='public/js/home.js'></script>";
+                             "<script defer type='module' src='public/js/home.js'></script>";
                 break;
 
             case 'newProject':
@@ -29,7 +29,7 @@
                 break;
 
             case 'community':
-                $resources = "<link rel='stylesheet' href='public/css/community.css' />";
+                $resources = "<link rel='stylesheet' type='module' href='public/css/community.css' />";
                 break;
         }
 
