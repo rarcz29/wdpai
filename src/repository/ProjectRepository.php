@@ -30,7 +30,8 @@ class ProjectRepository extends Repository
     public function getProjects(string $userNickname): ?array
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT p.*, g.*, COUNT(c.id) as number_of_comments
+            SELECT p.*, g.name as git_name,
+                COUNT(c.id) as number_of_comments
             FROM projects p
             LEFT JOIN git_tools g
                 ON p.id_git_tools = g.id
@@ -62,12 +63,13 @@ class ProjectRepository extends Repository
                 $project['title'],
                 $project['description'],
                 $project['image'],
-                $project['name'],
+                $project['git_name'],
                 true,
                 $project['likes'],
                 $project['dislikes'],
                 "null",
-                $project['number_of_comments']
+                $project['number_of_comments'],
+                $project['id']
             );
         }
 

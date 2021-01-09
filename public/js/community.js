@@ -31,6 +31,7 @@ function getAllProjects() {
                     const comments = commentsSection.querySelector("p");
                     comments.innerText = value.numberOfComments;
 
+                    clone.querySelector("article").id = value.id;
                     container.appendChild(clone);
                 });
             }

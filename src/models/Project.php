@@ -12,10 +12,11 @@ class Project
     private $dislikes;
     private $comments;
     private $numberOfComments;
+    private $id;
 
 // TODO: visibility as a bool value
     public function __construct($title, $description, $image, $tool, $visibility,
-                                $likes, $dislikes, $comments, $numberOfComments)
+                                $likes, $dislikes, $comments, $numberOfComments, $id = null)
     {
         $this->title = $title;
         $this->description = $description;
@@ -26,6 +27,7 @@ class Project
         $this->dislikes = $dislikes;
         $this->comments = $comments;
         $this->numberOfComments = $numberOfComments;
+        $this->id = $id;
     }
 
     public function getTitle(): string
@@ -116,5 +118,15 @@ class Project
     public function setNumberOfComments($numberOfComments): void
     {
         $this->numberOfComments = $numberOfComments;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 }
