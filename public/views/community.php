@@ -38,11 +38,11 @@
                 <p>ASP.NET, React ASP.NET, React ASP.NET, React ASP.NET, React</p>
                 <div class="social-section">
                     <div class="likes">
-                        <i class="fas fa-thumbs-up font-green"></i><p class="thumbs-up">0</p>
-                        <i class="fas fa-thumbs-down font-red"></i><p class="thumbs-down">0</p>
+                        <i class="fas fa-thumbs-up font-green"></i><p class="thumbs-up"></p>
+                        <i class="fas fa-thumbs-down font-red"></i><p class="thumbs-down"></p>
                     </div>
                     <div class="comments">
-                        <p>0</p>
+                        <p></p>
                         <i class="fas fa-comments"></i>
                     </div>
                 </div>

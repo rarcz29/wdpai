@@ -68,7 +68,6 @@
                 font-size: 3rem;
                 opacity: 0;
                 transition: inherit;
-                background-color: black;
             }
 
             img {
@@ -133,11 +132,11 @@
                 display: flex;
                 justify-content: space-between;
 
-                .likes i {
+                .likes > i {
                     margin-right: 0.3rem;
 
-                    p {
-                        margin-right: 2rem !important;
+                    &:hover {
+                        cursor: pointer;
                     }
                 }
 
