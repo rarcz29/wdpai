@@ -35,7 +35,7 @@ h1 {
 }
 
 .main-container {
-    width: $main-width;
+    max-width: $main-width;
     margin: 0 auto;
 
     .page-header {
@@ -97,6 +97,14 @@ h1 {
 
 .bt-red {
     background: $red-bt-gradient;
+}
+
+.font-red {
+    color: red;
+}
+
+.font-green {
+    color: green;
 }
 
 .search-form > input {

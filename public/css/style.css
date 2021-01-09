@@ -30,7 +30,7 @@ h1 {
 }
 
 .main-container {
-  width: 1140px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -108,6 +108,14 @@ h1 {
 .bt-red {
   background: transparent -webkit-gradient(linear, left top, left bottom, from(#1321a3), color-stop(0%, #02d52c), color-stop(0%, #ef0e0e), color-stop(1%, #cc0808), color-stop(100%, #7e0a0a), color-stop(100%, #9a0808), to(#0a4152)) 0% 0% no-repeat padding-box;
   background: transparent linear-gradient(180deg, #1321a3 0%, #02d52c 0%, #ef0e0e 0%, #cc0808 1%, #7e0a0a 100%, #9a0808 100%, #0a4152 100%) 0% 0% no-repeat padding-box;
+}
+
+.font-red {
+  color: red;
+}
+
+.font-green {
+  color: green;
 }
 
 .search-form > input {
