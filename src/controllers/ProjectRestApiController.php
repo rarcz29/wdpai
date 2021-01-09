@@ -14,16 +14,6 @@ class ProjectRestApiController extends AppController
         $this->projectRepository = new ProjectRepository();
     }
 
-//    public function gitToolConnect()
-//    {
-//        if (!$this->isPost())
-//        {
-//        }
-//
-//        $json = json_encode($response);
-//        echo $json;
-//    }
-
     public function projects()
     {
         $array = $this->projectRepository->getProjects(Cookies::getNickname());
@@ -59,12 +49,17 @@ class ProjectRestApiController extends AppController
     }
 
     public function like(int $id) {
-        $this->projectRepository->incrementItem($id, "likes");
+        $this->projectRepository->like($id);
+
+        $json = json_encode(array(
+            'title' => $id));
+        echo $json;
+
         http_response_code(200);
     }
 
     public function dislike(int $id) {
-        $this->projectRepository->incrementItem($id, "dislikes");
+        $this->projectRepository->dislike($id);
         http_response_code(200);
     }
 }
