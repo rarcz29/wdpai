@@ -44,11 +44,12 @@ h1 {
     }
 }
 
-@media only screen and (max-device-width: $main-width) {
-    .main-container {
-        background-color: red;
-    }
-}
+// TODO: main container responsiveness
+// @media only screen and (max-device-width: $main-width) {
+//     .main-container {
+//         background-color: red;
+//     }
+// }
 
 .flex-center {
     display: flex;
@@ -135,9 +136,6 @@ h1 {
     background-color: $bg-darker-color;
     box-shadow: 0px 3px 6px #00000029;
 
-    // display: flex;
-    // align-items: center;
-
     .logo {
         height: 80%;
         margin-right: 3.4rem;
@@ -146,25 +144,16 @@ h1 {
 
     .nav-container {
         width: 100%;
-        //display: flex;
         justify-content: space-between;
         font-size: 1.5rem;
         color: $fg-main-color;
 
         ul {
-            // margin: 0;
-            // //font-size: 20px;
-            // list-style-type: none;
-
             li {
                 display: inline-block;
-                // padding: 0;
-                // margin: 0;
                 margin-right: 2.2rem;
 
                 a {
-                    //color: $fg-main-color;
-                    //text-decoration: none;
                     transition: color $transition-time;
 
                     &:visited,

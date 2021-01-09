@@ -27,6 +27,12 @@
   color: grey;
 }
 
+@media only screen and (max-device-width: 32rem) {
+  .community-navbar {
+    width: 100%;
+  }
+}
+
 .projects-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,4 +126,17 @@
   color: white !important;
   display: inline-block;
   margin: 0;
+}
+
+@media only screen and (max-device-width: 450px) {
+  .projects-container .project {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-device-width: 380px) {
+  .projects-container .project {
+    width: 90%;
+  }
 }

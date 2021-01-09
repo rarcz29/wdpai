@@ -39,12 +39,6 @@ h1 {
   margin-top: 2rem;
 }
 
-@media only screen and (max-device-width: 1140px) {
-  .main-container {
-    background-color: red;
-  }
-}
-
 .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
