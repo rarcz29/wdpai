@@ -30,14 +30,17 @@ class ProjectRepository extends Repository
     public function getProjects(string $userNickname): ?array
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT p.*, g.*
+            SELECT p.*, g.*, COUNT(c.id) as number_of_comments
             FROM projects p
             LEFT JOIN git_tools g
                 ON p.id_git_tools = g.id
             LEFT JOIN users u
                 ON p.id_users = u.id
+            LEFT JOIN comments c
+                ON c.id_projects = p.id
             WHERE
                 nickname = :userNickname
+            GROUP BY p.id, g.id
         ');
 
         $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
@@ -60,7 +63,11 @@ class ProjectRepository extends Repository
                 $project['description'],
                 $project['image'],
                 $project['name'],
-                true
+                true,
+                $project['likes'],
+                $project['dislikes'],
+                "null",
+                $project['number_of_comments']
             );
         }
 

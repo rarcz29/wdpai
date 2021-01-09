@@ -40,7 +40,12 @@ class ProjectRestApiController extends AppController
                     'description' => $element->getDescription(),
                     'image_path' => $element->getImage(),
                     'git_tool' => $element->getTool(),
-                    'visibility' => $element->getVisibility()
+                    'visibility' => $element->getVisibility(),
+                    'likes' => $element->getLikes(),
+                    'dislikes' => $element->getDislikes(),
+                    // TODO:
+                    //'visibility' => $element->getComments(),
+                    'numberOfComments' => $element->getNumberOfComments()
                     // TODO: visibility as a bool value
                     // TODO: pass owner and colabolators with theirs profile images
                     // TODO: add likes and dislikes

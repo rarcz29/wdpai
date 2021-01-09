@@ -8,14 +8,24 @@ class Project
     private $image;
     private $tool;
     private $visibility;
+    private $likes;
+    private $dislikes;
+    private $comments;
+    private $numberOfComments;
+
 // TODO: visibility as a bool value
-    public function __construct($title, $description, $image, $tool, $visibility)
+    public function __construct($title, $description, $image, $tool, $visibility,
+                                $likes, $dislikes, $comments, $numberOfComments)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->tool = $tool;
         $this->visibility = $visibility;
+        $this->likes = $likes;
+        $this->dislikes = $dislikes;
+        $this->comments = $comments;
+        $this->numberOfComments = $numberOfComments;
     }
 
     public function getTitle(): string
@@ -66,5 +76,45 @@ class Project
     public function setVisibility($visibility): void
     {
         $this->visibility = $visibility;
+    }
+
+    public function getLikes(): int
+    {
+        return $this->likes;
+    }
+
+    public function setLikes($likes): void
+    {
+        $this->likes = $likes;
+    }
+
+    public function getDislikes(): int
+    {
+        return $this->dislikes;
+    }
+
+    public function setDislikes($dislikes): void
+    {
+        $this->dislikes = $dislikes;
+    }
+
+    public function getComments(): array
+    {
+        return $this->comments;
+    }
+
+    public function setComments($comments): void
+    {
+        $this->comments = $comments;
+    }
+
+    public function getNumberOfComments(): int
+    {
+        return $this->numberOfComments;
+    }
+
+    public function setNumberOfComments($numberOfComments): void
+    {
+        $this->numberOfComments = $numberOfComments;
     }
 }
