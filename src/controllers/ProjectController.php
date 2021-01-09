@@ -51,7 +51,8 @@ class ProjectController extends AppController
 
             // API
             $tool = new GitHub();
-            $tool->createNewRepository($userNickname, $gitTool->getToken(),
+            // TODO: check if it's correct
+            $response = $tool->createNewRepository($userNickname, $gitTool->getToken(),
                 $title, $description, $private);
             // Database
             $project = new Project($title, $description, $img, $tool, $visibility);

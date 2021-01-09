@@ -13,7 +13,7 @@ class GitHub extends GitToolApi
 
     // TODO: this method should return bool
     public function createNewRepository(string $username, string $token, string $title,
-                                        string $description, bool $private)
+                                        string $description, bool $private): string
     {
         $postData = array(
             "name" => $title,
@@ -22,5 +22,6 @@ class GitHub extends GitToolApi
             "auto_init" => true
         );
         $output = $this->post("https://api.github.com/user/repos", $username, $token, $postData);
+        return json_decode($output, true)['node_id'];
     }
 }

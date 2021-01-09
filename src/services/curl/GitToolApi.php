@@ -22,7 +22,7 @@ abstract class GitToolApi
         return $output;
     }
 
-    protected function post(string $url, string $username, string $token, array $postFields)
+    protected function post(string $url, string $username, string $token, array $postFields): string
     {
         $curl = curl_init();
         $headers = $this->setHeaders($username, $token);
