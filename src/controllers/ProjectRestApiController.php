@@ -50,11 +50,6 @@ class ProjectRestApiController extends AppController
 
     public function like(int $id) {
         $this->projectRepository->like($id);
-
-        $json = json_encode(array(
-            'title' => $id));
-        echo $json;
-
         http_response_code(200);
     }
 

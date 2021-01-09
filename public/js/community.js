@@ -1,5 +1,3 @@
-//const likeButton = document.querySelector("img");
-
 document.addEventListener("DOMContentLoaded", () => {
     getAllProjects();
 });
@@ -60,12 +58,11 @@ function giveLike() {
     const id = container.getAttribute("id");
     console.log(id);
 
-    fetch(`/like/${id}`)
-        .then((response) => response.text())
-        .then((x) => {
-            console.log(x);
-            //likes.innerHTML = parseInt(likes.innerHTML) + 1;
-        });
+    fetch(`/like/${id}`).then(() => {
+        const likesContainer = likes.parentElement;
+        const values = likesContainer.querySelectorAll("p");
+        values[0].innerHTML = parseInt(values[0].innerHTML) + 1;
+    });
 }
 
 function giveDislike() {
@@ -76,8 +73,9 @@ function giveDislike() {
     const id = container.getAttribute("id");
     console.log(id);
 
-    fetch(`/dislike/${id}`).then((response) => {
-        console.log(response);
-        //dislikes.innerHTML = parseInt(dislikes.innerHTML) + 1;
+    fetch(`/dislike/${id}`).then(() => {
+        const likesContainer = dislikes.parentElement;
+        const values = likesContainer.querySelectorAll("p");
+        values[1].innerHTML = parseInt(values[1].innerHTML) + 1;
     });
 }
