@@ -57,4 +57,14 @@ class ProjectRestApiController extends AppController
             echo $json;
         }
     }
+
+    public function like(int $id) {
+        $this->projectRepository->incrementItem($id, "likes");
+        http_response_code(200);
+    }
+
+    public function dislike(int $id) {
+        $this->projectRepository->incrementItem($id, "dislikes");
+        http_response_code(200);
+    }
 }

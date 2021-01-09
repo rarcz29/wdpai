@@ -75,4 +75,14 @@ class ProjectRepository extends Repository
 
         return $array;
     }
+
+    public function incrementItem(int $id, string $item) {
+        $stmt = $this->database->connect()->prepare('
+            UPDATE projects SET ":item" = ":item" + 1 WHERE id = :id
+         ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':item', $item, PDO::PARAM_STR);
+        $stmt->execute();
+    }
 }
