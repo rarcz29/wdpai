@@ -15,6 +15,7 @@ class Account
     public function logOut()
     {
         Cookies::deleteCookies();
+        Session::unsetUserId();
     }
 
     public function isLoggedIn(): bool

@@ -13,4 +13,9 @@ class Session
     {
         return $_SESSION[self::ID];
     }
+
+    public static function unsetUserId()
+    {
+        unset($_SESSION[self::ID]);
+    }
 }
