@@ -7,6 +7,7 @@ class AppController
     public function __construct()
     {
         $this->request = $_SERVER['REQUEST_METHOD'];
+        session_start();
     }
 
     protected function isGet(): bool
@@ -33,5 +34,11 @@ class AppController
         }
         
         print $output;
+    }
+
+    protected function redirect(string $page = '')
+    {
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/".$page);
     }
 }

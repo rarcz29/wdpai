@@ -5,22 +5,20 @@ require_once __DIR__.'/../models/GitTool.php';
 
 class GitToolRepository extends Repository
 {
-    public function getGitTool(string $userNickname, string $gitToolName): ?GitTool
+    public function getGitTool(int $userId, string $gitToolName): ?GitTool
     {
         $stmt = $this->database->connect()->prepare('
             SELECT ug.*, g.*
             FROM user_git_tools ug
             LEFT JOIN git_tools g
-                ON ug.id_git_tools = g.id
-            LEFT JOIN users u
-                ON ug.id_user = u.id
+                ON ug.id_git_tools = g.id AND 
             WHERE
                 name = :gitToolName AND
-                nickname = :userNickname
+                ug.id_user = :userId
         ');
 
         $stmt->bindParam(':gitToolName', $gitToolName, PDO::PARAM_STR);
-        $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
         $gitTool = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -34,11 +32,10 @@ class GitToolRepository extends Repository
             $gitTool['name'],
             $gitTool['login'],
             $gitTool['token']
-            // TODO: $gitTool['node_id']
         );
     }
 
-    public function getGitTools(string $userNickname): ?array
+    public function getGitTools(int $userId): ?array
     {
         $stmt = $this->database->connect()->prepare('
             SELECT ug.*, g.*
@@ -48,10 +45,10 @@ class GitToolRepository extends Repository
             LEFT JOIN users u
                 ON ug.id_user = u.id
             WHERE
-                nickname = :userNickname
+                ug.id_user = :userId
         ');
 
-        $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
         $gitTools = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -76,7 +73,7 @@ class GitToolRepository extends Repository
     }
 
     // TODO: return bool
-    public function addUserGitTool(string $nickname, GitTool $gitTool)
+    public function addUserGitTool(int $userId, GitTool $gitTool)
     {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO user_git_tools (id_user, id_git_tools, login, token)
@@ -84,25 +81,25 @@ class GitToolRepository extends Repository
         ');
 
         $stmt->execute([
-            $this->getUserId($nickname),
+            $userId,
             $this->getGitToolId($gitTool->getName()),
             $gitTool->getLogin(),
             $gitTool->getToken()
         ]);
     }
-
-    private function getUserId(string $nickname): int
-    {
-        $stmt = $this->database->connect()->prepare('
-            SELECT id
-            FROM users
-            WHERE nickname = :nickname
-        ');
-        $stmt->bindParam(':nickname', $nickname, PDO::PARAM_STR);
-        $stmt->execute();
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $data['id'];
-    }
+// TODO: remove commented code
+//    private function getUserId(string $nickname): int
+//    {
+//        $stmt = $this->database->connect()->prepare('
+//            SELECT id
+//            FROM users
+//            WHERE nickname = :nickname
+//        ');
+//        $stmt->bindParam(':nickname', $nickname, PDO::PARAM_STR);
+//        $stmt->execute();
+//        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+//        return $data['id'];
+//    }
 
     private function getGitToolId(string $name): int
     {

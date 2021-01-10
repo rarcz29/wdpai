@@ -1,7 +1,7 @@
 <?php
 
 require_once 'AppController.php';
-require_once 'AppController.php';
+require_once 'src/services/Account.php';
 
 class DefaultController extends AppController
 {
@@ -17,10 +17,10 @@ class DefaultController extends AppController
 
     public function home()
     {
-        // TODO: cookies
-        if (Cookies::getNickname() === null)
+        $account = new Account();
+        if (!$account->isLoggedIn())
         {
-            return $this->render("login");
+            $this->redirect();
         }
 
         $this->render('home');
@@ -28,6 +28,12 @@ class DefaultController extends AppController
 
     public function community()
     {
+        $account = new Account();
+        if (!$account->isLoggedIn())
+        {
+            $this->redirect();
+        }
+
         $this->render('community');
     }
 }
