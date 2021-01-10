@@ -77,6 +77,7 @@ class ProjectController extends AppController
     {
         if ($file['size'] > self::MAX_FILE_SIZE)
         {
+            // TODO: messages
             $this->message[] = 'File is too large for destination file system.';
             return false;
         }

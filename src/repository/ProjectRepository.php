@@ -30,7 +30,7 @@ class ProjectRepository extends Repository
         ]);
     }
 
-    public function getProjects(string $userNickname): ?array
+    public function getProjects(int $userId): ?array
     {
         $stmt = $this->database->connect()->prepare('
             SELECT p.*, g.name as git_name,
@@ -38,16 +38,14 @@ class ProjectRepository extends Repository
             FROM projects p
             LEFT JOIN git_tools g
                 ON p.id_git_tools = g.id
-            LEFT JOIN users u
-                ON p.id_users = u.id
             LEFT JOIN comments c
                 ON c.id_projects = p.id
             WHERE
-                nickname = :userNickname
+                p.id_users = :userId
             GROUP BY p.id, g.id
         ');
 
-        $stmt->bindParam(':userNickname', $userNickname, PDO::PARAM_STR);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
         $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -79,25 +77,23 @@ class ProjectRepository extends Repository
         return $array;
     }
 
-    public function like(int $id) {
+    public function like(int $id)
+    {
         $stmt = $this->database->connect()->prepare('
             UPDATE projects SET "likes" = "likes" + 1 WHERE id = :id
          ');
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        //$stmt->bindParam(':item', $item, PDO::PARAM_STR);
-        //$stmt->bindParam(':item', $item, PDO::PARAM_STR);
         $stmt->execute();
     }
 
-    public function dislike(int $id) {
+    public function dislike(int $id)
+    {
         $stmt = $this->database->connect()->prepare('
             UPDATE projects SET "dislikes" = "dislikes" + 1 WHERE id = :id
          ');
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        //$stmt->bindParam(':item', $item, PDO::PARAM_STR);
-        //$stmt->bindParam(':item', $item, PDO::PARAM_STR);
         $stmt->execute();
     }
 }

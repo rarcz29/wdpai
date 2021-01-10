@@ -16,7 +16,7 @@ class ProjectRestApiController extends AppController
 
     public function projects()
     {
-        $array = $this->projectRepository->getProjects(Cookies::getNickname());
+        $array = $this->projectRepository->getProjects($this->account->getUserId());
         $arrayOfArrays = null;
 
         if ($array === null)
