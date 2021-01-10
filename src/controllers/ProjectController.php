@@ -47,19 +47,24 @@ class ProjectController extends AppController
             $private = $visibility === "private";
             $userNickname = Cookies::getNickname();
 
-            $json = json_decode("{'prop':'val','prop2':'val2'}", true);
-            echo gettype($json);
-            die();
-
             $gitTool = $this->gitToolRepository->getGitTool($userNickname, $tool);
 
             // API
+            // TODO: switch tools
             $tool = new GitHub();
-            // TODO: check if it's correct
             $response = $tool->createNewRepository($userNickname, $gitTool->getToken(),
                 $title, $description, $private);
+
+            if ($response === null)
+            {
+                $this->render('newProject');
+            }
+
             // Database
-            $project = new Project($title, $description, $img, $tool, $visibility, $response);
+            $project = new Project($title, $description, $img, $tool, $visibility,
+                $response, 0, 0, array(), 0);
+            $project->setOriginUrl($response['url']);
+            $project->setRepoName($response['name']);
             $this->projectRepository->addProject($project);
             return $this->render('home', ['messages' => $this->message]);
         }

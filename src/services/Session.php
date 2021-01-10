@@ -9,7 +9,7 @@ class Session
         $_SESSION[self::ID] = $id;
     }
 
-    public static function getNickname() : ?int
+    public static function getUserId(): ?int
     {
         return $_SESSION[self::ID];
     }

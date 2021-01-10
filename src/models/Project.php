@@ -29,7 +29,6 @@ class Project
         $this->dislikes = $dislikes;
         $this->comments = $comments;
         $this->numberOfComments = $numberOfComments;
-        $this->originUrl = $originUrl;
         $this->id = $id;
     }
 

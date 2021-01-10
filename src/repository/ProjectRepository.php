@@ -9,8 +9,9 @@ class ProjectRepository extends Repository
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO projects (id_users, id_git_tools, title, description, image, created_at)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO projects (id_users, id_git_tools, title, description,
+                image, created_at, urigin_url, repo_name)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ');
 
         //TODO you should get this value from logged user session
@@ -23,7 +24,9 @@ class ProjectRepository extends Repository
             $project->getTitle(),
             $project->getDescription(),
             $project->getImage(),
-            $date->format('Y-m-d')
+            $date->format('Y-m-d'),
+            $project->getOriginUrl(),
+            $project->getRepoName()
         ]);
     }
 
@@ -56,7 +59,7 @@ class ProjectRepository extends Repository
 
         $array = null;
 
-        // TODO: add visibility to the database
+        // TODO: add visibility and comments to the database
         foreach ($projects as $project)
         {
             $array[] = new Project(

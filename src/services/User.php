@@ -17,8 +17,18 @@ class User
         Cookies::deleteCookies();
     }
 
-    public function isLoggedIn()
+    public function isLoggedIn(): bool
     {
         return Cookies::getNickname() !== null;
+    }
+
+    public function getUserId(): ?int
+    {
+        return Session::getUserId();
+    }
+
+    public function getUserName(): ?string
+    {
+        return Cookies::getNickname();
     }
 }

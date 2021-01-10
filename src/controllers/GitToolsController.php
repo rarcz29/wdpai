@@ -38,8 +38,8 @@ class GitToolsController extends AppController
             switch ($gitTool) {
                 case "github":
                     $tool = new GitHub();
-                    $nodeId = $tool->getNodeId($login, $token);
-                    $exists = $nodeId !== null;
+                    $gitAccountName = $tool->getUsername($token);
+                    $exists = $gitAccountName === $login;
                     $response = array(
                         "tool" => $gitTool,
                         "value" => $exists
@@ -49,7 +49,7 @@ class GitToolsController extends AppController
 
             if ($exists)
             {
-                $model = new GitTool($gitTool, $login, $token, $nodeId);
+                $model = new GitTool($gitTool, $login, $token);
                 $this->gitToolRepository->addUserGitTool($nickname, $model);
             }
         }
