@@ -4,7 +4,7 @@ require_once __DIR__.'/Cookies.php';
 require_once __DIR__.'/Session.php';
 
 // TODO: add session to the database
-class User
+class Account
 {
     public function logIn(int $id, string $username)
     {
