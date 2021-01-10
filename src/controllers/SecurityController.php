@@ -3,7 +3,6 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
-require_once __DIR__ . '/../services/Cookies.php';
 
 class SecurityController extends AppController
 {
@@ -13,7 +12,7 @@ class SecurityController extends AppController
     {
         parent::__construct();
         $this->userRepository = new UserRepository();
-        Cookies::deleteCookies();
+        $this->account->logOut();
     }
 
     public function login()
@@ -41,10 +40,9 @@ class SecurityController extends AppController
         {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
-
-        Cookies::setNicknameCookie($user->getNickname());
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/home");
+        // TODO: important!
+        $this->account->logIn($user->getId(), $user->getNickname());
+        $this->redirect('home');
     }
 
     public function register()

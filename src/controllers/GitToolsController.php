@@ -1,9 +1,9 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/GitTool.php';
+require_once __DIR__.'/../models/GitTool.php';
 require_once __DIR__.'/../repository/GitToolRepository.php';
-require_once __DIR__.'/../services/curl/GitHub.php';
+require_once __DIR__.'/../services/Account.php';
 
 class GitToolsController extends AppController
 {
@@ -17,6 +17,15 @@ class GitToolsController extends AppController
 
     public function gitToolConnect()
     {
+        if (!$this->account->isLoggedIn())
+        {
+            $response = array(
+                "message" => 'unauthenticated',
+            );
+            $json = json_encode($response);
+            echo $json;
+        }
+
         $response = null;
 
         if (!$this->isPost())
@@ -28,18 +37,18 @@ class GitToolsController extends AppController
         }
         else
         {
-            $nickname = Cookies::getNickname();
+            $nickname = $this->account->getUserName();
             $gitTool = $_POST['gitTool'];
             $login = $_POST['login'];
             $token = $_POST['token'];
             $exists = false;
-            $nodeId = null;
 
             switch ($gitTool) {
                 case "github":
                     $tool = new GitHub();
-                    $nodeId = $tool->getNodeId($login, $token);
-                    $exists = $nodeId !== null;
+                    // TODO: duplikujący się kod
+                    $gitAccountName = $tool->getUsername($token);
+                    $exists = $gitAccountName === $login;
                     $response = array(
                         "tool" => $gitTool,
                         "value" => $exists
@@ -49,7 +58,7 @@ class GitToolsController extends AppController
 
             if ($exists)
             {
-                $model = new GitTool($gitTool, $login, $token, $nodeId);
+                $model = new GitTool($gitTool, $login, $token);
                 $this->gitToolRepository->addUserGitTool($nickname, $model);
             }
         }
@@ -60,7 +69,16 @@ class GitToolsController extends AppController
 
     public function getConnectedTools()
     {
-        $array = $this->gitToolRepository->getGitTools(Cookies::getNickname());
+        if (!$this->account->isLoggedIn())
+        {
+            $response = array(
+                "message" => 'unauthenticated',
+            );
+            $json = json_encode($response);
+            echo $json;
+        }
+
+        $array = $this->gitToolRepository->getGitTools($this->account->getUserId());
         $toolName1 = "github";
         $toolName2 = "bitbucket";
         $toolName3 = "gitlab";

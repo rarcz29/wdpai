@@ -1,10 +1,9 @@
 <?php
 
-// TODO: update user activity
 class Cookies
 {
     private const USER_NAME_COOKIE = "user_name";
-    private const EXPIRY_TIME = 3600;
+    private const EXPIRY_TIME = 900; // 15 min
 
     public static function setNicknameCookie(string $nickname)
     {

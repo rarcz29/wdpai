@@ -2,7 +2,6 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Project.php';
-require_once __DIR__ . '/../services/Cookies.php';
 require_once __DIR__.'/../repository/ProjectRepository.php';
 require_once __DIR__.'/../services/curl/GitHub.php';
 
@@ -26,12 +25,13 @@ class ProjectController extends AppController
     // TODO: check if repository exists
     public function newProject()
     {
-        if (Cookies::getNickname() === null)
+        if (!$this->account->isLoggedIn())
         {
-            return $this->render("login");
+            $this->redirect();
         }
 
-        if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
+        if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) &&
+            $this->validate($_FILES['file']))
         {
             move_uploaded_file
             (
@@ -45,21 +45,27 @@ class ProjectController extends AppController
             $tool = $_POST["gitTool"];
             $visibility = $_POST["visibility"];
             $private = $visibility === "private";
-            $userNickname = Cookies::getNickname();
-
-            $json = json_decode("{'prop':'val','prop2':'val2'}", true);
-            echo gettype($json);
-            die();
+            $userNickname = $this->account->getUserName();
 
             $gitTool = $this->gitToolRepository->getGitTool($userNickname, $tool);
 
             // API
+            // TODO: switch tools
             $tool = new GitHub();
-            // TODO: check if it's correct
             $response = $tool->createNewRepository($userNickname, $gitTool->getToken(),
                 $title, $description, $private);
+
+            if ($response === null)
+            {
+                // TODO: message
+                $this->render('newProject');
+            }
+
             // Database
-            $project = new Project($title, $description, $img, $tool, $visibility, $response);
+            $project = new Project($title, $description, $img, $tool, $visibility,
+                $response, 0, 0, array(), 0);
+            $project->setOriginUrl($response['url']);
+            $project->setRepoName($response['name']);
             $this->projectRepository->addProject($project);
             return $this->render('home', ['messages' => $this->message]);
         }
@@ -71,6 +77,7 @@ class ProjectController extends AppController
     {
         if ($file['size'] > self::MAX_FILE_SIZE)
         {
+            // TODO: messages
             $this->message[] = 'File is too large for destination file system.';
             return false;
         }

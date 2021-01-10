@@ -5,14 +5,14 @@ class GitTool
     private $name;
     private $login;
     private $token;
-    private $nodeId;
+    // TODO: private $nodeId;
 
-    public function __construct($name, $login, $token, $nodeId)
+    public function __construct($name, $login, $token)
     {
         $this->name = $name;
         $this->login = $login;
         $this->token = $token;
-        $this->nodeId = $nodeId;
+        // TODO: $this->nodeId = $nodeId;
     }
 
     public function getName()
@@ -44,14 +44,14 @@ class GitTool
     {
         $this->token = $token;
     }
-
-    public function getNodeId()
-    {
-        return $this->nodeId;
-    }
-
-    public function setNodeId($nodeId): void
-    {
-        $this->nodeId = $nodeId;
-    }
+// TODO:
+//    public function getNodeId()
+//    {
+//        return $this->nodeId;
+//    }
+//
+//    public function setNodeId($nodeId): void
+//    {
+//        $this->nodeId = $nodeId;
+//    }
 }
