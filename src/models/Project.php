@@ -12,6 +12,8 @@ class Project
     private $dislikes;
     private $comments;
     private $numberOfComments;
+    private $originUrl;
+    private $repoName;
     private $id;
 
 // TODO: visibility as a bool value
@@ -27,6 +29,7 @@ class Project
         $this->dislikes = $dislikes;
         $this->comments = $comments;
         $this->numberOfComments = $numberOfComments;
+        $this->originUrl = $originUrl;
         $this->id = $id;
     }
 
@@ -123,6 +126,26 @@ class Project
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function getOriginUrl(): string
+    {
+        return $this->originUrl;
+    }
+
+    public function setOriginUrl($originUrl): void
+    {
+        $this->originUrl = $originUrl;
+    }
+
+    public function getRepoName()
+    {
+        return $this->repoName;
+    }
+
+    public function setRepoName($repoName): void
+    {
+        $this->repoName = $repoName;
     }
 
     public function setId($id): void

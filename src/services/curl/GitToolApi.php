@@ -2,7 +2,7 @@
 
 abstract class GitToolApi
 {
-    abstract public function getNodeId(string $username, string $token) : ?string;
+    //abstract public function getNodeId(string $username, string $token) : ?string;
     abstract public function createNewRepository(string $username, string $token,
                                                  string $title, string $description,
                                                  bool $private);

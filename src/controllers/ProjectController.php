@@ -47,6 +47,10 @@ class ProjectController extends AppController
             $private = $visibility === "private";
             $userNickname = Cookies::getNickname();
 
+            $json = json_decode("{'prop':'val','prop2':'val2'}", true);
+            echo gettype($json);
+            die();
+
             $gitTool = $this->gitToolRepository->getGitTool($userNickname, $tool);
 
             // API
@@ -55,7 +59,7 @@ class ProjectController extends AppController
             $response = $tool->createNewRepository($userNickname, $gitTool->getToken(),
                 $title, $description, $private);
             // Database
-            $project = new Project($title, $description, $img, $tool, $visibility);
+            $project = new Project($title, $description, $img, $tool, $visibility, $response);
             $this->projectRepository->addProject($project);
             return $this->render('home', ['messages' => $this->message]);
         }
