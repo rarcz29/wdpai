@@ -69,7 +69,6 @@ class GitToolsController extends AppController
 
     public function getConnectedTools()
     {
-        $this->account = new Account();
         if (!$this->account->isLoggedIn())
         {
             $response = array(

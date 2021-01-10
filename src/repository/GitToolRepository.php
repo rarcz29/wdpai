@@ -87,19 +87,6 @@ class GitToolRepository extends Repository
             $gitTool->getToken()
         ]);
     }
-// TODO: remove commented code
-//    private function getUserId(string $nickname): int
-//    {
-//        $stmt = $this->database->connect()->prepare('
-//            SELECT id
-//            FROM users
-//            WHERE nickname = :nickname
-//        ');
-//        $stmt->bindParam(':nickname', $nickname, PDO::PARAM_STR);
-//        $stmt->execute();
-//        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-//        return $data['id'];
-//    }
 
     private function getGitToolId(string $name): int
     {

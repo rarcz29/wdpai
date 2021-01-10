@@ -16,6 +16,15 @@ class ProjectRestApiController extends AppController
 
     public function projects()
     {
+        if (!$this->account->isLoggedIn())
+        {
+            $response = array(
+                "message" => 'unauthenticated',
+            );
+            $json = json_encode($response);
+            echo $json;
+        }
+
         $array = $this->projectRepository->getProjects($this->account->getUserId());
         $arrayOfArrays = null;
 

@@ -12,6 +12,11 @@ class AppController
         $this->request = $_SERVER['REQUEST_METHOD'];
         session_start();
         $this->account = new Account();
+
+        if ($this->account->isLoggedIn())
+        {
+            $this->account->extendUserSessionLife();
+        }
     }
 
     protected function isGet(): bool

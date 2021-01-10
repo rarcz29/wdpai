@@ -19,7 +19,8 @@ class Account
 
     public function isLoggedIn(): bool
     {
-        return Cookies::getNickname() !== null;
+        return Cookies::getNickname() !== null &&
+            Session::getUserId() !== null;
     }
 
     public function getUserId(): ?int
@@ -30,5 +31,13 @@ class Account
     public function getUserName(): ?string
     {
         return Cookies::getNickname();
+    }
+
+    public function extendUserSessionLife()
+    {
+        if ($this->isLoggedIn())
+        {
+            Cookies::setNicknameCookie(Cookies::getNickname());
+        }
     }
 }
