@@ -1,7 +1,6 @@
 <?php
 
 require_once 'AppController.php';
-require_once 'src/services/Account.php';
 
 class DefaultController extends AppController
 {
@@ -17,8 +16,7 @@ class DefaultController extends AppController
 
     public function home()
     {
-        $account = new Account();
-        if (!$account->isLoggedIn())
+        if (!$this->account->isLoggedIn())
         {
             $this->redirect();
         }
@@ -28,8 +26,7 @@ class DefaultController extends AppController
 
     public function community()
     {
-        $account = new Account();
-        if (!$account->isLoggedIn())
+        if (!$this->account->isLoggedIn())
         {
             $this->redirect();
         }

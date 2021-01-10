@@ -1,7 +1,7 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/GitTool.php';
+require_once __DIR__.'/../models/GitTool.php';
 require_once __DIR__.'/../repository/GitToolRepository.php';
 require_once __DIR__.'/../services/Account.php';
 
@@ -17,8 +17,7 @@ class GitToolsController extends AppController
 
     public function gitToolConnect()
     {
-        $account = new Account();
-        if (!$account->isLoggedIn())
+        if (!$this->account->isLoggedIn())
         {
             $response = array(
                 "message" => 'unauthenticated',
@@ -38,16 +37,16 @@ class GitToolsController extends AppController
         }
         else
         {
-            $nickname = $account->getUserName();
+            $nickname = $this->account->getUserName();
             $gitTool = $_POST['gitTool'];
             $login = $_POST['login'];
             $token = $_POST['token'];
             $exists = false;
-            $nodeId = null;
 
             switch ($gitTool) {
                 case "github":
                     $tool = new GitHub();
+                    // TODO: duplikujący się kod
                     $gitAccountName = $tool->getUsername($token);
                     $exists = $gitAccountName === $login;
                     $response = array(
@@ -70,8 +69,8 @@ class GitToolsController extends AppController
 
     public function getConnectedTools()
     {
-        $account = new Account();
-        if (!$account->isLoggedIn())
+        $this->account = new Account();
+        if (!$this->account->isLoggedIn())
         {
             $response = array(
                 "message" => 'unauthenticated',
@@ -80,7 +79,7 @@ class GitToolsController extends AppController
             echo $json;
         }
 
-        $array = $this->gitToolRepository->getGitTools($account->getUserId());
+        $array = $this->gitToolRepository->getGitTools($this->account->getUserId());
         $toolName1 = "github";
         $toolName2 = "bitbucket";
         $toolName3 = "gitlab";

@@ -2,7 +2,6 @@
 
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Project.php';
-require_once __DIR__ . '/../services/Cookies.php';
 require_once __DIR__.'/../repository/ProjectRepository.php';
 require_once __DIR__.'/../services/curl/GitHub.php';
 
@@ -26,12 +25,13 @@ class ProjectController extends AppController
     // TODO: check if repository exists
     public function newProject()
     {
-        if (Cookies::getNickname() === null)
+        if (!$this->account->isLoggedIn())
         {
-            return $this->render("login");
+            $this->redirect();
         }
 
-        if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file']))
+        if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) &&
+            $this->validate($_FILES['file']))
         {
             move_uploaded_file
             (
@@ -45,7 +45,7 @@ class ProjectController extends AppController
             $tool = $_POST["gitTool"];
             $visibility = $_POST["visibility"];
             $private = $visibility === "private";
-            $userNickname = Cookies::getNickname();
+            $userNickname = $this->account->getUserName();
 
             $gitTool = $this->gitToolRepository->getGitTool($userNickname, $tool);
 
@@ -57,6 +57,7 @@ class ProjectController extends AppController
 
             if ($response === null)
             {
+                // TODO: message
                 $this->render('newProject');
             }
 

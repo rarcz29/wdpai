@@ -1,13 +1,17 @@
 <?php
 
+require_once 'src/services/Account.php';
+
 class AppController
 {
+    protected $account;
     private $request;
 
     public function __construct()
     {
         $this->request = $_SERVER['REQUEST_METHOD'];
         session_start();
+        $this->account = new Account();
     }
 
     protected function isGet(): bool
