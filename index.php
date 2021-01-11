@@ -9,7 +9,7 @@ Routing::get('', 'DefaultController');
 Routing::get('signup', 'DefaultController');
 Routing::get('home', 'DefaultController');
 Routing::get('community', 'DefaultController');
-Routing::get('newProject', 'ProjectController');
+Routing::post('newProject', 'ProjectController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('gitToolConnect', 'GitToolsController');
@@ -17,5 +17,6 @@ Routing::get('getConnectedTools', 'GitToolsController');
 Routing::get('projects', 'ProjectRestApiController');
 Routing::get('like', 'ProjectRestApiController');
 Routing::get('dislike', 'ProjectRestApiController');
+Routing::post('admin', 'AdminController');
 
 Routing::run($path);

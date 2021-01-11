@@ -5,7 +5,7 @@ require_once __DIR__.'/../models/Project.php';
 
 class ProjectRepository extends Repository
 {
-    public function addProject(Project $project): void
+    public function addProject(Project $project, int $userId, int $gitToolId): void
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
@@ -14,12 +14,8 @@ class ProjectRepository extends Repository
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ');
 
-        //TODO you should get this value from logged user session
-        $assignedById = 2;
-        $gitToolId = 1;
-
         $stmt->execute([
-            $assignedById,
+            $userId,
             $gitToolId,
             $project->getTitle(),
             $project->getDescription(),

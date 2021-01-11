@@ -1,0 +1,30 @@
+.container {
+    margin-top: 2rem;
+
+    .admin-form form {
+        margin: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        .checkboxes {
+            display: flex;
+            align-items: center;
+
+            input[type="checkbox"] {
+                margin-right: 3rem;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    hr {
+        opacity: 0.4;
+    }
+
+    input[type="submit"] {
+        width: 10rem;
+    }
+}

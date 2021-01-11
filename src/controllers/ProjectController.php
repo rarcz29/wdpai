@@ -66,7 +66,7 @@ class ProjectController extends AppController
                 $response, 0, 0, array(), 0);
             $project->setOriginUrl($response['url']);
             $project->setRepoName($response['name']);
-            $this->projectRepository->addProject($project);
+            $this->projectRepository->addProject($project, $this->account->getUserId(), $gitTool->getId());
             return $this->render('home', ['messages' => $this->message]);
         }
 
