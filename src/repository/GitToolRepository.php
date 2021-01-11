@@ -64,6 +64,7 @@ class GitToolRepository extends Repository
         foreach ($gitTools as $tool)
         {
             $array[] = new GitTool(
+                $tool['id'],
                 $tool['name'],
                 $tool['login'],
                 $tool['token']

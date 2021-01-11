@@ -54,24 +54,4 @@ class User
     {
         $this->password = $password;
     }
-
-//    public function getName(): string
-//    {
-//        return $this->name;
-//    }
-//
-//    public function setName(string $name)
-//    {
-//        $this->name = $name;
-//    }
-//
-//    public function getSurname(): string
-//    {
-//        return $this->surname;
-//    }
-//
-//    public function setSurname(string $surname)
-//    {
-//        $this->surname = $surname;
-//    }
 }
