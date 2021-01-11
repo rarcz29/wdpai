@@ -11,7 +11,7 @@ class UserRolesRepository extends Repository
             SELECT r.description
             FROM users_roles ur
             LEFT JOIN roles r
-                ON ur.id_users = r.id
+                ON ur.id_roles = r.id
             Where id_users = :userId
         ');
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);

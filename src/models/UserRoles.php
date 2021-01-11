@@ -8,6 +8,7 @@ class UserRoles
     public function __construct(bool $admin, bool $moderator)
     {
         $this->admin = $admin;
+        $this->moderator = $moderator;
     }
 
     public function isAdmin(): bool

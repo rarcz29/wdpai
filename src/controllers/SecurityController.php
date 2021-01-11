@@ -63,7 +63,7 @@ class SecurityController extends AppController
         }
 
         //TODO try to use better hash function
-        $user = new User($nickname, $email, md5($password));
+        $user = new User(0, $nickname, $email, md5($password));
         $this->userRepository->addUser($user);
 
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);

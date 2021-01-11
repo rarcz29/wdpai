@@ -13,7 +13,7 @@ class Account
         Cookies::setNicknameCookie($username);
         Session::setUserId($id);
         $rolesRepo = new UserRolesRepository();
-        $roles = $rolesRepo->getRoles();
+        $roles = $rolesRepo->getRoles(Session::getUserId());
         Session::setAdminPrivileges($roles->isAdmin());
         Session::setModeratorPrivileges($roles->isModerator());
     }
@@ -42,6 +42,18 @@ class Account
     {
         $this->logOutIfNoData();
         return Cookies::getNickname();
+    }
+
+    public function isAdmin(): ?bool
+    {
+        $this->logOutIfNoData();
+        return Session::isAdmin();
+    }
+
+    public function isModerator(): ?bool
+    {
+        $this->logOutIfNoData();
+        return Session::isModerator();
     }
 
     public function extendUserSessionLife()

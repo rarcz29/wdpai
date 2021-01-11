@@ -16,6 +16,10 @@ class DefaultController extends AppController
 
     public function home()
     {
+        echo $this->account->isAdmin();
+        echo $this->account->isModerator();
+        die();
+
         if (!$this->account->isLoggedIn())
         {
             $this->redirect();
