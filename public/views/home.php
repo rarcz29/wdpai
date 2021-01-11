@@ -6,7 +6,7 @@
 <?php require_once __DIR__ . '/shared/_headTag.php'; ?>
 
 <body>
-    <?php require __DIR__.'/shared/_header.html'; ?>
+    <?php require __DIR__ . '/shared/_header.php'; ?>
 
     <main class="home-main-container">
         <section class="home-left-container">

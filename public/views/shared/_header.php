@@ -8,6 +8,12 @@
                 <li><a href="community">Community</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Help</a></li>
+                <?php
+                    if ($_SESSION['admin'] === true)
+                    {
+                        echo "<li><a href='#'>Admin</a></li>";
+                    }
+                ?>
             </ul>
         </nav>
 
