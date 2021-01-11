@@ -14,10 +14,6 @@ class ProjectRepository extends Repository
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ');
 
-        //TODO you should get this value from logged user session
-        //$assignedById = 2;
-        //$gitToolId = 1;
-
         $stmt->execute([
             $userId,
             $gitToolId,

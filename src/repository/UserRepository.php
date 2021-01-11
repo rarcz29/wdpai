@@ -30,24 +30,8 @@ class UserRepository extends Repository
 
     public function addUser(User $user)
     {
-        // users table
         $stmt = $this->database->connect()->prepare('
             INSERT INTO users (nickname, email, password)
-            VALUES (?, ?, ?)
-            RETURNING id
-        ');
-
-        $stmt->execute([
-            $user->getNickname(),
-            $user->getEmail(),
-            $user->getPassword(),
-        ]);
-
-        $id = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // users_roles table
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO users_roles (nickname, email, password)
             VALUES (?, ?, ?)
         ');
 
@@ -57,6 +41,4 @@ class UserRepository extends Repository
             $user->getPassword(),
         ]);
     }
-
-    private
 }
