@@ -11,7 +11,7 @@
                 <?php
                     if ($_SESSION['admin'] === true)
                     {
-                        echo "<li><a href='#'>Admin</a></li>";
+                        echo "<li><a href='admin'>Admin</a></li>";
                     }
                 ?>
             </ul>

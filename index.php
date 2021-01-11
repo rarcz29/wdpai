@@ -17,5 +17,6 @@ Routing::get('getConnectedTools', 'GitToolsController');
 Routing::get('projects', 'ProjectRestApiController');
 Routing::get('like', 'ProjectRestApiController');
 Routing::get('dislike', 'ProjectRestApiController');
+Routing::get('admin', 'AdminController');
 
 Routing::run($path);
