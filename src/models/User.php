@@ -1,11 +1,14 @@
 <?php
 
+require_once 'UserRoles.php';
+
 class User
 {
     private $id;
     private $nickname;
     private $email;
     private $password;
+    private $userRoles;
 
     public function __construct(string $id, string $nickname, string $email, string $password)
     {
@@ -53,5 +56,15 @@ class User
     public function setPassword(string $password)
     {
         $this->password = $password;
+    }
+
+    public function getUserRoles(): ?UserRoles
+    {
+        return $this->userRoles;
+    }
+
+    public function setUserRoles(UserRoles $userRoles): void
+    {
+        $this->userRoles = $userRoles;
     }
 }

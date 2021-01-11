@@ -1,0 +1,38 @@
+.container {
+  margin-top: 2rem;
+}
+
+.container .admin-form form {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .admin-form form .checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .admin-form form .checkboxes input[type="checkbox"] {
+  margin-right: 3rem;
+}
+
+.container .admin-form form p {
+  margin-bottom: 0;
+}
+
+.container hr {
+  opacity: 0.4;
+}
+
+.container input[type="submit"] {
+  width: 10rem;
+}

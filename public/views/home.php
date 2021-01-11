@@ -14,8 +14,7 @@
             <div class="projects-container">
                 <section>
                     <form class="search-form search-projects-form">
-                        <input class="input-field-round" placeholder="&#xF002; Find a project"
-                            style="font-family:Arial, FontAwesome">
+                        <input class="input-field-round" placeholder="&#xF002; Find a project">
                             <!-- TODO: fix fonts -->
                     </form>
 

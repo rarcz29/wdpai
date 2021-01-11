@@ -53,6 +53,11 @@ class UserRolesRepository extends Repository
         ]);
     }
 
+    public function updateRoles(int $userId, UserRoles $roles)
+    {
+        // TODO: !important - update roles
+    }
+
     private function getRoleId(string $role)
     {
         $stmt = $this->database->connect()->prepare('

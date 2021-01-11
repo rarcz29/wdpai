@@ -33,6 +33,10 @@
                 $resources = "<link rel='stylesheet' href='public/css/community.css' />".
                              "<script defer src='public/js/community.js'></script>";
                 break;
+
+            case 'admin':
+                $resources = "<link rel='stylesheet' href='public/css/admin.css' />";
+                break;
         }
 
         echo $resources;
