@@ -21,5 +21,7 @@ class AdminController extends AppController
             $this->redirect('home');
         }
 
+        $users = $this->userRepository->getAllUsers();
+        $this->render('admin', ['users' => $users]);
     }
 }

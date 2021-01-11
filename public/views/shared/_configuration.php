@@ -24,4 +24,9 @@
             $_SESSION['state'] = "community";
             $_SESSION['title'] = "CNone | Community";
             break;
+
+        case "/admin":
+            $_SESSION['state'] = "admin";
+            $_SESSION['title'] = "CNone | Admin";
+            break;
     }
