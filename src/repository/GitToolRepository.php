@@ -29,6 +29,7 @@ class GitToolRepository extends Repository
         }
 
         return new GitTool(
+            $gitTool['id'],
             $gitTool['name'],
             $gitTool['login'],
             $gitTool['token']
