@@ -19,6 +19,9 @@
 
         <section class="projects-container">
             <article class="comment-section">
+                <button class="exit-button">
+                    <i class="fas fa-times"></i>
+                </button>
                 <div class="write-comment-section">
                     <form>
                         <input type="text">

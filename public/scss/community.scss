@@ -168,6 +168,22 @@
     width: 100%;
     background-color: black;
     border-radius: 1rem;
+    padding-top: 3rem;
+    position: relative;
+
+    .exit-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        border-radius: 1rem;
+        border-width: 0;
+        transition: background-color ease-in-out $transition-time;
+
+        &:hover {
+            background-color: red;
+            cursor: pointer;
+        }
+    }
 
     .write-comment-section {
         margin: 2rem;

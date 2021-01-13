@@ -188,6 +188,23 @@
   width: 100%;
   background-color: black;
   border-radius: 1rem;
+  padding-top: 3rem;
+  position: relative;
+}
+
+.comment-section .exit-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 1rem;
+  border-width: 0;
+  -webkit-transition: background-color ease-in-out 0.5s;
+  transition: background-color ease-in-out 0.5s;
+}
+
+.comment-section .exit-button:hover {
+  background-color: red;
+  cursor: pointer;
 }
 
 .comment-section .write-comment-section {
