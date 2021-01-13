@@ -18,5 +18,7 @@ Routing::get('projects', 'ProjectRestApiController');
 Routing::get('like', 'ProjectRestApiController');
 Routing::get('dislike', 'ProjectRestApiController');
 Routing::post('admin', 'AdminController');
+Routing::post('comment', 'CommentController');
+Routing::get('comments', 'CommentController');
 
 Routing::run($path);

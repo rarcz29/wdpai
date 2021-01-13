@@ -96,7 +96,8 @@
         </button>
         <div class="write-comment-section">
             <form>
-                <input type="text">
+                <input type="text" name="text" autocomplete="off">
+                <input type="hidden" name="project-id">
                 <button type="submit" class="bt-green">
                     <i class="fas fa-paper-plane"></i>
                 </button>
@@ -110,15 +111,15 @@
     </article>
 </template>
 
-<template id="single-comment">
+<template id="single-comment-template">
     <section class="comment">
         <button class="bt-red">remove</button>
         <header>
-            <h2>Username</h2>
-            <p>99/99/9999</p>
+            <h2></h2>
+            <p></p>
         </header>
         <div>
-            <p>My super comment. My super comment. My super comment. </p>
+            <p></p>
         </div>
     </section>
 </template>

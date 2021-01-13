@@ -36,8 +36,10 @@ class CommentRepository extends Repository
         return $array;
     }
 
-    public function addComment(int $projectId, int $userId, string $text, string $date): ?int
+    public function addComment(int $projectId, int $userId, string $text, string $userName): ?Comment
     {
+        $date = new DateTime();
+
         $stmt = $this->database->connect()->prepare('
             INSERT INTO comments (id_projects, id_users, text, date)
             VALUES (?, ?, ?, ?)
@@ -48,10 +50,13 @@ class CommentRepository extends Repository
             $projectId,
             $userId,
             $text,
-            $date
+            $date->format('Y-m-d'),
         ]);
 
         $output = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $output['id'];
+        $id = $output['id'];
+        return $id === null
+            ? null
+            : new Comment($id, $userName, $text, $date->format('Y-m-d'));
     }
 }
