@@ -1,7 +1,7 @@
 .new-project-form textarea,
 .new-project-form input[type="text"] {
   font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .new-project-form .upload-img-container {
@@ -16,7 +16,7 @@
 }
 
 .new-project-form .upload-img-container .add-background-img-bt {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   width: 300px;
 }
 
@@ -80,19 +80,21 @@
 }
 
 .new-project-form .git-form {
-  padding-top: 0.1px;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.1px;
+  margin-bottom: 2rem;
   background-color: #2d2e2e;
   width: 100%;
+  border-radius: 1rem;
 }
 
 .new-project-form .git-form h1 {
   margin-left: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-size: 1.4rem;
 }
 
 .new-project-form .git-form hr {
   width: calc(100% - 2 * 2rem);
+  margin-bottom: 3rem;
 }

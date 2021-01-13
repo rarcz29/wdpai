@@ -11,7 +11,7 @@ class GitToolRepository extends Repository
             SELECT ug.*, g.*
             FROM user_git_tools ug
             LEFT JOIN git_tools g
-                ON ug.id_git_tools = g.id AND 
+                ON ug.id_git_tools = g.id
             WHERE
                 name = :gitToolName AND
                 ug.id_user = :userId

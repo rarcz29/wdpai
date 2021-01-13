@@ -44,16 +44,16 @@ class Account
         return Cookies::getNickname();
     }
 
-    public function isAdmin(): ?bool
+    public function isAdmin(): bool
     {
         $this->logOutIfNoData();
-        return Session::isAdmin();
+        return Session::isAdmin() === true;
     }
 
-    public function isModerator(): ?bool
+    public function isModerator(): bool
     {
         $this->logOutIfNoData();
-        return Session::isModerator();
+        return Session::isModerator() === true;
     }
 
     public function extendUserSessionLife()
