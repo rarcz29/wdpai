@@ -113,7 +113,7 @@
 
 <template id="single-comment-template">
     <section class="comment">
-        <button class="bt-red">remove</button>
+        <?php if ($_SESSION['moderator']) echo "<button class='bt-red'>remove</button>" ?>
         <header>
             <h2></h2>
             <p></p>
