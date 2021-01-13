@@ -17,7 +17,42 @@
             </ul>
         </nav>
 
-        <section class="projects-container"></section>
+        <section class="projects-container">
+            <article class="comment-section">
+                <div class="write-comment-section">
+                    <form>
+                        <input type="text">
+                        <button type="submit" class="bt-green">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="comments">
+                    <section class="comment">
+                        <button class="bt-red">remove</button>
+                        <header>
+                            <h2>Username</h2>
+                            <p>99/99/9999</p>
+                        </header>
+                        <div>
+                            <p>My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. </p>
+                        </div>
+                    </section>
+                    <section class="comment">
+                        <button class="bt-red">remove</button>
+                        <header>
+                            <h2>Username</h2>
+                            <p>99/99/9999</p>
+                        </header>
+                        <div>
+                            <p>My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. My super comment. </p>
+                        </div>
+                    </section>
+                </div>
+
+            </article>
+        </section>
 
     </main>
 

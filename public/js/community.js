@@ -34,19 +34,23 @@ function getAllProjects() {
                     clone.querySelector("article").id = value.id;
                     container.appendChild(clone);
 
-                    likesListener();
+                    listener();
                 });
             }
         });
 }
 
-function likesListener() {
+function listener() {
     const likeButtons = document.querySelectorAll(".fa-thumbs-up");
     const dislikeButtons = document.querySelectorAll(".fa-thumbs-down");
+    const commentsButtons = document.querySelectorAll(".fa-comments");
 
     likeButtons.forEach((button) => button.addEventListener("click", giveLike));
     dislikeButtons.forEach((button) =>
         button.addEventListener("click", giveDislike)
+    );
+    commentsButtons.forEach((button) =>
+        button.addEventListener("click", showComments)
     );
 }
 
@@ -56,7 +60,6 @@ function giveLike() {
         likes.parentElement.parentElement.parentElement.parentElement
             .parentElement;
     const id = container.getAttribute("id");
-    console.log(id);
 
     fetch(`/like/${id}`).then(() => {
         const likesContainer = likes.parentElement;
@@ -71,11 +74,20 @@ function giveDislike() {
         dislikes.parentElement.parentElement.parentElement.parentElement
             .parentElement;
     const id = container.getAttribute("id");
-    console.log(id);
 
     fetch(`/dislike/${id}`).then(() => {
         const likesContainer = dislikes.parentElement;
         const values = likesContainer.querySelectorAll("p");
         values[1].innerHTML = parseInt(values[1].innerHTML) + 1;
     });
+}
+
+function showComments() {
+    const comments = this;
+    const container =
+        comments.parentElement.parentElement.parentElement.parentElement
+            .parentElement;
+    const id = container.getAttribute("id");
+
+    console.log(id);
 }
