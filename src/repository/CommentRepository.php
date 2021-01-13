@@ -35,4 +35,23 @@ class CommentRepository extends Repository
 
         return $array;
     }
+
+    public function addComment(int $projectId, int $userId, string $text, string $date): ?int
+    {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO comments (id_projects, id_users, text, date)
+            VALUES (?, ?, ?, ?)
+            RETURNING id
+        ');
+
+        $stmt->execute([
+            $projectId,
+            $userId,
+            $text,
+            $date
+        ]);
+
+        $output = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $output['id'];
+    }
 }
