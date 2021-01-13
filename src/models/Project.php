@@ -1,33 +1,29 @@
 <?php
 
-
 class Project
 {
     private $title;
     private $description;
     private $image;
     private $tool;
-    private $visibility;
+    private $private;
     private $likes;
     private $dislikes;
-    private $comments;
     private $numberOfComments;
     private $originUrl;
     private $repoName;
     private $id;
 
-// TODO: visibility as a bool value
-    public function __construct($title, $description, $image, $tool, $visibility,
-                                $likes, $dislikes, $comments, $numberOfComments, $id = null)
+    public function __construct($title, $description, $image, $tool, $private,
+                                $likes, $dislikes, $numberOfComments, $id = null)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->tool = $tool;
-        $this->visibility = $visibility;
+        $this->private = $private;
         $this->likes = $likes;
         $this->dislikes = $dislikes;
-        $this->comments = $comments;
         $this->numberOfComments = $numberOfComments;
         $this->id = $id;
     }
@@ -37,7 +33,7 @@ class Project
         return $this->title;
     }
 
-    public function setTitle($title): void
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
@@ -47,7 +43,7 @@ class Project
         return $this->description;
     }
 
-    public function setDescription($description): void
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
@@ -57,7 +53,7 @@ class Project
         return $this->image;
     }
 
-    public function setImage($image): void
+    public function setImage(string $image)
     {
         $this->image = $image;
     }
@@ -67,19 +63,19 @@ class Project
         return $this->tool;
     }
 
-    public function setTool($tool): void
+    public function setTool(string $tool)
     {
         $this->tool = $tool;
     }
 
-    public function getVisibility(): string
+    public function isPrivate(): bool
     {
-        return $this->visibility;
+        return $this->private;
     }
 
-    public function setVisibility($visibility): void
+    public function setPrivate(bool $private)
     {
-        $this->visibility = $visibility;
+        $this->private = $private;
     }
 
     public function getLikes(): int
@@ -87,7 +83,7 @@ class Project
         return $this->likes;
     }
 
-    public function setLikes($likes): void
+    public function setLikes(int $likes)
     {
         $this->likes = $likes;
     }
@@ -97,19 +93,9 @@ class Project
         return $this->dislikes;
     }
 
-    public function setDislikes($dislikes): void
+    public function setDislikes(int $dislikes)
     {
         $this->dislikes = $dislikes;
-    }
-
-    public function getComments(): array
-    {
-        return $this->comments;
-    }
-
-    public function setComments($comments): void
-    {
-        $this->comments = $comments;
     }
 
     public function getNumberOfComments(): int
@@ -117,14 +103,9 @@ class Project
         return $this->numberOfComments;
     }
 
-    public function setNumberOfComments($numberOfComments): void
+    public function setNumberOfComments(int $numberOfComments)
     {
         $this->numberOfComments = $numberOfComments;
-    }
-
-    public function getId(): int
-    {
-        return $this->id;
     }
 
     public function getOriginUrl(): string
@@ -132,22 +113,27 @@ class Project
         return $this->originUrl;
     }
 
-    public function setOriginUrl($originUrl): void
+    public function setOriginUrl(string $originUrl)
     {
         $this->originUrl = $originUrl;
     }
 
-    public function getRepoName()
+    public function getRepoName(): string
     {
         return $this->repoName;
     }
 
-    public function setRepoName($repoName): void
+    public function setRepoName(string $repoName)
     {
         $this->repoName = $repoName;
     }
 
-    public function setId($id): void
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id)
     {
         $this->id = $id;
     }

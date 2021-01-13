@@ -13,7 +13,7 @@ class GitHub extends GitToolApi
 
     // TODO: this method should return bool
     public function createNewRepository(string $username, string $token, string $title,
-                                        string $description, bool $private): ?array
+                                        string $description, bool $private): ?Project
     {
         if ($this->getUsername($token) !== $username)
         {
@@ -27,16 +27,19 @@ class GitHub extends GitToolApi
             "auto_init" => true
         );
         $output = $this->post("https://api.github.com/user/repos", $username, $token, $postData);
-        $json = json_decode($output, true)['svn_url'];
+        $json = json_decode($output, true);
 
-        if ($json['message'] !== null)
+        if ($json['message'])
         {
-            return null;
+            //TODO private repo
+            echo $json['message'];
+            die();
         }
 
-        return array(
-            'name' => $json['name'],
-            'url' => $json['svn_url']
-        );
+        $project = new Project($title, $json['description'], '',
+            'github', $json['private'], 0, 0, 0);
+        $project->setOriginUrl($json['url']);
+        $project->setRepoName($json['name']);
+        return $project;
     }
 }

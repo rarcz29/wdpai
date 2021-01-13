@@ -10,8 +10,8 @@ class ProjectRepository extends Repository
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
             INSERT INTO projects (id_users, id_git_tools, title, description,
-                image, created_at, urigin_url, repo_name)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                image, private, created_at, origin_url, repo_name)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         ');
 
         $stmt->execute([
@@ -20,6 +20,7 @@ class ProjectRepository extends Repository
             $project->getTitle(),
             $project->getDescription(),
             $project->getImage(),
+            $project->isPrivate() ? 1 : 0,
             $date->format('Y-m-d'),
             $project->getOriginUrl(),
             $project->getRepoName()
@@ -61,10 +62,9 @@ class ProjectRepository extends Repository
                 $project['description'],
                 $project['image'],
                 $project['git_name'],
-                true,
+                $project['private'],
                 $project['likes'],
                 $project['dislikes'],
-                "null",
                 $project['number_of_comments'],
                 $project['id']
             );

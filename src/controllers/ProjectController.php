@@ -43,29 +43,24 @@ class ProjectController extends AppController
             $description = $_POST['description'];
             $img = $_FILES['file']['name'];
             $tool = $_POST["gitTool"];
-            $visibility = $_POST["visibility"];
-            $private = $visibility === "private";
-            $userNickname = $this->account->getUserName();
+            $private = $_POST["visibility"] === 'private';
 
-            $gitTool = $this->gitToolRepository->getGitTool($userNickname, $tool);
+            $gitTool = $this->gitToolRepository->getGitTool($this->account->getUserId(), $tool);
 
             // API
             // TODO: switch tools
             $tool = new GitHub();
-            $response = $tool->createNewRepository($userNickname, $gitTool->getToken(),
+            $project = $tool->createNewRepository($gitTool->getLogin(), $gitTool->getToken(),
                 $title, $description, $private);
 
-            if ($response === null)
+            if ($project === null)
             {
                 // TODO: message
                 $this->render('newProject');
             }
 
             // Database
-            $project = new Project($title, $description, $img, $tool, $visibility,
-                $response, 0, 0, array(), 0);
-            $project->setOriginUrl($response['url']);
-            $project->setRepoName($response['name']);
+            $project->setImage($img);
             $this->projectRepository->addProject($project, $this->account->getUserId(), $gitTool->getId());
             return $this->render('home', ['messages' => $this->message]);
         }
