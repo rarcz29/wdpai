@@ -38,7 +38,7 @@ class GitHub extends GitToolApi
 
         $project = new Project($title, $json['description'], '',
             'github', $json['private'], 0, 0, 0);
-        $project->setOriginUrl($json['url']);
+        $project->setOriginUrl($json['html_url']);
         $project->setRepoName($json['name']);
         return $project;
     }

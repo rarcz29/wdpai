@@ -251,7 +251,7 @@
 </body>
 
 <template id="project-tile-template">
-    <a href="#">
+    <a href="#" target="_blank">
         <div class="project-tile">
             <div>
                 <h1>Title</h1>

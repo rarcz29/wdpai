@@ -54,10 +54,9 @@ class ProjectRepository extends Repository
 
         $array = null;
 
-        // TODO: add visibility and comments to the database
         foreach ($projects as $project)
         {
-            $array[] = new Project(
+            $currentProject = new Project(
                 $project['title'],
                 $project['description'],
                 $project['image'],
@@ -68,6 +67,9 @@ class ProjectRepository extends Repository
                 $project['number_of_comments'],
                 $project['id']
             );
+
+            $currentProject->setOriginUrl($project['origin_url']);
+            $array[] = $currentProject;
         }
 
         return $array;
