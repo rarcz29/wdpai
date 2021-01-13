@@ -111,6 +111,16 @@
   margin-bottom: 1rem;
 }
 
+.home-left-container .projects-container .projects ul li a:hover .project-tile {
+  border-color: white;
+}
+
+.home-left-container .projects-container .projects ul li a:hover .project-tile img {
+  opacity: 1;
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
 .home-left-container .projects-container .projects ul li a .project-tile {
   background-color: transparent;
   width: 100%;
@@ -124,10 +134,6 @@
   overflow: hidden;
 }
 
-.home-left-container .projects-container .projects ul li a .project-tile:hover {
-  border-color: white;
-}
-
 .home-left-container .projects-container .projects ul li a .project-tile img {
   position: absolute;
   left: 0;
@@ -139,12 +145,6 @@
   opacity: 0.1;
   -webkit-transition: all ease-out 0.5s;
   transition: all ease-out 0.5s;
-}
-
-.home-left-container .projects-container .projects ul li a .project-tile img:hover {
-  opacity: 1;
-  -webkit-transform: scale(1.08);
-          transform: scale(1.08);
 }
 
 .home-left-container .projects-container .projects ul li a .project-tile div {
