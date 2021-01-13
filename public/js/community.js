@@ -83,11 +83,27 @@ function giveDislike() {
 }
 
 function showComments() {
+    removeComments();
     const comments = this;
     const container =
         comments.parentElement.parentElement.parentElement.parentElement
             .parentElement;
     const id = container.getAttribute("id");
+    const projectsContainer = container.parentElement;
+    const template = document.querySelector("#comments-section-template");
+    let commentsContainer = template.content.cloneNode(true);
+    projectsContainer.insertBefore(commentsContainer, container.nextSibling);
+    commentsContainer = projectsContainer.querySelector(".comment-section");
+    commentsContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+    });
+    commentsContainer
+        .querySelector(".exit-button")
+        .addEventListener("click", removeComments);
+}
 
-    console.log(id);
+function removeComments() {
+    const comments = document.querySelectorAll(".comment-section");
+    comments.forEach((container) => container.remove());
 }
