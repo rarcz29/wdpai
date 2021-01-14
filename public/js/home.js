@@ -77,7 +77,7 @@ function getRequests() {
     fetch("joinRequests")
         .then((response) => response.json())
         .then((data) => {
-            displayRequests(data);
+            //displayRequests(data);
         });
 }
 
