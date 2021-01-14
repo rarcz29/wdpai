@@ -219,11 +219,13 @@ function addJoinRequest() {
     const button = this;
     const container = button.parentElement.parentElement;
     const id = container.id;
-    fetch(`/addJoinRequest/${id}`)
-        .then((response) => response.text())
-        .then((data) => {
-            console.log(data);
-        });
+    const text = container.querySelector(".image > h1");
+
+    if (text.innerHTML !== "REQUESTED") {
+        fetch(`/addJoinRequest/${id}`);
+        text.innerHTML = "REQUESTED";
+    }
+    //
     //location.href = "home";
 }
 

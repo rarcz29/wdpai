@@ -197,6 +197,7 @@
   width: 100%;
   height: 90%;
   margin-top: 1rem;
+  display: none;
 }
 
 .home-news-container .join-project-message {

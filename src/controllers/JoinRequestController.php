@@ -63,6 +63,17 @@ class JoinRequestController extends AppController
         $requests = $this->joinRequestRepository->getRequests($this->account->getUserId());
         $array = null;
 
+        if (!$requests)
+        {
+            $response = array(
+                "message" => 'Empty'
+            );
+            http_response_code(200);
+            $json = json_encode($response);
+            echo $json;
+            return;
+        }
+
         foreach ($requests as $request)
         {
             $array[] = array(

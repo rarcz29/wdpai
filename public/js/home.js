@@ -4,6 +4,7 @@ form.addEventListener("submit", logSubmit);
 document.addEventListener("DOMContentLoaded", () => {
     checkConnection();
     getProjects();
+    getRequests();
 });
 
 function logSubmit(event) {
@@ -69,5 +70,35 @@ function displayProjects(data) {
             element.appendChild(clone);
             container.appendChild(element);
         });
+    }
+}
+
+function getRequests() {
+    fetch("joinRequests")
+        .then((response) => response.json())
+        .then((data) => {
+            displayRequests(data);
+        });
+}
+
+function displayRequests(data) {
+    const container = document.querySelector(".home-news-container");
+
+    if (Object.values(data).message) {
+        const template = document.querySelector("#project-tile-template");
+        Object.values(data).forEach((value) => {
+            const clone = template.content.cloneNode(true);
+            container.appendChild(clone);
+        });
+    } else {
+        showEmptyImage();
+    }
+}
+
+function showEmptyImage() {
+    const image = document.querySelector("#news-empty-image");
+
+    if (image) {
+        image.style.display = "block";
     }
 }
