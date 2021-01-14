@@ -114,26 +114,6 @@
 
         <section class="home-news-container">
             <div id="news-empty-image"></div>
-            <article class="join-request">
-                <div class="request-info">
-                    <h1>username</h1>
-                    <p>want's to join your project <span>projectName</span></p>
-                </div>
-                <div class="request-buttons">
-                    <button class="input-field-round button bt-blue">Accept</button>
-                    <button class="input-field-round button bt-red">Decline</button>
-                </div>
-            </article>
-            <article class="join-request">
-                <div class="request-info">
-                    <h1>username</h1>
-                    <p>want's to join your project <span>projectName</span></p>
-                </div>
-                <div class="request-buttons">
-                    <button class="input-field-round button bt-blue">Accept</button>
-                    <button class="input-field-round button bt-red">Decline</button>
-                </div>
-            </article>
             <!-- <img id="news-empty-image" src="public/img/empty.png" alt="emtpy image"> -->
             <!-- <section class="join-project-message">
                 <img src="public/img/example/faces/image-2.png" alt="Avatar">
@@ -280,6 +260,19 @@
             <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
         </div>
     </a>
+</template>
+
+<template id="notification-template">
+    <article class="join-request">
+        <div class="request-info">
+            <h1>username</h1>
+            <p>want's to join your project <span>projectName</span></p>
+        </div>
+        <div class="request-buttons">
+            <button class="input-field-round button bt-green">Accept</button>
+            <button class="input-field-round button bt-red">Decline</button>
+        </div>
+    </article>
 </template>
 
 </html>

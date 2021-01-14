@@ -29,11 +29,14 @@ class ProjectRepository extends Repository
 
     public function getProjects(int $userId = null): ?array
     {
+        $collaboration = null;
         $where = ' ';
 
         if ($userId)
         {
-            $where = ' WHERE p.id_users = :userId ';
+            $where = '
+                WHERE p.id_users = :userId
+            ';
         }
 
         $stmt = $this->database->connect()->prepare('

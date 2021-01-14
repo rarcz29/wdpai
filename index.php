@@ -24,5 +24,7 @@ Routing::get('comments', 'CommentController');
 Routing::get('removeComment', 'CommentController');
 Routing::get('addJoinRequest', 'JoinRequestController');
 Routing::get('joinRequests', 'JoinRequestController');
+Routing::get('accept', 'JoinRequestController');
+Routing::get('decline', 'JoinRequestController');
 
 Routing::run($path);

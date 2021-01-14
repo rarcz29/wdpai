@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function logSubmit(event) {
     const formattedData = new FormData(form);
-    //formattedFormData.append("property", "value");
 
     fetch("gitToolConnect", { method: "POST", body: formattedData })
         .then((response) => response.json())
@@ -77,19 +76,26 @@ function getRequests() {
     fetch("joinRequests")
         .then((response) => response.json())
         .then((data) => {
-            //displayRequests(data);
+            displayRequests(data);
         });
 }
 
 function displayRequests(data) {
     const container = document.querySelector(".home-news-container");
 
-    if (Object.values(data).message) {
-        const template = document.querySelector("#project-tile-template");
+    if (!data.message) {
+        const template = document.querySelector("#notification-template");
         Object.values(data).forEach((value) => {
             const clone = template.content.cloneNode(true);
+            const username = clone.querySelector("h1");
+            const projectName = clone.querySelector(".request-info > p > span");
+            username.parentElement.parentElement.id = value.id;
+            username.innerHTML = value.username;
+            projectName.innerHTML = value.title;
             container.appendChild(clone);
         });
+
+        requestButtons(container);
     } else {
         showEmptyImage();
     }
@@ -101,4 +107,30 @@ function showEmptyImage() {
     if (image) {
         image.style.display = "block";
     }
+}
+
+function requestButtons(container) {
+    const acceptButtons = container.querySelectorAll(".bt-green");
+    const declineButtons = container.querySelectorAll(".bt-red");
+
+    acceptButtons.forEach((button) =>
+        button.addEventListener("click", acceptRequest)
+    );
+    declineButtons.forEach((button) =>
+        button.addEventListener("click", declineRequest)
+    );
+}
+
+function acceptRequest() {
+    const button = this;
+    const container = button.parentElement.parentElement;
+    fetch(`/accept/${container.id}`);
+    container.remove();
+}
+
+function declineRequest() {
+    const button = this;
+    const container = button.parentElement.parentElement;
+    fetch(`/decline/${container.id}`);
+    container.remove();
 }

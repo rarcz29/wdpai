@@ -26,25 +26,6 @@ class JoinRequestController extends AppController
         {
             http_response_code(401);
         }
-
-//        if ($this->isPost())
-//        {
-//            $comment = $this->addComment();
-//
-//            if ($comment === null)
-//            {
-//                $response = array(
-//                    "message" => 'Error',
-//                );
-//                $json = json_encode($response);
-//                echo $json;
-//                return;
-//            }
-//
-//            $array = $this->createCommentArray($comment);
-//            $json = json_encode($array);
-//            echo $json;
-//        }
     }
 
     public function joinRequests()
@@ -66,7 +47,7 @@ class JoinRequestController extends AppController
         if (!$requests)
         {
             $response = array(
-                "message" => 'Empty'
+                "message" => 'empty'
             );
             http_response_code(200);
             $json = json_encode($response);
@@ -87,31 +68,21 @@ class JoinRequestController extends AppController
         echo json_encode($array);
     }
 
-//    public function removeComment(int $id)
-//    {
-//        if ($this->account->isLoggedIn())
-//        {
-//            $this->commentRepository->removeComment($id);
-//            http_response_code(200);
-//        }
-//    }
-//
-//    private function addComment(): ?Comment
-//    {
-//        $projectId = $_POST['project-id'];
-//        $text = $_POST['text'];
-//        $userId = $this->account->getUserId();
-//        $userName = $this->account->getUserName();
-//        return $this->commentRepository->addComment($projectId, $userId, $text, $userName);
-//    }
-//
-//    private function createCommentArray(Comment $comment): array
-//    {
-//        return array(
-//            'id' => $comment->getId(),
-//            'creator' => $comment->getCreator(),
-//            'text' => $comment->getText(),
-//            'date' => $comment->getDate()
-//        );
-//    }
+    public function accept(int $id)
+    {
+        if ($this->account->isLoggedIn())
+        {
+            $this->joinRequestRepository->confirmRequest($id);
+            http_response_code(200);
+        }
+    }
+
+    public function decline(int $id)
+    {
+        if ($this->account->isLoggedIn())
+        {
+            $this->joinRequestRepository->removeRequest($id);
+            http_response_code(200);
+        }
+    }
 }

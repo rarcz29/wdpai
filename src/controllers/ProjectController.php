@@ -62,7 +62,7 @@ class ProjectController extends AppController
             // Database
             $project->setImage($img);
             $this->projectRepository->addProject($project, $this->account->getUserId(), $gitTool->getId());
-            return $this->render('home', ['messages' => $this->message]);
+            $this->redirect('home');
         }
 
         return $this->render('newProject', ['messages' => $this->message]);

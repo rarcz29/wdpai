@@ -14,7 +14,7 @@ class JoinRequestRepository extends Repository
             ON jr.id_projects = p.id
             LEFT JOIN users u
             ON jr.id_users = u.id
-            WHERE u.id = :userId
+            WHERE p.id_users = :userId
         ');
 
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
@@ -41,13 +41,23 @@ class JoinRequestRepository extends Repository
     {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO join_requests (id_projects, id_users)
-            VALUES (?, ?)
+            SELECT :projectId, :userId
+            WHERE NOT EXISTS
+                (
+                    SELECT u.id
+                    FROM users u
+                    LEFT JOIN projects p
+                        ON u.id = p.id_users
+                    WHERE u.id = :userId2
+                        AND p.id = :projectId2
+                )
         ');
 
-        $stmt->execute([
-            $projectId,
-            $userId
-        ]);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);
+        $stmt->bindParam(':userId2', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':projectId2', $projectId, PDO::PARAM_INT);
+        $stmt->execute();
     }
 
     public function confirmRequest(int $requestId)
@@ -72,10 +82,10 @@ class JoinRequestRepository extends Repository
         $stmtRemove->execute();
     }
 
-    public function removeComment(int $id)
+    public function removeRequest(int $id)
     {
         $stmt = $this->database->connect()->prepare('
-            DELETE FROM comments WHERE id = :id
+            DELETE FROM join_requests WHERE id = :id
         ');
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);

@@ -36,15 +36,6 @@ $left-panel-width: 27rem;
         width: 0.5rem;
     }
 
-    // &:hover::-webkit-scrollbar {
-    //     width: 2em;
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //     background: black;
-    //     border-radius: 1em;
-    // }
-
     &::-webkit-scrollbar-thumb {
         border-radius: 1rem;
     }
@@ -53,21 +44,10 @@ $left-panel-width: 27rem;
         background: rgb(37, 37, 37);
     }
 
-    // &::-webkit-scrollbar-thumb:hover {
-    //     background: $bg-color-brighter;
-    // }
-
-    // &:hover {
-    //     &::-webkit-scrollbar {
-    //         width: 10em;
-    //     }
-    // }
-
     .search-projects-form > input {
         width: 100%;
         background-color: $bg-main-color;
         box-shadow: inset 0px 3px 6px #00000029;
-        //border: 1px solid #363738;
         border-width: 0;
         color: $fg-main-color;
         margin-top: 1rem;
@@ -224,17 +204,6 @@ $left-panel-width: 27rem;
         border-radius: 1rem;
         flex-wrap: wrap;
 
-        header {
-            width: 200px;
-            height: $height;
-
-            h1 {
-                font-size: 2rem;
-                margin: 0;
-                padding: 0;
-            }
-        }
-
         .request-info {
             h1 {
                 font-size: 1.7rem;
@@ -245,6 +214,10 @@ $left-panel-width: 27rem;
             p {
                 margin-bottom: 0;
                 font-size: 1.1rem;
+
+                span {
+                    font-weight: bold;
+                }
             }
         }
 

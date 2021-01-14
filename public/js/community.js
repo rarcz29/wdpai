@@ -222,7 +222,9 @@ function addJoinRequest() {
     const text = container.querySelector(".image > h1");
 
     if (text.innerHTML !== "REQUESTED") {
-        fetch(`/addJoinRequest/${id}`);
+        fetch(`/addJoinRequest/${id}`)
+            .then((response) => response.text())
+            .then((data) => console.log(data));
         text.innerHTML = "REQUESTED";
     }
     //
