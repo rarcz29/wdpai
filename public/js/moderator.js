@@ -1,4 +1,4 @@
-export default function deleteComment() {
+function deleteCommenta() {
     console.log("remove");
     const button = this;
     const comment = button.parentElement;

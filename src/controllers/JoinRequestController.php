@@ -18,11 +18,14 @@ class JoinRequestController extends AppController
     {
         if ($this->account->isLoggedIn())
         {
-            $this->commentRepository->removeComment($projectId);
+            $userId = $this->account->getUserId();
+            $this->joinRequestRepository->addRequest($userId, $projectId);
             http_response_code(200);
         }
-
-        http_response_code(401);
+        else
+        {
+            http_response_code(401);
+        }
 
 //        if ($this->isPost())
 //        {

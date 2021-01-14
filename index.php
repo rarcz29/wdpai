@@ -22,5 +22,7 @@ Routing::post('admin', 'AdminController');
 Routing::post('comment', 'CommentController');
 Routing::get('comments', 'CommentController');
 Routing::get('removeComment', 'CommentController');
+Routing::get('addJoinRequest', 'JoinRequestController');
+Routing::get('joinRequests', 'JoinRequestController');
 
 Routing::run($path);

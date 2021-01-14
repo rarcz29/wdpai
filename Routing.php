@@ -7,6 +7,7 @@ require_once 'src/controllers/GitToolsController.php';
 require_once 'src/controllers/ProjectRestApiController.php';//TODO: remove
 require_once 'src/controllers/AdminController.php';
 require_once 'src/controllers/CommentController.php';
+require_once 'src/controllers/JoinRequestController.php';
 
 class Routing
 {

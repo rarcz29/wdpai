@@ -39,6 +39,7 @@ function listener() {
     const likeButtons = document.querySelectorAll(".fa-thumbs-up");
     const dislikeButtons = document.querySelectorAll(".fa-thumbs-down");
     const commentsButtons = document.querySelectorAll(".fa-comments");
+    const joinButtons = document.querySelectorAll(".project > .image > img");
 
     likeButtons.forEach((button) => button.addEventListener("click", giveLike));
     dislikeButtons.forEach((button) =>
@@ -46,6 +47,9 @@ function listener() {
     );
     commentsButtons.forEach((button) =>
         button.addEventListener("click", showComments)
+    );
+    joinButtons.forEach((button) =>
+        button.addEventListener("click", addJoinRequest)
     );
 }
 
@@ -199,7 +203,6 @@ function createComment(template, data) {
 }
 
 function deleteComment() {
-    console.log("remove");
     const button = this;
     const comment = button.parentElement;
     const id = comment.id;
@@ -210,6 +213,18 @@ function deleteComment() {
     );
 
     numberOfComments.innerHTML = parseInt(numberOfComments.innerHTML) - 1;
+}
+
+function addJoinRequest() {
+    const button = this;
+    const container = button.parentElement.parentElement;
+    const id = container.id;
+    fetch(`/addJoinRequest/${id}`)
+        .then((response) => response.text())
+        .then((data) => {
+            console.log(data);
+        });
+    //location.href = "home";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
