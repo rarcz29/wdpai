@@ -1,7 +1,7 @@
 function getAllProjects() {
     const container = document.querySelector(".projects-container");
 
-    fetch("projects")
+    fetch("projectsAll")
         .then((response) => response.json())
         .then((data) => {
             if (Object.keys(data).length !== 0) {
@@ -134,7 +134,6 @@ function getComments(id) {
     fetch(`/comments/${id}`)
         .then((response) => response.json())
         .then((data) => {
-            //console.log(data);
             if (!data.message) {
                 const comments = document.querySelector(
                     ".comment-section .comments"
@@ -146,12 +145,7 @@ function getComments(id) {
                 Object.entries(data).forEach((entry) => {
                     const [key, value] = entry;
                     const clone = template.content.cloneNode(true);
-                    const username = clone.querySelector("h2");
-                    const date = clone.querySelector("header > p");
-                    const comment = clone.querySelector("div > p");
-                    username.innerText = value.creator;
-                    date.innerText = value.date;
-                    comment.innerText = value.text;
+                    createComment(clone, value);
                     comments.append(clone);
                 });
             }
@@ -173,25 +167,49 @@ function addCommentSubmit(event, form) {
                 );
 
                 const clone = template.content.cloneNode(true);
-                const username = clone.querySelector("h2");
-                const date = clone.querySelector("header > p");
-                const comment = clone.querySelector("div > p");
-                username.innerText = data.creator;
-                date.innerText = data.date;
-                comment.innerText = data.text;
+                createComment(clone, data);
                 comments.prepend(clone);
 
-                const numberOfLikes = document.querySelector(
+                const numberOfComments = document.querySelector(
                     ".social-section .comments > p"
                 );
 
-                numberOfLikes.innerHTML = parseInt(numberOfLikes.innerHTML) + 1;
+                numberOfComments.innerHTML =
+                    parseInt(numberOfComments.innerHTML) + 1;
             }
 
             form.reset();
         });
 
     event.preventDefault();
+}
+
+function createComment(template, data) {
+    const username = template.querySelector("h2");
+    const date = template.querySelector("header > p");
+    const comment = template.querySelector("div > p");
+    const removeButton = template.querySelector("button");
+    username.innerText = data.creator;
+    date.innerText = data.date;
+    comment.innerText = data.text;
+    username.parentElement.parentElement.id = data.id;
+
+    removeButton !== null &&
+        removeButton.addEventListener("click", deleteComment);
+}
+
+function deleteComment() {
+    console.log("remove");
+    const button = this;
+    const comment = button.parentElement;
+    const id = comment.id;
+    fetch(`/removeComment/${id}`).then(comment.remove());
+
+    const numberOfComments = document.querySelector(
+        ".social-section .comments > p"
+    );
+
+    numberOfComments.innerHTML = parseInt(numberOfComments.innerHTML) - 1;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -59,4 +59,14 @@ class CommentRepository extends Repository
             ? null
             : new Comment($id, $userName, $text, $date->format('Y-m-d'));
     }
+
+    public function removeComment(int $id)
+    {
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM comments WHERE id = :id
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }

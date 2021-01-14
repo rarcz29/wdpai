@@ -69,6 +69,15 @@ class CommentController extends AppController
         die();
     }
 
+    public function removeComment(int $id)
+    {
+        if ($this->account->isLoggedIn())
+        {
+            $this->commentRepository->removeComment($id);
+            http_response_code(200);
+        }
+    }
+
     private function addComment(): ?Comment
     {
         $projectId = $_POST['project-id'];

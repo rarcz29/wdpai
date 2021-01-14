@@ -31,7 +31,11 @@
 
             case 'community':
                 $resources = "<link rel='stylesheet' href='public/css/community.css' />".
-                             "<script defer src='public/js/community.js'></script>";
+                             "<script defer type='module' src='public/js/community.js'></script>";
+                if ($_SESSION['moderator'])
+                {
+                    $resources = $resources."<script defer src='public/js/moderator.js'></script>";
+                }
                 break;
 
             case 'admin':
