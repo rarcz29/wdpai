@@ -70,7 +70,7 @@
             </div>
 
             <input type="text" class="input-field-line-under technologies-input" name="technologies"
-                placeholder="Technologies...">
+                placeholder="Technologies..." autocomplete="off">
 
             <button class="input-field-round button bt-blue submit-bt">Create project</button>
         </form>
