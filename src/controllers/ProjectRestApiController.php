@@ -16,27 +16,39 @@ class ProjectRestApiController extends AppController
 
     public function projects()
     {
-        // TODO
-        $this->getProjects(false);
+        if (!$this->account->isLoggedIn())
+        {
+            $response = array(
+                "message" => 'unauthenticated',
+            );
+            $json = json_encode($response);
+            echo $json;
+        }
+
+        $array = $this->projectRepository->getProjects($this->account->getUserId());
+        $arrayOfArrays = null;
+
+        if ($array === null)
+        {
+            echo json_encode(array());
+        }
+        else {
+            foreach ($array as $element) {
+                $arrayOfArrays[] = array(
+                    'title' => $element->getTitle(),
+                    'image_path' => $element->getImage(),
+                    'git_tool' => $element->getTool(),
+                    'id' => $element->getId(),
+                    'url' => $element->getOriginUrl()
+                );
+            }
+
+            $json = json_encode($arrayOfArrays);
+            echo $json;
+        }
     }
 
     public function projectsAll()
-    {
-        // TODO
-        $this->getProjects(true);
-    }
-
-    public function like(int $id) {
-        $this->projectRepository->like($id);
-        http_response_code(200);
-    }
-
-    public function dislike(int $id) {
-        $this->projectRepository->dislike($id);
-        http_response_code(200);
-    }
-
-    private function getProjects(bool $all)
     {
         if (!$this->account->isLoggedIn())
         {
@@ -47,9 +59,7 @@ class ProjectRestApiController extends AppController
             echo $json;
         }
 
-        $array = $all
-            ? $this->projectRepository->getProjects()
-            : $this->projectRepository->getProjects($this->account->getUserId());
+        $array = $this->projectRepository->getAllProjects();
         $arrayOfArrays = null;
 
         if ($array === null)
@@ -66,16 +76,23 @@ class ProjectRestApiController extends AppController
                     'visibility' => $element->isPrivate(),
                     'likes' => $element->getLikes(),
                     'dislikes' => $element->getDislikes(),
-                    // TODO:
-                    //'visibility' => $element->getComments(),
                     'numberOfComments' => $element->getNumberOfComments(),
-                    'id' => $element->getId(),
-                    'url' => $element->getOriginUrl()
+                    'id' => $element->getId()
                 );
             }
 
             $json = json_encode($arrayOfArrays);
             echo $json;
         }
+    }
+
+    public function like(int $id) {
+        $this->projectRepository->like($id);
+        http_response_code(200);
+    }
+
+    public function dislike(int $id) {
+        $this->projectRepository->dislike($id);
+        http_response_code(200);
     }
 }

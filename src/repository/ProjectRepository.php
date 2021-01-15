@@ -27,18 +27,55 @@ class ProjectRepository extends Repository
         ]);
     }
 
-    public function getProjects(int $userId = null): ?array
+    public function getProjects(int $userId): ?array
     {
-        $collaboration = null;
-        $where = ' ';
+        $stmt = $this->database->connect()->prepare('
+            SELECT p.*, g.name as git_name
+            FROM projects p
+            LEFT JOIN git_tools g
+                ON p.id_git_tools = g.id
+            LEFT JOIN users_projects up
+                ON up.id_projects = p.id
+            WHERE p.id_users = :userId
+                OR up.id_users = :userId2
+        ');
 
-        if ($userId)
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':userId2', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (empty($projects))
         {
-            $where = '
-                WHERE p.id_users = :userId
-            ';
+            return null;
         }
 
+        $array = null;
+
+        foreach ($projects as $project)
+        {
+            $currentProject = new Project(
+                $project['title'],
+                $project['description'],
+                $project['image'],
+                $project['git_name'],
+                $project['private'],
+                $project['likes'],
+                $project['dislikes'],
+                0,
+                $project['id']
+            );
+
+            $currentProject->setOriginUrl($project['origin_url']);
+            $array[] = $currentProject;
+        }
+
+        return $array;
+    }
+
+    public function getAllProjects(): ?array
+    {
         $stmt = $this->database->connect()->prepare('
             SELECT p.*, g.name as git_name,
                 COUNT(c.id) as number_of_comments
@@ -46,21 +83,14 @@ class ProjectRepository extends Repository
             LEFT JOIN git_tools g
                 ON p.id_git_tools = g.id
             LEFT JOIN comments c
-                ON c.id_projects = p.id'.
-            $where.
-            'GROUP BY p.id, g.id
+                ON c.id_projects = p.id
+            GROUP BY p.id, g.id
         ');
 
-        if ($userId)
-        {
-            $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-        }
-
         $stmt->execute();
-
         $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($projects == false)
+        if (empty($projects))
         {
             return null;
         }
@@ -81,7 +111,6 @@ class ProjectRepository extends Repository
                 $project['id']
             );
 
-            $currentProject->setOriginUrl($project['origin_url']);
             $array[] = $currentProject;
         }
 
