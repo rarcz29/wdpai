@@ -69,12 +69,23 @@
                 <p id="upload-img-path">No file chosen</p>
             </div>
 
-            <input type="text" class="input-field-line-under technologies-input" name="technologies"
-                placeholder="Technologies..." autocomplete="off">
+            <div class="technologies">
+                <input type="text" class="input-field-line-under technologies-input" name="technologies"
+                    placeholder="Technologies..." autocomplete="off">
+                <div class="choose-technology">
+                    <div><p>asdfasd</p><i class="fas fa-plus-circle"></i></div>
+                    <div>asdf</div>
+                    <div>asdf</div>
+                </div>
+            </div>
 
             <button class="input-field-round button bt-blue submit-bt">Create project</button>
         </form>
     </main>
 </body>
+
+<template id="technology-template">
+    <div><p>technology</p><i class="fas fa-plus-circle"></i></div>
+</template>
 
 </html>

@@ -71,8 +71,64 @@
   margin-left: 1rem;
 }
 
-.new-project-form .technologies-input {
+.new-project-form .technologies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.new-project-form .technologies .technologies-input {
   width: 30%;
+}
+
+.new-project-form .technologies .choose-technology {
+  width: 66%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.new-project-form .technologies .choose-technology div {
+  padding: 0 1rem;
+  border: 1px solid white;
+  border-radius: 0.7rem;
+  margin-right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.new-project-form .technologies .choose-technology div:hover p {
+  opacity: 0.7;
+}
+
+.new-project-form .technologies .choose-technology div p {
+  margin: 0;
+  padding: 0;
+  margin-right: 1rem;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  font-size: 1.3rem;
+}
+
+.new-project-form .technologies .choose-technology div i {
+  color: green;
+  font-size: 1.2rem;
 }
 
 .new-project-form .submit-bt {
