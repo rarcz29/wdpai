@@ -16,11 +16,13 @@ class ProjectRestApiController extends AppController
 
     public function projects()
     {
+        // TODO
         $this->getProjects(false);
     }
 
     public function projectsAll()
     {
+        // TODO
         $this->getProjects(true);
     }
 

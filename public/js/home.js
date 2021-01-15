@@ -65,7 +65,11 @@ function displayProjects(data) {
             const element = document.createElement("li");
             const clone = template.content.cloneNode(true);
             const link = clone.querySelector("a");
+            const title = clone.querySelector("h1");
+            const git = clone.querySelector("p");
             link.href = value.url;
+            title.innerHTML = value.title;
+            git.innerHTML = value.git_tool;
             element.appendChild(clone);
             container.appendChild(element);
         });
