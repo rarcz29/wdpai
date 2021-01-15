@@ -5,7 +5,7 @@ require_once __DIR__ . '/../models/Technology.php';
 
 class TechnologyRepository extends Repository
 {
-    public function getTechnologyByName(string $searchString): ?array
+    public function getTechnologyByName(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';
 
@@ -15,14 +15,7 @@ class TechnologyRepository extends Repository
         ');
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
-        $technologies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $array = null;
 
-        foreach ($technologies as $technology)
-        {
-            array[] = new Technology($technology['id'], $technology['description']);
-        }
-
-        return array;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

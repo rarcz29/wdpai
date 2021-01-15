@@ -26,5 +26,6 @@ Routing::get('addJoinRequest', 'JoinRequestController');
 Routing::get('joinRequests', 'JoinRequestController');
 Routing::get('accept', 'JoinRequestController');
 Routing::get('decline', 'JoinRequestController');
+Routing::post('searchTechnologies', 'ProjectRestApiController');
 
 Routing::run($path);

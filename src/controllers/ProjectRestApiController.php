@@ -3,15 +3,19 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Project.php';
 require_once __DIR__.'/../repository/ProjectRepository.php';
+require_once __DIR__ .'/../models/Technology.php';
+require_once __DIR__.'/../repository/TechnologyRepository.php';
 
 class ProjectRestApiController extends AppController
 {
     private $projectRepository;
+    private $technologyRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->projectRepository = new ProjectRepository();
+        $this->technologyRepository = new TechnologyRepository();
     }
 
     public function projects()
@@ -94,5 +98,21 @@ class ProjectRestApiController extends AppController
     public function dislike(int $id) {
         $this->projectRepository->dislike($id);
         http_response_code(200);
+    }
+
+    public function searchTechnologies()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json")
+        {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->technologyRepository->getTechnologyByName($decoded['search']));
+        }
     }
 }
