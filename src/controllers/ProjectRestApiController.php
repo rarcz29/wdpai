@@ -16,6 +16,28 @@ class ProjectRestApiController extends AppController
 
     public function projects()
     {
+        // TODO
+        $this->getProjects(false);
+    }
+
+    public function projectsAll()
+    {
+        // TODO
+        $this->getProjects(true);
+    }
+
+    public function like(int $id) {
+        $this->projectRepository->like($id);
+        http_response_code(200);
+    }
+
+    public function dislike(int $id) {
+        $this->projectRepository->dislike($id);
+        http_response_code(200);
+    }
+
+    private function getProjects(bool $all)
+    {
         if (!$this->account->isLoggedIn())
         {
             $response = array(
@@ -25,7 +47,9 @@ class ProjectRestApiController extends AppController
             echo $json;
         }
 
-        $array = $this->projectRepository->getProjects($this->account->getUserId());
+        $array = $all
+            ? $this->projectRepository->getProjects()
+            : $this->projectRepository->getProjects($this->account->getUserId());
         $arrayOfArrays = null;
 
         if ($array === null)
@@ -47,22 +71,11 @@ class ProjectRestApiController extends AppController
                     'numberOfComments' => $element->getNumberOfComments(),
                     'id' => $element->getId(),
                     'url' => $element->getOriginUrl()
-                    // TODO: pass owner and colabolators with theirs profile images
                 );
             }
 
             $json = json_encode($arrayOfArrays);
             echo $json;
         }
-    }
-
-    public function like(int $id) {
-        $this->projectRepository->like($id);
-        http_response_code(200);
-    }
-
-    public function dislike(int $id) {
-        $this->projectRepository->dislike($id);
-        http_response_code(200);
     }
 }

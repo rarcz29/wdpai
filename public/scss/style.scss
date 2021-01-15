@@ -25,6 +25,11 @@ textarea {
     resize: none;
 }
 
+input,
+button {
+    outline: none;
+}
+
 h1 {
     font-weight: normal;
 }
@@ -38,13 +43,6 @@ h1 {
         margin-top: 2rem;
     }
 }
-
-// TODO: main container responsiveness
-// @media only screen and (max-device-width: $main-width) {
-//     .main-container {
-//         background-color: red;
-//     }
-// }
 
 .flex-center {
     display: flex;
@@ -126,6 +124,7 @@ h1 {
 }
 
 .main-navbar {
+    z-index: 999;
     width: 100%;
     height: $main-navbar-height;
     background-color: $bg-darker-color;

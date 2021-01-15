@@ -27,8 +27,18 @@ class ProjectRepository extends Repository
         ]);
     }
 
-    public function getProjects(int $userId): ?array
+    public function getProjects(int $userId = null): ?array
     {
+        $collaboration = null;
+        $where = ' ';
+
+        if ($userId)
+        {
+            $where = '
+                WHERE p.id_users = :userId
+            ';
+        }
+
         $stmt = $this->database->connect()->prepare('
             SELECT p.*, g.name as git_name,
                 COUNT(c.id) as number_of_comments
@@ -36,13 +46,16 @@ class ProjectRepository extends Repository
             LEFT JOIN git_tools g
                 ON p.id_git_tools = g.id
             LEFT JOIN comments c
-                ON c.id_projects = p.id
-            WHERE
-                p.id_users = :userId
-            GROUP BY p.id, g.id
+                ON c.id_projects = p.id'.
+            $where.
+            'GROUP BY p.id, g.id
         ');
 
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        if ($userId)
+        {
+            $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        }
+
         $stmt->execute();
 
         $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);

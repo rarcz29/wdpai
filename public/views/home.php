@@ -262,4 +262,17 @@
     </a>
 </template>
 
+<template id="notification-template">
+    <article class="join-request">
+        <div class="request-info">
+            <h1>username</h1>
+            <p>want's to join your project <span>projectName</span></p>
+        </div>
+        <div class="request-buttons">
+            <button class="input-field-round button bt-green">Accept</button>
+            <button class="input-field-round button bt-red">Decline</button>
+        </div>
+    </article>
+</template>
+
 </html>

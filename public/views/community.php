@@ -17,7 +17,9 @@
             </ul>
         </nav>
 
-        <section class="projects-container"></section>
+        <section class="projects-container">
+
+        </section>
 
     </main>
 
@@ -49,6 +51,41 @@
             </div>
         </div>
     </article>
+</template>
+
+<template id="comments-section-template">
+    <article class="comment-section">
+        <button class="exit-button">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="write-comment-section">
+            <form>
+                <input type="text" name="text" autocomplete="off">
+                <input type="hidden" name="project-id">
+                <button type="submit" class="bt-green">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="comments">
+
+        </div>
+
+    </article>
+</template>
+
+<template id="single-comment-template">
+    <section class="comment">
+        <?php if ($_SESSION['moderator']) echo "<button class='bt-red'>remove</button>" ?>
+        <header>
+            <h2></h2>
+            <p></p>
+        </header>
+        <div>
+            <p></p>
+        </div>
+    </section>
 </template>
 
 </html>

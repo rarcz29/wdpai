@@ -36,15 +36,6 @@ $left-panel-width: 27rem;
         width: 0.5rem;
     }
 
-    // &:hover::-webkit-scrollbar {
-    //     width: 2em;
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //     background: black;
-    //     border-radius: 1em;
-    // }
-
     &::-webkit-scrollbar-thumb {
         border-radius: 1rem;
     }
@@ -53,21 +44,10 @@ $left-panel-width: 27rem;
         background: rgb(37, 37, 37);
     }
 
-    // &::-webkit-scrollbar-thumb:hover {
-    //     background: $bg-color-brighter;
-    // }
-
-    // &:hover {
-    //     &::-webkit-scrollbar {
-    //         width: 10em;
-    //     }
-    // }
-
     .search-projects-form > input {
         width: 100%;
         background-color: $bg-main-color;
         box-shadow: inset 0px 3px 6px #00000029;
-        //border: 1px solid #363738;
         border-width: 0;
         color: $fg-main-color;
         margin-top: 1rem;
@@ -209,6 +189,47 @@ $left-panel-width: 27rem;
         width: 100%;
         height: 90%;
         margin-top: 1rem;
+        display: none;
+    }
+
+    .join-request {
+        $height: 5rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5%;
+        background-color: $bg-darker-color;
+        margin-top: 3rem;
+        border-radius: 1rem;
+        flex-wrap: wrap;
+
+        .request-info {
+            h1 {
+                font-size: 1.7rem;
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin-bottom: 0;
+                font-size: 1.1rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .request-buttons {
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                width: 48%;
+            }
+        }
     }
 
     .join-project-message {
@@ -258,12 +279,10 @@ $left-panel-width: 27rem;
     .pull-request-message {
         margin-top: 2rem;
         background-color: $bg-darker-color;
-        // padding: 0.5em 0;
         display: flex;
         border-radius: 1rem;
 
         .pull-request-logo {
-            // display: inline-block;
             margin: auto 3rem;
 
             i {
@@ -272,8 +291,6 @@ $left-panel-width: 27rem;
         }
 
         .pull-request-info {
-            // display: inline-block;
-
             h1 {
                 font-size: 2rem;
                 margin-bottom: 0;

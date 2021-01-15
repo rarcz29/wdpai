@@ -4,11 +4,11 @@ form.addEventListener("submit", logSubmit);
 document.addEventListener("DOMContentLoaded", () => {
     checkConnection();
     getProjects();
+    getRequests();
 });
 
 function logSubmit(event) {
     const formattedData = new FormData(form);
-    //formattedFormData.append("property", "value");
 
     fetch("gitToolConnect", { method: "POST", body: formattedData })
         .then((response) => response.json())
@@ -65,9 +65,76 @@ function displayProjects(data) {
             const element = document.createElement("li");
             const clone = template.content.cloneNode(true);
             const link = clone.querySelector("a");
+            const title = clone.querySelector("h1");
+            const git = clone.querySelector("p");
             link.href = value.url;
+            title.innerHTML = value.title;
+            git.innerHTML = value.git_tool;
             element.appendChild(clone);
             container.appendChild(element);
         });
     }
+}
+
+function getRequests() {
+    fetch("joinRequests")
+        .then((response) => response.json())
+        .then((data) => {
+            displayRequests(data);
+        });
+}
+
+function displayRequests(data) {
+    const container = document.querySelector(".home-news-container");
+
+    if (!data.message) {
+        const template = document.querySelector("#notification-template");
+        Object.values(data).forEach((value) => {
+            const clone = template.content.cloneNode(true);
+            const username = clone.querySelector("h1");
+            const projectName = clone.querySelector(".request-info > p > span");
+            username.parentElement.parentElement.id = value.id;
+            username.innerHTML = value.username;
+            projectName.innerHTML = value.title;
+            container.appendChild(clone);
+        });
+
+        requestButtons(container);
+    } else {
+        showEmptyImage();
+    }
+}
+
+function showEmptyImage() {
+    const image = document.querySelector("#news-empty-image");
+
+    if (image) {
+        image.style.display = "block";
+    }
+}
+
+function requestButtons(container) {
+    const acceptButtons = container.querySelectorAll(".bt-green");
+    const declineButtons = container.querySelectorAll(".bt-red");
+
+    acceptButtons.forEach((button) =>
+        button.addEventListener("click", acceptRequest)
+    );
+    declineButtons.forEach((button) =>
+        button.addEventListener("click", declineRequest)
+    );
+}
+
+function acceptRequest() {
+    const button = this;
+    const container = button.parentElement.parentElement;
+    fetch(`/accept/${container.id}`);
+    container.remove();
+}
+
+function declineRequest() {
+    const button = this;
+    const container = button.parentElement.parentElement;
+    fetch(`/decline/${container.id}`);
+    container.remove();
 }

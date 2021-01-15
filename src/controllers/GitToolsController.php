@@ -37,7 +37,7 @@ class GitToolsController extends AppController
         }
         else
         {
-            $nickname = $this->account->getUserName();
+            $userId = $this->account->getUserId();
             $gitTool = $_POST['gitTool'];
             $login = $_POST['login'];
             $token = $_POST['token'];
@@ -58,8 +58,8 @@ class GitToolsController extends AppController
 
             if ($exists)
             {
-                $model = new GitTool($gitTool, $login, $token);
-                $this->gitToolRepository->addUserGitTool($nickname, $model);
+                $model = new GitTool(0, $gitTool, $login, $token);
+                $this->gitToolRepository->addUserGitTool($userId, $model);
             }
         }
 

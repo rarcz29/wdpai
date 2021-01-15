@@ -15,8 +15,16 @@ Routing::post('register', 'SecurityController');
 Routing::post('gitToolConnect', 'GitToolsController');
 Routing::get('getConnectedTools', 'GitToolsController');
 Routing::get('projects', 'ProjectRestApiController');
+Routing::get('projectsAll', 'ProjectRestApiController');
 Routing::get('like', 'ProjectRestApiController');
 Routing::get('dislike', 'ProjectRestApiController');
 Routing::post('admin', 'AdminController');
+Routing::post('comment', 'CommentController');
+Routing::get('comments', 'CommentController');
+Routing::get('removeComment', 'CommentController');
+Routing::get('addJoinRequest', 'JoinRequestController');
+Routing::get('joinRequests', 'JoinRequestController');
+Routing::get('accept', 'JoinRequestController');
+Routing::get('decline', 'JoinRequestController');
 
 Routing::run($path);
