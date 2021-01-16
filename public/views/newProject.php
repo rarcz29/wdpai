@@ -11,7 +11,7 @@
     <main class="main-container">
         <h1 class="page-header">Create new project</h1>
 
-        <form class="new-project-form" action="newProject" method="POST" ENCTYPE="multipart/form-data">
+        <form class="new-project-form">
             <div class="messages">
                 <?php
                     if (isset($messages))
@@ -70,22 +70,22 @@
             </div>
 
             <div class="technologies">
-                <input type="text" class="input-field-line-under technologies-input" name="technologies"
+                <input type="text" class="input-field-line-under technologies-input"
                     placeholder="Technologies..." autocomplete="off">
                 <div class="choose-technology">
-                    <div><p>asdfasd</p><i class="fas fa-plus-circle"></i></div>
-                    <div>asdf</div>
-                    <div>asdf</div>
                 </div>
             </div>
+            <div class="selected-technologies">
 
-            <button class="input-field-round button bt-blue submit-bt">Create project</button>
+            </div>
+
+            <button type="submit" class="input-field-round button bt-blue submit-bt">Create project</button>
         </form>
     </main>
 </body>
 
 <template id="technology-template">
-    <div><p>technology</p><i class="fas fa-plus-circle"></i></div>
+    <div class="technology-button"><p>technology</p><i class="fas fa-plus-circle"></i></div>
 </template>
 
 </html>

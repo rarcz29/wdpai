@@ -45,6 +45,9 @@ class ProjectController extends AppController
             $tool = $_POST["gitTool"];
             $private = $_POST["visibility"] === 'private';
 
+            var_dump($_POST);
+            die();
+
             $gitTool = $this->gitToolRepository->getGitTool($this->account->getUserId(), $tool);
 
             // API
