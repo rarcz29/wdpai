@@ -44,6 +44,7 @@ class ProjectController extends AppController
             $img = $_FILES['file']['name'];
             $tool = $_POST["gitTool"];
             $private = $_POST["visibility"] === 'private';
+            $technologies = $_POST['technologies'];
 
             $gitTool = $this->gitToolRepository->getGitTool($this->account->getUserId(), $tool);
 
@@ -61,7 +62,7 @@ class ProjectController extends AppController
 
             // Database
             $project->setImage($img);
-            $this->projectRepository->addProject($project, $this->account->getUserId(), $gitTool->getId());
+            $this->projectRepository->addProject($project, $this->account->getUserId(), $gitTool->getId(), $technologies);
             $this->redirect('home');
         }
 

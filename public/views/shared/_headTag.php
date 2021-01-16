@@ -26,7 +26,8 @@
 
             case 'newProject':
                 $resources = "<link rel='stylesheet' href='public/css/new-project.css' />".
-                             "<script defer src='public/js/new_project.js'></script>";
+                             "<script defer src='public/js/new_project.js'></script>".
+                             "<script defer src='public/js/search_technologies.js'></script>";
                 break;
 
             case 'community':
