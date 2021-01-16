@@ -59,35 +59,13 @@ class ProjectRestApiController extends AppController
             $response = array(
                 "message" => 'unauthenticated',
             );
-            $json = json_encode($response);
-            echo $json;
+            echo json_encode($response);
+            return;
         }
 
-        $array = $this->projectRepository->getAllProjects();
-        $arrayOfArrays = null;
-
-        if ($array === null)
-        {
-            echo json_encode(array());
-        }
-        else {
-            foreach ($array as $element) {
-                $arrayOfArrays[] = array(
-                    'title' => $element->getTitle(),
-                    'description' => $element->getDescription(),
-                    'image_path' => $element->getImage(),
-                    'git_tool' => $element->getTool(),
-                    'visibility' => $element->isPrivate(),
-                    'likes' => $element->getLikes(),
-                    'dislikes' => $element->getDislikes(),
-                    'numberOfComments' => $element->getNumberOfComments(),
-                    'id' => $element->getId()
-                );
-            }
-
-            $json = json_encode($arrayOfArrays);
-            echo $json;
-        }
+        $output = $this->projectRepository->getAllProjects();
+        $output['technologies'] = json_decode($output['technologies']);
+        echo json_encode($output);
     }
 
     public function like(int $id) {

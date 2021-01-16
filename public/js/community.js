@@ -32,7 +32,17 @@ function displayProjects(entry, template, container) {
 
     const commentsSection = clone.querySelector(".comments");
     const comments = commentsSection.querySelector("p");
-    comments.innerText = value.numberOfComments;
+    comments.innerText = value.number_of_comments;
+
+    if (value.technologies) {
+        const technologies = clone.querySelector(".details-section > p");
+        let technologiesStr = value.technologies.substr(
+            1,
+            value.technologies.length - 2
+        );
+        technologiesStr = technologiesStr.replace(/,/g, ", ");
+        technologies.innerHTML = technologiesStr;
+    }
 
     clone.querySelector("article").id = value.id;
     container.appendChild(clone);

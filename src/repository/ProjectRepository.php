@@ -97,47 +97,14 @@ class ProjectRepository extends Repository
         return $array;
     }
 
-    public function getAllProjects(): ?array
+    public function getAllProjects()
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT p.*, g.name as git_name,
-                COUNT(c.id) as number_of_comments
-            FROM projects p
-            LEFT JOIN git_tools g
-                ON p.id_git_tools = g.id
-            LEFT JOIN comments c
-                ON c.id_projects = p.id
-            GROUP BY p.id, g.id
+            SELECT * FROM vw_projects_details
         ');
 
         $stmt->execute();
-        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if (empty($projects))
-        {
-            return null;
-        }
-
-        $array = null;
-
-        foreach ($projects as $project)
-        {
-            $currentProject = new Project(
-                $project['title'],
-                $project['description'],
-                $project['image'],
-                $project['git_name'],
-                $project['private'],
-                $project['likes'],
-                $project['dislikes'],
-                $project['number_of_comments'],
-                $project['id']
-            );
-
-            $array[] = $currentProject;
-        }
-
-        return $array;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function like(int $id)

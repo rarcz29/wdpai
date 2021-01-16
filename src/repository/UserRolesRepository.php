@@ -55,7 +55,17 @@ class UserRolesRepository extends Repository
 
     public function updateRoles(int $userId, UserRoles $roles)
     {
-        // TODO: !important - update roles
+        $stmt = $this->database->connect()->prepare('
+            CALL set_user_roles(:id, :admin, :moderator)
+        ');
+
+        $admin = $roles->isAdmin();
+        $moderator = $roles->isModerator();
+
+        $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':admin', $admin, PDO::PARAM_BOOL);
+        $stmt->bindParam(':moderator', $moderator, PDO::PARAM_BOOL);
+        $stmt->execute();
     }
 
     private function getRoleId(string $role)

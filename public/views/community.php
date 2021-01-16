@@ -37,7 +37,7 @@
                 <p></p>
             </div>
             <div class="details-section">
-                <p>ASP.NET, React ASP.NET, React ASP.NET, React ASP.NET, React</p>
+                <p></p>
                 <div class="social-section">
                     <div class="likes">
                         <i class="fas fa-thumbs-up font-green"></i><p class="thumbs-up"></p>
