@@ -6,6 +6,7 @@
     <meta name="description" content="WdPAI project">
     <meta name="keywords" content="code programming team crew">
     <link rel="stylesheet" href="public/css/style.css" />
+    <script defer src='public/js/navbar.js'></script>
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
 
     <?php

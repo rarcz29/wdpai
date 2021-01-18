@@ -137,6 +137,15 @@ h1 {
     color: red;
 }
 
+.hover-basic {
+    cursor: pointer;
+    transition: opacity ease-in-out $transition-time;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
 .input-radio-container {
     display: flex;
     justify-content: space-evenly;
@@ -174,12 +183,8 @@ h1 {
         margin-left: 3rem;
     }
 
-    .nav-drop {
-        transform: translateX(100%);
-    }
-
-    .nav-drop-active {
-        transform: translateX(0%);
+    .visible-nav {
+        transform: translateX(0%) !important;
     }
 
     .nav-container {
@@ -187,6 +192,7 @@ h1 {
         justify-content: space-between;
         font-size: 1.5rem;
         color: $fg-main-color;
+        transition: transform ease-in-out $transition-time;
 
         .main-list {
             li {
@@ -201,6 +207,9 @@ h1 {
             right: 0;
             top: $main-navbar-height;
             padding: 0 5rem;
+            transform: translateX(100%);
+            transition: transform ease-in-out $transition-time;
+            margin: 0;
 
             li {
                 line-height: 4rem;
@@ -241,6 +250,7 @@ h1 {
             background-color: $bg-darker-color;
             width: auto;
             text-align: center;
+            transform: translateX(100%);
 
             .main-list {
                 li {
@@ -251,6 +261,7 @@ h1 {
             }
 
             .user-list {
+                transform: translateX(0%);
                 margin-top: 1rem;
                 position: static;
             }

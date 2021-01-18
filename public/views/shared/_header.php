@@ -18,16 +18,16 @@
 
             <ul class="list user-list">
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Sign out</a></li>
+                <li><a href="login">Sign out</a></li>
             </ul>
         </nav>
 
         <div class="right-side-icons flex-center">
 <!--            <i class="fas fa-search"></i>-->
 <!--            <i class="fas fa-bell"></i>-->
-            <a href="login"><i class="fas fa-user-circle"></i></a>
+            <i class="fas fa-user-circle hover-basic"></i>
         </div>
     </div>
 
-    <i class="fas fa-bars burger"></i>
+    <i class="fas fa-bars burger hover-basic"></i>
 </header>
