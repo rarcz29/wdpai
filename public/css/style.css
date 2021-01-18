@@ -37,6 +37,7 @@ h1 {
 .main-container {
   max-width: 1140px;
   margin: 0 auto;
+  min-height: calc(100vh - 4.4rem - 5rem);
 }
 
 .main-container .page-header {
@@ -274,6 +275,18 @@ h1 {
   display: none;
   margin-right: 3rem;
   font-size: 1.6rem;
+}
+
+footer {
+  background-color: #2d2e2e;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer p {
+  line-height: 5rem;
+  margin: 0;
+  padding: 0;
 }
 
 @media only screen and (max-width: 800px) {

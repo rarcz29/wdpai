@@ -39,6 +39,7 @@
         <?php endforeach; endif; ?>
     </main>
 
+<?php require __DIR__ . '/shared/_footer.html'; ?>
 </body>
 
 </html>

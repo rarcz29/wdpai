@@ -23,6 +23,8 @@
 
     </main>
 
+<?php require __DIR__ . '/shared/_footer.html'; ?>
+
 </body>
 
 <template id="project-template">
