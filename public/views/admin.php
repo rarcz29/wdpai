@@ -15,7 +15,7 @@
         ?>
             <section class="admin-form">
                 <form action="admin" method="POST">
-                    <div>
+                    <div class="title">
                         <h1><?= $user->getNickname() ?></h1>
                         <p><?= $user->getEmail() ?></p>
                     </div>

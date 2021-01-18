@@ -5,6 +5,7 @@
         margin: 1rem;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         .checkboxes {
             display: flex;
@@ -26,5 +27,25 @@
 
     input[type="submit"] {
         width: 10rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .admin-form form {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        .title {
+            margin-bottom: 2rem;
+        }
+
+        .checkboxes {
+            justify-content: space-around;
+
+            input[type="checkbox"] {
+                margin: 0 !important;
+            }
+        }
     }
 }

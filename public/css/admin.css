@@ -10,6 +10,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .container .admin-form form .checkboxes {
@@ -35,4 +37,27 @@
 
 .container input[type="submit"] {
   width: 10rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .admin-form form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .admin-form form .title {
+    margin-bottom: 2rem;
+  }
+  .admin-form form .checkboxes {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .admin-form form .checkboxes input[type="checkbox"] {
+    margin: 0 !important;
+  }
 }
