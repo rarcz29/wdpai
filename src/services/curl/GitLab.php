@@ -2,13 +2,13 @@
 
 require_once 'GitToolApi.php';
 
-class GitHub extends GitToolApi
+class GitLab extends GitToolApi
 {
     public function getUsername(array $header, string $username) : string
     {
-        $output = $this->get("https://api.github.com/user", $header);
+        $output = $this->get("https://gitlab.com/api/v4/users?username=".$username, $header);
         $json = json_decode($output, true);
-        return $json['login'];
+        return $json[0]['username'];
     }
 
     public function createNewRepository(string $username, string $token, string $title,
@@ -24,22 +24,20 @@ class GitHub extends GitToolApi
         $postData = array(
             "name" => $title,
             "description" => $description,
-            "private" => $private,
-            "auto_init" => true
+            "visibility" => $private ? 'private' : 'public'
         );
-        $output = $this->post("https://api.github.com/user/repos", $headers, $postData);
+        $output = $this->post("https://gitlab.com/api/v4/projects", $headers, $postData);
         $json = json_decode($output, true);
 
         if ($json['message'])
         {
-            //TODO private repo
-            echo $json['message'];
-            die();
+            return null;
         }
 
+        $visibility = $json['visibility'] === 'private';
         $project = new Project($title, $json['description'], '',
-            'github', $json['private'], 0, 0, 0);
-        $project->setOriginUrl($json['html_url']);
+            'gitlab', $visibility, 0, 0, 0);
+        $project->setOriginUrl($json['web_url']);
         $project->setRepoName($json['name']);
         return $project;
     }
@@ -47,9 +45,8 @@ class GitHub extends GitToolApi
     public function setHeaders(string $username, string $token) : array
     {
         return array(
-            "User-Agent: ${username}",
-            "Authorization: token ${token}",
-            "Accept: application/vnd.github.v3+json"
+            "Content-Type: application/json",
+            "PRIVATE-TOKEN: ${token}"
         );
     }
 }

@@ -4,6 +4,7 @@ require_once 'AppController.php';
 require_once __DIR__ .'/../models/Project.php';
 require_once __DIR__.'/../repository/ProjectRepository.php';
 require_once __DIR__.'/../services/curl/GitHub.php';
+require_once __DIR__.'/../services/curl/GitLab.php';
 
 class ProjectController extends AppController
 {
@@ -47,11 +48,24 @@ class ProjectController extends AppController
             $technologies = $_POST['technologies'];
 
             $gitTool = $this->gitToolRepository->getGitTool($this->account->getUserId(), $tool);
+            $repo = null;
 
             // API
-            // TODO: switch tools
-            $tool = new GitHub();
-            $project = $tool->createNewRepository($gitTool->getLogin(), $gitTool->getToken(),
+            switch ($tool)
+            {
+                case 'github':
+                    $repo = new GitHub();
+                    break;
+
+                case 'bitbucket':
+                    break;
+
+                case 'gitlab':
+                    $repo = new GitLab();
+                    break;
+            }
+
+            $project = $repo->createNewRepository($gitTool->getLogin(), $gitTool->getToken(),
                 $title, $description, $private);
 
             if ($project === null)

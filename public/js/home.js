@@ -11,8 +11,9 @@ function logSubmit(event) {
     const formattedData = new FormData(form);
 
     fetch("gitToolConnect", { method: "POST", body: formattedData })
-        .then((response) => response.json())
+        .then((response) => response.text())
         .then((data) => {
+            console.log(data);
             if (data.tool !== "unknown" && data.value === true) {
                 const toolConnectedIcon = document.getElementById(
                     data.tool + "-connected-icon"
