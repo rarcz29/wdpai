@@ -157,3 +157,39 @@
         }
     }
 }
+
+@media only screen and (max-device-width: 430px) {
+    .new-project-form {
+        width: 95% !important;
+        margin: auto;
+    }
+
+    .git-form {
+        .input-radio-container {
+            i {
+                font-size: 3rem !important;
+            }
+        }
+    }
+
+    .upload-img-container {
+        flex-direction: column;
+
+        .add-background-img-bt {
+            margin-bottom: 0 !important;
+            width: 100% !important;
+        }
+    }
+
+    .technologies {
+        flex-direction: column;
+
+        .technologies-input {
+            width: 100% !important;
+        }
+
+        .choose-technology {
+            width: 100% !important;
+        }
+    }
+}

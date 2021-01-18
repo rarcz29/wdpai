@@ -254,6 +254,8 @@ h1 {
             transform: translateX(100%);
 
             .main-list {
+                margin-bottom: 1rem;
+
                 li {
                     display: block;
                     line-height: 4rem;
@@ -263,7 +265,6 @@ h1 {
 
             .user-list {
                 transform: translateX(0%);
-                margin-top: 1rem;
                 position: static;
             }
 
