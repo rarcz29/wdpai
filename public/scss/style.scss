@@ -37,6 +37,7 @@ h1 {
 .main-container {
     max-width: $main-width;
     margin: 0 auto;
+    min-height: calc(100vh - #{$main-navbar-height} - 5rem);
 
     .page-header {
         margin-left: 1.5rem;
@@ -119,54 +120,15 @@ h1 {
 
         a {
             text-decoration: none;
-        }
-    }
-}
+            transition: color $transition-time;
 
-.main-navbar {
-    z-index: 999;
-    width: 100%;
-    height: $main-navbar-height;
-    background-color: $bg-darker-color;
-    box-shadow: 0px 3px 6px #00000029;
-
-    .logo {
-        height: 80%;
-        margin-right: 3.4rem;
-        margin-left: 3rem;
-    }
-
-    .nav-container {
-        width: 100%;
-        justify-content: space-between;
-        font-size: 1.5rem;
-        color: $fg-main-color;
-
-        ul {
-            li {
-                display: inline-block;
-                margin-right: 2.2rem;
-
-                a {
-                    transition: color $transition-time;
-
-                    &:visited,
-                    &:link {
-                        color: $fg-main-color;
-                    }
-
-                    &:hover {
-                        color: $fg-darker-color;
-                    }
-                }
+            &:visited,
+            &:link {
+                color: $fg-main-color;
             }
-        }
 
-        .right-side-icons {
-            margin-right: 1.5rem;
-
-            i {
-                margin-left: 1rem;
+            &:hover {
+                color: $fg-darker-color;
             }
         }
     }
@@ -174,6 +136,15 @@ h1 {
 
 .messages {
     color: red;
+}
+
+.hover-basic {
+    cursor: pointer;
+    transition: opacity ease-in-out $transition-time;
+
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 .input-radio-container {
@@ -200,8 +171,142 @@ h1 {
     }
 }
 
-@media only screen and (max-device-width: 800px) {
-    .main-navbar .nav-container {
+.main-navbar {
+    z-index: 999;
+    width: 100%;
+    height: $main-navbar-height;
+    background-color: $bg-darker-color;
+    box-shadow: 0px 3px 6px #00000029;
+
+    .logo {
+        height: 80%;
+        margin-right: 3.4rem;
+        margin-left: 3rem;
+    }
+
+    .visible-nav {
+        transform: translateX(0%) !important;
+    }
+
+    .nav-container {
+        width: 100%;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        color: $fg-main-color;
+        transition: transform ease-in-out $transition-time;
+        z-index: 9999;
+
+        .main-list {
+            li {
+                display: inline-block;
+                margin-right: 2.2rem;
+            }
+        }
+
+        .user-list {
+            background-color: $bg-darker-color;
+            position: fixed;
+            right: 0;
+            top: $main-navbar-height;
+            padding: 0 5rem;
+            transform: translateX(100%);
+            transition: transform ease-in-out $transition-time;
+            margin: 0;
+
+            li {
+                line-height: 4rem;
+                text-align: center;
+            }
+        }
+
+        .right-side-icons {
+            margin-right: 1.5rem;
+
+            a {
+                &:checked {
+                    color: $fg-main-blue-color;
+                }
+            }
+
+            i {
+                margin-left: 1rem;
+                font-size: 2.5rem;
+                color: $fg-main-blue-color;
+            }
+        }
+    }
+
+    .burger {
         display: none;
+        margin-right: 3rem;
+        font-size: 1.6rem;
+    }
+}
+
+footer {
+    background-color: $bg-darker-color;
+    margin-top: 2rem;
+    text-align: center;
+
+    p {
+        line-height: 5rem;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .main-navbar {
+        .nav-container {
+            position: fixed;
+            right: 0;
+            top: $main-navbar-height;
+            background-color: $bg-darker-color;
+            width: auto;
+            text-align: center;
+            transform: translateX(100%);
+
+            .main-list {
+                margin-bottom: 1rem;
+
+                li {
+                    display: block;
+                    line-height: 4rem;
+                    margin: 0;
+                }
+            }
+
+            .user-list {
+                transform: translateX(0%);
+                position: static;
+            }
+
+            .right-side-icons {
+                display: none;
+            }
+        }
+    }
+
+    // .main-navbar .nav-container {
+    //     display: none;
+    // }
+
+    .main-navbar {
+        justify-content: space-between;
+    }
+
+    .main-navbar .burger {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .nav-container {
+        width: 100vw !important;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

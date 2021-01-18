@@ -168,3 +168,35 @@
   width: calc(100% - 2 * 2rem);
   margin-bottom: 3rem;
 }
+
+@media only screen and (max-device-width: 430px) {
+  .new-project-form {
+    width: 95% !important;
+    margin: auto;
+  }
+  .git-form .input-radio-container i {
+    font-size: 3rem !important;
+  }
+  .upload-img-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .upload-img-container .add-background-img-bt {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+  }
+  .technologies {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .technologies .technologies-input {
+    width: 100% !important;
+  }
+  .technologies .choose-technology {
+    width: 100% !important;
+  }
+}

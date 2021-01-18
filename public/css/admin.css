@@ -1,8 +1,5 @@
-.container {
-  margin-top: 2rem;
-}
-
-.container .admin-form form {
+.admin-form form {
+  margin-top: 3rem !important;
   margin: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,9 +7,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.container .admin-form form .checkboxes {
+.admin-form form .checkboxes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,18 +20,41 @@
           align-items: center;
 }
 
-.container .admin-form form .checkboxes input[type="checkbox"] {
+.admin-form form .checkboxes input[type="checkbox"] {
   margin-right: 3rem;
 }
 
-.container .admin-form form p {
+.admin-form form p {
   margin-bottom: 0;
 }
 
-.container hr {
+hr {
   opacity: 0.4;
 }
 
-.container input[type="submit"] {
+input[type="submit"] {
   width: 10rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .admin-form form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .admin-form form .title {
+    margin-bottom: 2rem;
+  }
+  .admin-form form .checkboxes {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .admin-form form .checkboxes input[type="checkbox"] {
+    margin: 0 !important;
+  }
 }
