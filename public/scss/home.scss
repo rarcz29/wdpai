@@ -381,16 +381,24 @@ $left-panel-width: 27rem;
         flex-direction: column;
     }
 
+    .home-news-container {
+        display: none;
+    }
+
     .home-left-container {
         width: 100%;
-        height: auto;
+        position: static;
 
         .search-projects-form > input {
             margin-top: 0.5rem;
         }
 
-        .projects-buttons {
-            display: none;
-        }
+        // .projects-buttons {
+        //     display: none;
+        // }
+    }
+
+    .git-tools {
+        width: 100%;
     }
 }

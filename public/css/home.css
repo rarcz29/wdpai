@@ -401,14 +401,17 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .home-news-container {
+    display: none;
+  }
   .home-left-container {
     width: 100%;
-    height: auto;
+    position: static;
   }
   .home-left-container .search-projects-form > input {
     margin-top: 0.5rem;
   }
-  .home-left-container .projects-buttons {
-    display: none;
+  .git-tools {
+    width: 100%;
   }
 }
