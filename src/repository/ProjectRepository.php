@@ -67,10 +67,10 @@ class ProjectRepository extends Repository
                 ON up.id_projects = p.id
             WHERE p.id_users = :userId
                 OR up.id_users = :userId
-                AND LOWER(p.title)
+                AND (LOWER(p.title)
                 LIKE :search
                 OR LOWER(p.description)
-                LIKE :search
+                LIKE :search)
         ');
 
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
