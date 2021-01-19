@@ -1,15 +1,9 @@
-<!doctype html>
-<html>
+<?php require_once __DIR__."/shared/_configuration.php"; ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CNode</title>
-    <meta name="description" content="WdPAI project">
-    <meta name="keywords" content="code programming team crew">
-    <link rel="stylesheet" href="public/css/style.css" />
-    <link rel="stylesheet" href="public/css/login.css" />
-</head>
+<!doctype html>
+<html lang=<?php echo $_SESSION['lang'] ?>>
+
+<?php require_once __DIR__.'/shared/_headTag.php'; ?>
 
 <body>
     <div class="container">
@@ -17,16 +11,16 @@
             <img src="public/img/logo.svg" alt="logo">
         </div>
         <div class="login-container">
-            <form>
-                <input class="input-field-line-under input-login" name="username" type="text" placeholder="username">
+            <form action="register" method="POST">
+                <input class="input-field-line-under input-login" name="nickname" type="text" placeholder="nickname">
                 <input class="input-field-line-under input-login" name="email" type="email" placeholder="email">
                 <input class="input-field-line-under input-login" name="password" type="password"
                     placeholder="password">
-                <input class="input-field-line-under input-login" name="password2" type="password"
+                <input class="input-field-line-under input-login" name="confirmedPassword" type="password"
                     placeholder="confirm password">
-                <button class="button-login button bt-blue input-field-round">Sign up</button>
+                <button type="submit" class="button-login button bt-blue input-field-round">Sign up</button>
                 <p>or</p>
-                <a href="./login.html">Log in</a>
+                <a href="login">Log in</a>
             </form>
         </div>
     </div>

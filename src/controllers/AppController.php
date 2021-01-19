@@ -1,12 +1,22 @@
 <?php
 
+require_once 'src/services/Account.php';
+
 class AppController
 {
+    protected $account;
     private $request;
 
     public function __construct()
     {
         $this->request = $_SERVER['REQUEST_METHOD'];
+        session_start();
+        $this->account = new Account();
+
+        if ($this->account->isLoggedIn())
+        {
+            $this->account->extendUserSessionLife();
+        }
     }
 
     protected function isGet(): bool
@@ -33,5 +43,11 @@ class AppController
         }
         
         print $output;
+    }
+
+    protected function redirect(string $page = '')
+    {
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/".$page);
     }
 }

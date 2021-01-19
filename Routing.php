@@ -2,6 +2,11 @@
 
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
+require_once 'src/controllers/ProjectController.php';
+require_once 'src/controllers/GitToolsController.php';
+require_once 'src/controllers/AdminController.php';
+require_once 'src/controllers/CommentController.php';
+require_once 'src/controllers/JoinRequestController.php';
 
 class Routing
 {
@@ -19,7 +24,8 @@ class Routing
 
     public static function run($url)
     {
-        $action = explode("/", $url)[0];
+        $urlParts = explode("/", $url);
+        $action = $urlParts[0];
         
         if (!array_key_exists($action, self::$routes))
         {
@@ -30,6 +36,8 @@ class Routing
         $object = new $controller;
         $action = $action ?: 'index';
 
-        $object->$action();
+        $prop = $urlParts[1] ?? '';
+
+        $object->$action($prop);
     }
 }

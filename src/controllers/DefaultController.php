@@ -16,11 +16,21 @@ class DefaultController extends AppController
 
     public function home()
     {
+        if (!$this->account->isLoggedIn())
+        {
+            $this->redirect();
+        }
+
         $this->render('home');
     }
-    
-    public function new()
+
+    public function community()
     {
-        $this->render('new-project');
+        if (!$this->account->isLoggedIn())
+        {
+            $this->redirect();
+        }
+
+        $this->render('community');
     }
 }

@@ -1,127 +1,326 @@
 @import "./shared/color-palette";
 @import "./shared/variables";
 
-$left-panel-width: 27em;
+$left-panel-width: 27rem;
+
+.home-navbar {
+    position: fixed;
+}
 
 .home-main-container {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .home-left-container {
-  $padding-top: 0.3em;
+    $padding-top: 0rem;
 
-  width: $left-panel-width;
-  height: calc(100vh - #{$main-navbar-height} - #{$padding-top});
-  background-color: $bg-darker-color;
-  padding-top: $padding-top;
-  box-shadow: 0px 3px 6px #00000029;
-  overflow-y: scroll;
-  overflow-x: hidden;
+    position: fixed;
+    top: $main-navbar-height;
+    width: $left-panel-width;
+    height: calc(100vh - #{$main-navbar-height} - #{$padding-top});
+    background-color: $bg-darker-color;
+    padding-top: $padding-top;
+    box-shadow: 0px 3px 6px #00000029;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
-  &::-webkit-scrollbar {
-    width: 0.5em;
-  }
-
-  // &:hover::-webkit-scrollbar {
-  //     width: 2em;
-  // }
-
-  // &::-webkit-scrollbar-track {
-  //     background: black;
-  //     border-radius: 1em;
-  // }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 1em;
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-    background: rgb(37, 37, 37);
-  }
-
-  // &::-webkit-scrollbar-thumb:hover {
-  //     background: $bg-color-brighter;
-  // }
-
-  // &:hover {
-  //     &::-webkit-scrollbar {
-  //         width: 10em;
-  //     }
-  // }
-
-  .search-projects-form > input {
-    width: 100%;
-    background-color: $bg-main-color;
-    box-shadow: inset 0px 3px 6px #00000029;
-    //border: 1px solid #363738;
-    border-width: 0;
-    color: $fg-main-color;
-    margin-top: 1em;
-  }
-
-  .projects-buttons {
-    $element-width: 47%;
-
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
-
-    .new-project-bt {
-      width: $element-width;
+    .left-nav-separator {
+        height: 1px;
+        width: 100%;
+        opacity: 0.05;
+        margin: 0;
     }
 
-    .filters {
-      height: inherit;
-      width: $element-width;
-      border-radius: 1em;
-      border: 1px solid white;
+    &::-webkit-scrollbar {
+        width: 0.5rem;
     }
-  }
 
-  .projects-container {
-    margin: 0 1em;
-
-    .projects {
-      margin-top: 1em;
-
-      ul {
-        li {
-          margin-bottom: 1em;
-
-          a {
-            div {
-              width: 100%;
-              height: 10em;
-              border-radius: 2em;
-              background-color: red;
-            }
-          }
-        }
-      }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
     }
-  }
-}
 
-.home-news-container {
-  width: calc(100vw - #{$left-panel-width});
-}
-
-@media only screen and (max-device-width: 800px) {
-  .home-main {
-    flex-direction: column;
-  }
-
-  .home-left-container {
-    width: 100%;
-    height: auto;
+    &:hover::-webkit-scrollbar-thumb {
+        background: rgb(37, 37, 37);
+    }
 
     .search-projects-form > input {
-      margin-top: 0.5em;
+        width: 100%;
+        background-color: $bg-main-color;
+        box-shadow: inset 0px 3px 6px #00000029;
+        border-width: 0;
+        color: $fg-main-color;
+        margin-top: 1rem;
     }
 
     .projects-buttons {
-      display: none;
+        $element-width: 47%;
+
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        .new-project-bt {
+            width: $element-width;
+
+            i {
+                margin-right: 1rem;
+            }
+        }
+
+        .filters {
+            height: inherit;
+            margin: 0.3rem 0;
+            width: $element-width;
+            border-radius: 1rem;
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+        }
     }
-  }
+
+    .projects-container {
+        margin: 0 1rem;
+
+        .projects {
+            margin-top: 1rem;
+
+            #no-projects-info {
+                opacity: 0.3;
+                display: none;
+
+                hr {
+                    margin-top: 2rem;
+                }
+
+                h1 {
+                    font-size: 1.3rem;
+                    margin: 1.5rem 1rem 1rem 1rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    margin: 0.5rem 1rem;
+                }
+            }
+
+            ul {
+                li {
+                    margin-bottom: 1rem;
+
+                    a {
+                        &:hover {
+                            .project-tile {
+                                border-color: $fg-main-color;
+
+                                img {
+                                    opacity: 1;
+                                    transform: scale(1.08);
+                                }
+                            }
+                        }
+
+                        .project-tile {
+                            background-color: transparent;
+                            width: 100%;
+                            height: 10rem;
+                            border-radius: $project-tile-border-radius;
+                            border: 1px solid $border-color;
+                            text-align: center;
+                            position: relative;
+                            transition: border-color ease-out $transition-time;
+                            overflow: hidden;
+
+                            img {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                                opacity: 0.1;
+                                transition: all ease-out $transition-time;
+                            }
+
+                            div {
+                                position: absolute;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                width: 100%;
+                                height: 100%;
+
+                                h1 {
+                                    font-weight: bold;
+                                    font-size: 2rem;
+                                    margin-top: 0.4rem;
+                                    margin-bottom: 0;
+                                    color: $fg-main-color;
+                                }
+
+                                p {
+                                    margin-top: 0.6rem;
+                                    // color: $fg-darker-color;
+                                    color: $fg-main-color;
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-news-container {
+    $margin: 2rem;
+    min-height: calc(100vh - #{$main-navbar-height} - 55px);
+    width: calc(100% - #{$left-panel-width} - #{$margin});
+    margin-left: calc(#{$left-panel-width} + #{$margin});
+    margin-right: $margin;
+    margin-top: $main-navbar-height;
+    padding-bottom: 55px;
+
+    #news-empty-image {
+        background-image: url("../img/empty.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        opacity: 0.1;
+        width: 100%;
+        height: 90%;
+        margin-top: 1rem;
+        display: none;
+    }
+
+    .join-request {
+        $height: 5rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5%;
+        background-color: $bg-darker-color;
+        margin-top: 3rem;
+        border-radius: 1rem;
+        //flex-wrap: wrap;
+
+        .request-info {
+            h1 {
+                font-size: 1.7rem;
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin-bottom: 0;
+                font-size: 1.1rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .request-buttons {
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                width: 48%;
+            }
+        }
+    }
+}
+
+.git-tools {
+    width: 280px;
+    height: 230px;
+    background-color: $bg-darker-color;
+    position: fixed;
+    bottom: -180px;
+    right: 0;
+    box-shadow: $shadow2;
+    border-radius: 15px;
+    transition: bottom ease-out $transition-time;
+
+    .git-icons {
+        justify-content: space-around !important;
+        margin: 5px 0;
+
+        label {
+            position: relative;
+
+            .main-icon {
+                margin: auto 0;
+                font-size: 40px;
+            }
+
+            .check-icon {
+                position: absolute;
+                bottom: 0;
+                right: -10px;
+                font-size: 16px;
+                color: $checked-icon-color;
+                opacity: 0;
+                transition: opacity ease-out $transition-time;
+            }
+        }
+    }
+
+    .git-input {
+        width: calc(100% - 2rem);
+        margin: 0.5rem 1rem;
+    }
+
+    .git-submit-bt {
+        width: calc(100% - 6rem);
+        margin: 1.5rem 3rem 0 3rem;
+    }
+
+    &:hover {
+        bottom: 0;
+    }
+
+    &:not(:hover) {
+        label {
+            opacity: 1 !important;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 800px) {
+    .home-main-container {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .home-news-container {
+        display: block;
+        position: static;
+        width: 100% !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .home-left-container {
+        display: block;
+        width: 100%;
+        position: static;
+        height: auto;
+
+        .search-projects-form > input {
+            margin-top: 0.5rem;
+        }
+    }
+
+    .git-tools {
+        width: 100%;
+    }
 }

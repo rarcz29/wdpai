@@ -1,13 +1,202 @@
-.new-project-form input {
+.new-project-form textarea,
+.new-project-form input[type="text"] {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.new-project-form .upload-img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.new-project-form .upload-img-container #upload-img-path {
+  margin-left: 1.4rem;
+  font-size: 1.1rem;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt {
+  margin-bottom: 2rem;
+  width: 300px;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label {
+  height: inherit;
+  width: inherit;
+  border-radius: inherit;
+  cursor: inherit;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label div i {
+  margin-right: 1rem;
+}
+
+.new-project-form .upload-img-container .add-background-img-bt label div input[type="file"] {
+  display: none;
+  width: 0;
+}
+
+.new-project-form .main-input {
+  width: 100%;
+}
+
+.new-project-form .description-input {
+  overflow: hidden;
+}
+
+.new-project-form .connect-with-container i {
+  font-size: 4.5rem;
+}
+
+.new-project-form .visibility-container label i {
+  font-size: 4rem;
+}
+
+.new-project-form .visibility-container label div {
+  font-size: 1.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1rem;
+}
+
+.new-project-form .technologies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.new-project-form .technologies .technologies-input {
+  width: 30%;
+}
+
+.new-project-form .technologies .choose-technology {
+  width: 66%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.new-project-form .technology-button {
+  padding: 0 1rem;
+  border: 1px solid white;
+  border-radius: 0.7rem;
+  margin-right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.new-project-form .technology-button:hover p {
+  opacity: 0.7;
+}
+
+.new-project-form .technology-button p {
+  margin: 0;
+  padding: 0;
+  margin-right: 1rem;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  font-size: 1.3rem;
+}
+
+.new-project-form .technology-button i {
+  color: green;
+  font-size: 1.2rem;
+}
+
+.new-project-form .selected-technologies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.new-project-form .selected-technologies .technology-button {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.new-project-form .submit-bt {
   width: 100%;
 }
 
 .new-project-form .git-form {
-  background-color: #2D2E2E;
+  padding-top: 1rem;
+  padding-bottom: 0.1px;
+  margin-bottom: 2rem;
+  background-color: #2d2e2e;
   width: 100%;
+  border-radius: 1rem;
 }
 
-.new-project-form .git-form input {
-  margin: 0 1em;
-  width: calc(100% - 2 * 1em);
+.new-project-form .git-form h1 {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.new-project-form .git-form hr {
+  width: calc(100% - 2 * 2rem);
+  margin-bottom: 3rem;
+}
+
+@media only screen and (max-device-width: 430px) {
+  .new-project-form {
+    width: 95% !important;
+    margin: auto;
+  }
+  .git-form .input-radio-container i {
+    font-size: 3rem !important;
+  }
+  .upload-img-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .upload-img-container .add-background-img-bt {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+  }
+  .technologies {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .technologies .technologies-input {
+    width: 100% !important;
+  }
+  .technologies .choose-technology {
+    width: 100% !important;
+  }
 }

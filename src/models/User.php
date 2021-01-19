@@ -1,18 +1,41 @@
 <?php
 
+require_once 'UserRoles.php';
+
 class User
 {
+    private $id;
+    private $nickname;
     private $email;
     private $password;
-    private $name;
-    private $surname;
-    
-    public function __construct(string $email, string $password, string $name, string $surname)
+    private $userRoles;
+
+    public function __construct(string $id, string $nickname, string $email, string $password)
     {
+        $this->id = $id;
+        $this->nickname = $nickname;
         $this->email = $email;
         $this->password = $password;
-        $this->name = $name;
-        $this->surname = $surname;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(string $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getNickname(): string
+    {
+        return $this->nickname;
+    }
+
+    public function setNickname(string $nickname)
+    {
+        $this->nickname = $nickname;
     }
 
     public function getEmail(): string
@@ -35,23 +58,13 @@ class User
         $this->password = $password;
     }
 
-    public function getName(): string
+    public function getUserRoles(): ?UserRoles
     {
-        return $this->name;
+        return $this->userRoles;
     }
 
-    public function setName(string $name)
+    public function setUserRoles(UserRoles $userRoles): void
     {
-        $this->name = $name;
-    }
-
-    public function getSurname(): string
-    {
-        return $this->surname;
-    }
-
-    public function setSurname(string $surname)
-    {
-        $this->surname = $surname;
+        $this->userRoles = $userRoles;
     }
 }

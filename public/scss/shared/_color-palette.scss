@@ -1,10 +1,34 @@
 $fg-main-color: white;
 $fg-darker-color: grey;
-$fg-main-blue-color: #01A2D3;
+$fg-main-blue-color: #01a2d3;
 $bg-main-color: #363738;
-$bg-darker-color: #2D2E2E;
-$bg-color-brighter: #4F5152;
+$bg-darker-color: #2d2e2e;
+$bg-color-brighter: #4f5152;
+$border-color: #73777b;
+$checked-icon-color: green;
 
 // buttons
-$blue-bt-gradient: transparent linear-gradient(180deg, #1382A3 0%, #0A4152 100%) 0% 0% no-repeat padding-box;
-$green-bt-gradient: transparent linear-gradient(180deg, #1382A3 0%, #02D52C 0%, #086349 84%, #09594C 100%, #0A4152 100%) 0% 0% no-repeat padding-box;
+$blue-bt-gradient: transparent linear-gradient(180deg, #1382a3 0%, #0a4152 100%)
+    0% 0% no-repeat padding-box;
+$green-bt-gradient: transparent
+    linear-gradient(
+        180deg,
+        #1382a3 0%,
+        #02d52c 0%,
+        #086349 84%,
+        #09594c 100%,
+        #0a4152 100%
+    )
+    0% 0% no-repeat padding-box;
+$red-bt-gradient: transparent
+    linear-gradient(
+        180deg,
+        #1321a3 0%,
+        #02d52c 0%,
+        #ef0e0e 0%,
+        #cc0808 1%,
+        #7e0a0a 100%,
+        #9a0808 100%,
+        #0a4152 100%
+    )
+    0% 0% no-repeat padding-box;

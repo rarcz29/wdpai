@@ -1,15 +1,9 @@
-<!doctype html>
-<html>
+<?php require_once __DIR__."/shared/_configuration.php"; ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CNode</title>
-    <meta name="description" content="WdPAI project">
-    <meta name="keywords" content="code programming team crew">
-    <link rel="stylesheet" href="public/css/style.css" />
-    <link rel="stylesheet" href="public/css/login.css" />
-</head>
+<!doctype html>
+<html lang=<?php echo $_SESSION['lang'] ?>>
+
+<?php require_once __DIR__.'/shared/_headTag.php'; ?>
 
 <body>
     <div class="container">
@@ -34,7 +28,7 @@
                     placeholder="password">
                 <button type="submit" class="button input-field-round bt-blue button-login">Log in</button>
                 <p>Don't have an account?</p>
-                <a href="./signup.html">Sign up</a>
+                <a href="signup">Sign up</a>
             </form>
         </div>
     </div>

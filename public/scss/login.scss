@@ -1,92 +1,92 @@
 @import "./shared/color-palette";
 
 .container {
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  .logo {
-    $width: 30%;
-    width: 30%;
-    margin-bottom: 10%;
-    margin-right: 4%;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .login-container {
-    width: 30%;
-
-    form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-
-    .button-login {
-      width: 55%;
-      margin: 1em;
-    }
-
-    .input-login {
-      width: 70%;
-      margin: 1em;
-    }
-
-    p {
-      margin: 0;
-      margin-bottom: 1em;
-      color: grey;
-      font-size: 12px;
-    }
-
-    a {
-      color: $fg-main-color;
-      text-decoration: underline;
-    }
-  }
-}
-
-// mobile devices
-@media only screen and (max-device-width: 420px) {
-  .container {
     width: 100vw;
     height: 100vh;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 
     .logo {
-      $width: 80%;
-      width: $width;
-      margin: 0;
-      margin-bottom: 3vh;
+        $width: 30%;
+        width: 30%;
+        margin-bottom: 10%;
+        margin-right: 4%;
 
-      img {
-        width: 100%;
-      }
+        img {
+            width: 100%;
+        }
     }
 
     .login-container {
-      width: 100%;
+        width: 30%;
 
-      form {
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .button-login {
+            width: 55%;
+            margin: 1rem;
+        }
+
+        .input-login {
+            width: 70%;
+            margin: 1rem;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 1rem;
+            color: grey;
+            font-size: 12px;
+        }
+
+        a {
+            color: $fg-main-color;
+            text-decoration: underline;
+        }
+    }
+}
+
+// mobile devices
+@media only screen and (max-device-width: 420px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: auto;
-      }
+
+        .logo {
+            $width: 80%;
+            width: $width;
+            margin: 0;
+            margin-bottom: 3vh;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .login-container {
+            width: 100%;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+            }
+        }
     }
-  }
 }
