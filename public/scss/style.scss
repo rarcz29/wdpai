@@ -37,7 +37,6 @@ h1 {
 .main-container {
     max-width: $main-width;
     margin: 0 auto;
-    min-height: calc(100vh - #{$main-navbar-height} - 5rem);
 
     .page-header {
         margin-left: 1.5rem;

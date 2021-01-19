@@ -24,6 +24,7 @@ class GitToolsController extends AppController
             );
             $json = json_encode($response);
             echo $json;
+            return;
         }
 
         $response = null;
@@ -41,20 +42,34 @@ class GitToolsController extends AppController
             $gitTool = $_POST['gitTool'];
             $login = $_POST['login'];
             $token = $_POST['token'];
-            $exists = false;
+            $tool = null;
+
 
             switch ($gitTool) {
                 case "github":
                     $tool = new GitHub();
-                    // TODO: duplikujący się kod
-                    $gitAccountName = $tool->getUsername($token);
-                    $exists = $gitAccountName === $login;
-                    $response = array(
-                        "tool" => $gitTool,
-                        "value" => $exists
-                    );
                     break;
+
+                case "gitlab":
+                    $tool = new GitLab();
+                    break;
+
+                default:
+                    $response = array(
+                        "message" => "This git tool doesn't exists"
+                    );
+                    $json = json_encode($response);
+                    echo $json;
+                    return;
             }
+
+            $headers = $tool->setHeaders($login, $token);
+            $gitAccountName = $tool->getUsername($headers, $login);
+            $exists = $gitAccountName === $login;
+            $response = array(
+                "tool" => $gitTool,
+                "value" => $exists
+            );
 
             if ($exists)
             {

@@ -1,11 +1,31 @@
 const form = document.getElementById("git-tools-form");
-form.addEventListener("submit", logSubmit);
+const search = document.querySelector(
+    ".search-projects-form > .input-field-round"
+);
+const searchForm = document.querySelector(".search-projects-form");
 
-document.addEventListener("DOMContentLoaded", () => {
-    checkConnection();
-    getProjects();
-    getRequests();
-});
+form.addEventListener("submit", logSubmit);
+search.addEventListener("keyup", (event) => searchProjects(event));
+searchForm.addEventListener("submit", (event) => event.preventDefault());
+
+function searchProjects(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        const data = { search: search.value };
+
+        fetch("search", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((projects) => {
+                displayProjects(projects);
+            });
+    }
+}
 
 function logSubmit(event) {
     const formattedData = new FormData(form);
@@ -13,6 +33,7 @@ function logSubmit(event) {
     fetch("gitToolConnect", { method: "POST", body: formattedData })
         .then((response) => response.json())
         .then((data) => {
+            console.log(data);
             if (data.tool !== "unknown" && data.value === true) {
                 const toolConnectedIcon = document.getElementById(
                     data.tool + "-connected-icon"
@@ -55,6 +76,7 @@ function getProjects() {
 function displayProjects(data) {
     const container = document.getElementById("projects-container");
     const emptyContainerText = document.getElementById("no-projects-info");
+    container.innerHTML = "";
 
     if (Object.keys(data).length === 0) {
         emptyContainerText.style.display = "block";
@@ -67,9 +89,11 @@ function displayProjects(data) {
             const link = clone.querySelector("a");
             const title = clone.querySelector("h1");
             const git = clone.querySelector("p");
+            const img = clone.querySelector("img");
             link.href = value.url;
             title.innerHTML = value.title;
             git.innerHTML = value.git_tool;
+            img.src = `public/uploads/${value.image_path}`;
             element.appendChild(clone);
             container.appendChild(element);
         });
@@ -138,3 +162,9 @@ function declineRequest() {
     fetch(`/decline/${container.id}`);
     container.remove();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    checkConnection();
+    getProjects();
+    getRequests();
+});

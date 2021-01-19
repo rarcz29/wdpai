@@ -2,15 +2,15 @@
 
 abstract class GitToolApi
 {
-    abstract public function getUsername(string $token);
+    abstract public function getUsername(array $headers, string $username);
     abstract public function createNewRepository(string $username, string $token,
                                                  string $title, string $description,
                                                  bool $private);
+    abstract public function setHeaders(string $username, string $token) : array;
 
-    protected function get(string $url, string $username, string $token) : string
+    protected function get(string $url, array $headers) : string
     {
         $curl = curl_init();
-        $headers = $this->setHeaders($username, $token);
 
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -22,10 +22,9 @@ abstract class GitToolApi
         return $output;
     }
 
-    protected function post(string $url, string $username, string $token, array $postFields): string
+    protected function post(string $url, array $headers, array $postFields): string
     {
         $curl = curl_init();
-        $headers = $this->setHeaders($username, $token);
 
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -39,12 +38,5 @@ abstract class GitToolApi
         return $output;
     }
 
-    private function setHeaders(string $username, string $token) : array
-    {
-        return array(
-            "User-Agent: ${username}",
-            "Authorization: token ${token}",
-            "Accept: application/vnd.github.v3+json"
-        );
-    }
+
 }

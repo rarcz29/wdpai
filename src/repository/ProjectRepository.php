@@ -50,10 +50,16 @@ class ProjectRepository extends Repository
         }
     }
 
-    public function getProjects(int $userId): ?array
+    public function getProjects(int $userId, string $searchString = ''): ?array
     {
+        $searchString = '%' . strtolower($searchString) . '%';
+
         $stmt = $this->database->connect()->prepare('
-            SELECT p.*, g.name as git_name
+            SELECT p.title,
+                p.image as image_path,
+                p.id,
+                p.origin_url,
+                g.name as git_tool
             FROM projects p
             LEFT JOIN git_tools g
                 ON p.id_git_tools = g.id
@@ -61,40 +67,16 @@ class ProjectRepository extends Repository
                 ON up.id_projects = p.id
             WHERE p.id_users = :userId
                 OR up.id_users = :userId
+                AND LOWER(p.title)
+                LIKE :search
+                OR LOWER(p.description)
+                LIKE :search
         ');
 
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-        //TODO $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
-
-        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if (empty($projects))
-        {
-            return null;
-        }
-
-        $array = null;
-
-        foreach ($projects as $project)
-        {
-            $currentProject = new Project(
-                $project['title'],
-                $project['description'],
-                $project['image'],
-                $project['git_name'],
-                $project['private'],
-                $project['likes'],
-                $project['dislikes'],
-                0,
-                $project['id']
-            );
-
-            $currentProject->setOriginUrl($project['origin_url']);
-            $array[] = $currentProject;
-        }
-
-        return $array;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAllProjects()
