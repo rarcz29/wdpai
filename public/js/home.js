@@ -90,6 +90,7 @@ function displayProjects(data) {
             const title = clone.querySelector("h1");
             const git = clone.querySelector("p");
             const img = clone.querySelector("img");
+            console.log(value.url);
             link.href = value.url;
             title.innerHTML = value.title;
             git.innerHTML = value.git_tool;

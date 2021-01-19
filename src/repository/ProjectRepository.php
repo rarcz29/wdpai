@@ -58,7 +58,7 @@ class ProjectRepository extends Repository
             SELECT p.title,
                 p.image as image_path,
                 p.id,
-                p.origin_url,
+                p.origin_url as url,
                 g.name as git_tool
             FROM projects p
             LEFT JOIN git_tools g
