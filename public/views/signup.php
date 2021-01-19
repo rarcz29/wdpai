@@ -18,7 +18,7 @@
                     placeholder="password">
                 <input class="input-field-line-under input-login" name="confirmedPassword" type="password"
                     placeholder="confirm password">
-                <button class="button-login button bt-blue input-field-round">Sign up</button>
+                <button type="submit" class="button-login button bt-blue input-field-round">Sign up</button>
                 <p>or</p>
                 <a href="login">Log in</a>
             </form>

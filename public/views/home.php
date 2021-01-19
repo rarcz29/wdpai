@@ -14,7 +14,7 @@
             <div class="projects-container">
                 <section>
                     <form class="search-form search-projects-form">
-                        <input class="input-field-round" placeholder="&#xF002; Find a project">
+                        <input class="input-field-round search-form search-projects-form" name="search" placeholder="&#xF002; Find a project">
                             <!-- TODO: fix fonts -->
                     </form>
 
@@ -83,7 +83,7 @@
                 <h1>Title</h1>
                 <p>Description</p>
             </div>
-            <img src="public/uploads/Blockchain-Dubai.jpg" alt="Project">
+            <img src="" alt="Project">
         </div>
     </a>
 </template>

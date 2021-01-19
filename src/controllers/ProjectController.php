@@ -3,6 +3,8 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Project.php';
 require_once __DIR__.'/../repository/ProjectRepository.php';
+require_once __DIR__.'/../repository/GitToolRepository.php';
+require_once __DIR__.'/../repository/TechnologyRepository.php';
 require_once __DIR__.'/../services/curl/GitHub.php';
 require_once __DIR__.'/../services/curl/GitLab.php';
 
@@ -15,12 +17,14 @@ class ProjectController extends AppController
     private $messages = [];
     private $projectRepository;
     private $gitToolRepository;
+    private $technologyRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->projectRepository = new ProjectRepository();
         $this->gitToolRepository = new GitToolRepository();
+        $this->technologyRepository = new TechnologyRepository();
     }
 
     // TODO: check if repository exists
@@ -81,6 +85,77 @@ class ProjectController extends AppController
         }
 
         return $this->render('newProject', ['messages' => $this->message]);
+    }
+
+    public function projects()
+    {
+        if (!$this->account->isLoggedIn())
+        {
+            $response = array(
+                "message" => 'unauthenticated',
+            );
+            $json = json_encode($response);
+            echo $json;
+        }
+
+        echo json_encode($this->projectRepository->getProjects($this->account->getUserId()));
+    }
+
+    public function projectsAll()
+    {
+        if (!$this->account->isLoggedIn())
+        {
+            $response = array(
+                "message" => 'unauthenticated',
+            );
+            echo json_encode($response);
+            return;
+        }
+
+        $output = $this->projectRepository->getAllProjects();
+        $output['technologies'] = json_decode($output['technologies']);
+        echo json_encode($output);
+    }
+
+    public function like(int $id) {
+        $this->projectRepository->like($id);
+        http_response_code(200);
+    }
+
+    public function dislike(int $id) {
+        $this->projectRepository->dislike($id);
+        http_response_code(200);
+    }
+
+    public function searchTechnologies()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json")
+        {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->technologyRepository->getTechnologyByName($decoded['search']));
+        }
+    }
+
+    public function search()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->projectRepository->getProjects($this->account->getUserId(), $decoded['search']));
+        }
     }
 
     private function validate(array $file): bool

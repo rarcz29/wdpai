@@ -82,8 +82,6 @@
             <button type="submit" class="input-field-round button bt-blue submit-bt">Create project</button>
         </form>
     </main>
-
-    <?php require __DIR__ . '/shared/_footer.html'; ?>
 </body>
 
 <template id="technology-template">

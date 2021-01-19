@@ -36,7 +36,7 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User not exist!']]);
         }
 
-        if (password_verify($password, $user->getPassword()))
+        if (!password_verify($password, $user->getPassword()))
         {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
@@ -52,16 +52,20 @@ class SecurityController extends AppController
             return $this->render('register');
         }
 
+
+
         $nickname = $_POST['nickname'];
         $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $password = $_POST['password'];
         $confirmedPassword = $_POST['confirmedPassword'];
 
         if ($password !== $confirmedPassword)
         {
+            echo 'Nie działa';
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $user = new User(0, $nickname, $email, $password);
         $this->userRepository->addUser($user);
 
