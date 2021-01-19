@@ -58,7 +58,7 @@ class ProjectRepository extends Repository
             SELECT p.title,
                 p.image as image_path,
                 p.id,
-                p.origin_url,
+                p.origin_url as url,
                 g.name as git_tool
             FROM projects p
             LEFT JOIN git_tools g
@@ -67,10 +67,10 @@ class ProjectRepository extends Repository
                 ON up.id_projects = p.id
             WHERE p.id_users = :userId
                 OR up.id_users = :userId
-                AND LOWER(p.title)
+                AND (LOWER(p.title)
                 LIKE :search
                 OR LOWER(p.description)
-                LIKE :search
+                LIKE :search)
         ');
 
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);

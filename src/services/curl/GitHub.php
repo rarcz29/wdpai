@@ -18,15 +18,15 @@ class GitHub extends GitToolApi
 
         if ($this->getUsername($headers, $username) !== $username)
         {
-            return null;
+            return null;// TODO
         }
 
-        $postData = array(
+        $postData = [
             "name" => $title,
             "description" => $description,
             "private" => $private,
             "auto_init" => true
-        );
+        ];
         $output = $this->post("https://api.github.com/user/repos", $headers, $postData);
         $json = json_decode($output, true);
 

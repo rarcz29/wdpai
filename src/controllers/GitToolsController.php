@@ -122,7 +122,6 @@ class GitToolsController extends AppController
             }
         }
 
-        $json = json_encode($response);
-        echo $json;
+        echo json_encode($response);
     }
 }
