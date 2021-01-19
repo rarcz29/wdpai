@@ -74,6 +74,10 @@ $left-panel-width: 27rem;
             width: $element-width;
             border-radius: 1rem;
             border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
         }
     }
 

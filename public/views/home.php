@@ -24,7 +24,7 @@
                         </button>
 
                         <div class="filters">
-
+                            Filter
                         </div>
                     </div>
                 </section>
